@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-ItemImage.delete_all
+Picture.delete_all
 ItemColor.delete_all
 Item.delete_all
 Subcategory.delete_all
 Category.delete_all
+NewsItem.delete_all
 
 3.times do |i|
   Category.create!(name: "Category ##{i}")
@@ -21,10 +21,10 @@ Category.delete_all
       Item.create!(title: "Title for item ##{i}#{j}#{k}",
                    description: "Description for item ##{i}",
                   subcategory: Subcategory.find_by(name: "Subcategory##{i}#{j}"))
-      ItemImage.create!(item: Item.find_by(title: "Title for item ##{i}#{j}#{k}"),
+      Picture.create!(imageable: Item.find_by(title: "Title for item ##{i}#{j}#{k}"),
                         image: File.new("#{Rails.root}/app/assets/images/image.png"))
 
-      ItemImage.create!(item: Item.find_by(title: "Title for item ##{i}#{j}#{k}"),
+      Picture.create!(imageable: Item.find_by(title: "Title for item ##{i}#{j}#{k}"),
                         image: File.new("#{Rails.root}/app/assets/images/image1.jpg"))
 
       ItemColor.create!(item: Item.find_by(title: "Title for item ##{i}#{j}#{k}"),
@@ -33,5 +33,14 @@ Category.delete_all
       ItemColor.create!(item: Item.find_by(title: "Title for item ##{i}#{j}#{k}"),
                         image: File.new("#{Rails.root}/app/assets/images/color1.png"))
     end
+  end
+end
+
+3.times do |i|
+  NewsItem.create!(title: "NewsItem ##{i}",
+                    text: "Description for NewsItem ##{i}")
+  2.times do
+  Picture.create!(imageable: NewsItem.find_by(title: "NewsItem ##{i}"),
+                  image: File.new("#{Rails.root}/app/assets/images/newsitem.png"))
   end
 end

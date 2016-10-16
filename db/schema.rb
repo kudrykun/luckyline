@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161016132205) do
+ActiveRecord::Schema.define(version: 20161016225921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,17 +32,6 @@ ActiveRecord::Schema.define(version: 20161016132205) do
     t.index ["item_id"], name: "index_item_colors_on_item_id", using: :btree
   end
 
-  create_table "item_images", force: :cascade do |t|
-    t.integer  "item_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.index ["item_id"], name: "index_item_images_on_item_id", using: :btree
-  end
-
   create_table "items", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -50,6 +39,25 @@ ActiveRecord::Schema.define(version: 20161016132205) do
     t.datetime "updated_at",     null: false
     t.integer  "subcategory_id"
     t.index ["subcategory_id"], name: "index_items_on_subcategory_id", using: :btree
+  end
+
+  create_table "news_items", force: :cascade do |t|
+    t.string   "title"
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string   "imageable_type"
+    t.integer  "imageable_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable_type_and_imageable_id", using: :btree
   end
 
   create_table "subcategories", force: :cascade do |t|
@@ -61,7 +69,6 @@ ActiveRecord::Schema.define(version: 20161016132205) do
   end
 
   add_foreign_key "item_colors", "items"
-  add_foreign_key "item_images", "items"
   add_foreign_key "items", "subcategories"
   add_foreign_key "subcategories", "categories"
 end

@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @categories = Category.all
+    @newsitems = NewsItem.all
     @items = Item.all
   end
 

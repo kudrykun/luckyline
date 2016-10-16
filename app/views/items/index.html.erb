@@ -1,3 +1,32 @@
+<h1>NewsItems</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Images</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @newsitems.each do |newsitem| %>
+      <tr>
+        <td><%= newsitem.title %></td>
+        <td><%= newsitem.text %></td>
+        <td>
+          <%if newsitem.pictures%>
+              <%newsitem.pictures.each do |newsitem_image|%>
+                  <%= image_tag newsitem_image.image(:thumb) %>
+              <%end%>
+          <%end%>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h1>Categories</h1>
 <p>Categories</p>
 <ol>
   <%@categories.each do |category|%>
@@ -7,13 +36,39 @@
     <%category.subcategories.each do |subcategory|%>
           <li>
             <p><%=subcategory.name%></p>
-            <ol>
-            <%subcategory.items.each do |item|%>
-            <li>
-              <%=item.title%>
-            </li>
-            <%end%>
-            </ol>
+            <table>
+              <thead>
+              <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Images</th>
+                <th>Colors</th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <% subcategory.items.each do |item| %>
+                  <tr>
+                    <td><%= item.title %></td>
+                    <td><%= item.description %></td>
+                    <td>
+                    <%if item.pictures%>
+                        <%item.pictures.each do |item_image|%>
+                            <%= image_tag item_image.image(:thumb) %>
+                        <%end%>
+                    <%end%>
+                    </td>
+                    <td>
+                    <%if item.item_colors%>
+                        <%item.item_colors.each do |item_color|%>
+                            <%= image_tag item_color.image(:thumb) %>
+                        <%end%>
+                    <%end%>
+                    </td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
           </li>
       <%end%>
     </ol>
