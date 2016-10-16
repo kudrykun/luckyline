@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def index
     @categories = Category.all
     @newsitems = NewsItem.all
+    @opinions = Opinion.all
     @items = Item.all
   end
 

@@ -1,3 +1,25 @@
+<h1>Opinions</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Text</th>
+    <th>Info</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @opinions.each do |opinion| %>
+      <tr>
+        <td><%= opinion.name %></td>
+        <td><%= opinion.text %></td>
+        <td><%= opinion.info%></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <h1>NewsItems</h1>
 
 <table>

@@ -11,6 +11,7 @@ Item.delete_all
 Subcategory.delete_all
 Category.delete_all
 NewsItem.delete_all
+Opinion.delete_all
 
 3.times do |i|
   Category.create!(name: "Category ##{i}")
@@ -43,4 +44,10 @@ end
   Picture.create!(imageable: NewsItem.find_by(title: "NewsItem ##{i}"),
                   image: File.new("#{Rails.root}/app/assets/images/newsitem.png"))
   end
+end
+
+3.times do |i|
+  Opinion.create!(name: "Author ##{i}",
+                  text: "Text of opinion ##{i}",
+                  info: "Info of opinion ##{i}")
 end
