@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<h1>Catalog -> <%=@category.name%> -> <%=@subcategory.name%> -> <%=@item.title%></h1>
 
 <p>
   <strong>Title:</strong>
@@ -10,5 +10,22 @@
   <%= @item.description %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<p>
+  <strong>Images</strong>
+  <%if @item.pictures%>
+      <%@item.pictures.each do |item_image|%>
+          <%= image_tag item_image.image(:thumb) %>
+      <%end%>
+  <%end%>
+</p>
+
+<p>
+  <strong>Colors</strong>
+  <%if @item.item_colors%>
+      <%@item.item_colors.each do |item_color|%>
+          <%= image_tag item_color.image(:thumb) %>
+      <%end%>
+  <%end%>
+</p>
+
+<%=render :partial => 'orders/new', :object => @order %>

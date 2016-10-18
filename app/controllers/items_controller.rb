@@ -4,15 +4,17 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @categories = Category.all
-    @newsitems = NewsItem.all
-    @opinions = Opinion.all
-    @items = Item.all
+    @category = Category.friendly.find(params[:category_id])
+    @subcategory = Subcategory.friendly.find(params[:subcategory_id])
+    @items = @subcategory.items
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+    @order = Order.new
+    @category = Category.friendly.find(params[:category_id])
+    @subcategory = Subcategory.friendly.find(params[:subcategory_id])
   end
 
   # GET /items/new
@@ -67,11 +69,11 @@ class ItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
-      @item = Item.find(params[:id])
+      @item = Item.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:title, :description)
+      params.require(:item).permit(:title, :description, :category_id, :subcategory_id)
     end
 end

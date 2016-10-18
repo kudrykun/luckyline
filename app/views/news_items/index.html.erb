@@ -1,0 +1,15 @@
+<h1>News</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+  <%@news_items.each do |news_item|%>
+  <tr>
+    <td><%=link_to news_item.title, news_item_path(news_item)%></td>
+    <td><%=news_item.text%></td>
+  </tr>
+  <%end%>
+</table>
+

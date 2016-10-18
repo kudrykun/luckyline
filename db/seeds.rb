@@ -14,40 +14,46 @@ NewsItem.delete_all
 Opinion.delete_all
 
 3.times do |i|
-  Category.create!(name: "Category ##{i}")
+  Category.create!(name: "Категория ##{i}")
 
   2.times do |j|
-    Subcategory.create!(name: "Subcategory##{i}#{j}", category: Category.find_by(name: "Category ##{i}"))
+    Subcategory.create!(name: "Подкатегория ##{i}#{j}", category: Category.find_by(name: "Категория ##{i}"))
     2.times do |k|
-      Item.create!(title: "Title for item ##{i}#{j}#{k}",
+      Item.create!(title: "Товар ##{i}#{j}#{k}",
                    description: "Description for item ##{i}",
-                  subcategory: Subcategory.find_by(name: "Subcategory##{i}#{j}"))
-      Picture.create!(imageable: Item.find_by(title: "Title for item ##{i}#{j}#{k}"),
+                  subcategory: Subcategory.find_by(name: "Подкатегория ##{i}#{j}"))
+      Picture.create!(imageable: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
                         image: File.new("#{Rails.root}/app/assets/images/image.png"))
 
-      Picture.create!(imageable: Item.find_by(title: "Title for item ##{i}#{j}#{k}"),
+      Picture.create!(imageable: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
                         image: File.new("#{Rails.root}/app/assets/images/image1.jpg"))
 
-      ItemColor.create!(item: Item.find_by(title: "Title for item ##{i}#{j}#{k}"),
+      ItemColor.create!(item: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
                         image: File.new("#{Rails.root}/app/assets/images/color.png"))
 
-      ItemColor.create!(item: Item.find_by(title: "Title for item ##{i}#{j}#{k}"),
+      ItemColor.create!(item: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
                         image: File.new("#{Rails.root}/app/assets/images/color1.png"))
     end
   end
 end
 
 3.times do |i|
-  NewsItem.create!(title: "NewsItem ##{i}",
+  NewsItem.create!(title: "Новость ##{i}",
                     text: "Description for NewsItem ##{i}")
   2.times do
-  Picture.create!(imageable: NewsItem.find_by(title: "NewsItem ##{i}"),
+  Picture.create!(imageable: NewsItem.find_by(title: "Новость ##{i}"),
                   image: File.new("#{Rails.root}/app/assets/images/newsitem.png"))
   end
 end
 
 3.times do |i|
-  Opinion.create!(name: "Author ##{i}",
+  Opinion.create!(name: "Отзыв ##{i}",
                   text: "Text of opinion ##{i}",
                   info: "Info of opinion ##{i}")
+end
+
+3.times do |i|
+  Order.create!(name: "Name ##{i}",
+                  phone_number: "+7 916 770 48 6#{i}",
+                  email: "email ##{i}")
 end

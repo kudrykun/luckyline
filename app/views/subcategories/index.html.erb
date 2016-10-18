@@ -1,0 +1,10 @@
+<h1>Catalog -> <%=@category.name%></h1>
+<% if @subcategories %>
+    <ul>
+      <% @subcategories.each do |subcategory| %>
+          <li> <%= link_to subcategory.name, items_path(subcategory.category, subcategory) %></li>
+      <% end %>
+    </ul>
+<% else %>
+    <p>There is no subcategories, bro</p>
+<% end %>

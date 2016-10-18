@@ -1,45 +1,30 @@
-<h1>Opinions</h1>
-
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Text</th>
-    <th>Info</th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @opinions.each do |opinion| %>
-      <tr>
-        <td><%= opinion.name %></td>
-        <td><%= opinion.text %></td>
-        <td><%= opinion.info%></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<h1>NewsItems</h1>
-
+<h1>Catalog -> <%=@category.name%> -> <%=@subcategory.name%></h1>
 <table>
   <thead>
   <tr>
     <th>Title</th>
-    <th>Text</th>
+    <th>Description</th>
     <th>Images</th>
+    <th>Colors</th>
   </tr>
   </thead>
 
   <tbody>
-  <% @newsitems.each do |newsitem| %>
+  <% @items.each do |item| %>
       <tr>
-        <td><%= newsitem.title %></td>
-        <td><%= newsitem.text %></td>
+        <td><%= link_to item.title,item_path(@category,@subcategory,item) %></td>
+        <td><%= item.description %></td>
         <td>
-          <%if newsitem.pictures%>
-              <%newsitem.pictures.each do |newsitem_image|%>
-                  <%= image_tag newsitem_image.image(:thumb) %>
+          <%if item.pictures%>
+              <%item.pictures.each do |item_image|%>
+                  <%= image_tag item_image.image(:thumb) %>
+              <%end%>
+          <%end%>
+        </td>
+        <td>
+          <%if item.item_colors%>
+              <%item.item_colors.each do |item_color|%>
+                  <%= image_tag item_color.image(:thumb) %>
               <%end%>
           <%end%>
         </td>
@@ -47,53 +32,3 @@
   <% end %>
   </tbody>
 </table>
-
-<h1>Categories</h1>
-<p>Categories</p>
-<ol>
-  <%@categories.each do |category|%>
-  <li>
-    <p><%=category.name%></p>
-    <ol>
-    <%category.subcategories.each do |subcategory|%>
-          <li>
-            <p><%=subcategory.name%></p>
-            <table>
-              <thead>
-              <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Images</th>
-                <th>Colors</th>
-              </tr>
-              </thead>
-
-              <tbody>
-              <% subcategory.items.each do |item| %>
-                  <tr>
-                    <td><%= item.title %></td>
-                    <td><%= item.description %></td>
-                    <td>
-                    <%if item.pictures%>
-                        <%item.pictures.each do |item_image|%>
-                            <%= image_tag item_image.image(:thumb) %>
-                        <%end%>
-                    <%end%>
-                    </td>
-                    <td>
-                    <%if item.item_colors%>
-                        <%item.item_colors.each do |item_color|%>
-                            <%= image_tag item_color.image(:thumb) %>
-                        <%end%>
-                    <%end%>
-                    </td>
-                  </tr>
-              <% end %>
-              </tbody>
-            </table>
-          </li>
-      <%end%>
-    </ol>
-  </li>
-  <%end%>
-</ol>

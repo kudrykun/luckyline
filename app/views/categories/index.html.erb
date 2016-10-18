@@ -1,0 +1,10 @@
+<h1>Catalog</h1>
+<% if @categories %>
+  <ul>
+    <% @categories.each do |category| %>
+    <li> <%= link_to category.name, subcategories_path(category)  %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There is no categories, bro</p>
+<% end %>

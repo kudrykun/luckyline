@@ -9,6 +9,19 @@
   </head>
 
   <body>
+    <table>
+      <tr>
+        <td>
+          <%=link_to 'Каталог', root_path%>
+        </td>
+        <td>
+          <%=link_to 'Новости', news_items_path%>
+        </td>
+        <td>
+          <%=link_to 'Отзывы', opinions_path%>
+        </td>
+      </tr>
+    </table>
     <%= yield %>
   </body>
 </html>

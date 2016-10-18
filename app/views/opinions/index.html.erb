@@ -1,0 +1,21 @@
+<h1>Opinions</h1>
+
+<p>
+  <strong>Написать отзыв</strong>
+  <%=render 'opinions/form'%>
+</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Text</th>
+    <th>Info/th>
+  </tr>
+  <%@opinions.each do |opinion|%>
+      <tr>
+        <td><%=link_to opinion.name, opinion_path(opinion)%></td>
+        <td><%=opinion.text%></td>
+        <td><%=opinion.info%></td>
+      </tr>
+  <%end%>
+</table>
