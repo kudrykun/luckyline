@@ -1,10 +1,37 @@
-<h1>Catalog</h1>
 <% if @categories %>
-  <ul>
-    <% @categories.each do |category| %>
-    <li> <%= link_to category.name, subcategories_path(category)  %></li>
-    <% end %>
-  </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <% @categories[0..2].each do |category| %>
+      <div class="col-sm-4">
+        <div class="panel panel-success">
+          <div class="panel-heading"><%= link_to category.name, subcategories_path(category) %></div>
+          <div class="panel-body"><%=image_tag(category.subcategories.sample.items.sample.pictures.sample.image, class:'img-responsive',style:'width:100%')%></div>
+          <div class="panel-footer">Самая разная кухня в ваш уютный дом</div>
+        </div>
+      </div>
+      <%end%>
+      <% @categories[3..4].each do |category| %>
+      <div class="col-sm-6">
+        <div class="panel panel-success">
+          <div class="panel-heading"><%= link_to category.name, subcategories_path(category) %></div>
+          <div class="panel-body"><%=image_tag(category.subcategories.sample.items.sample.pictures.sample.image, class:'img-responsive',style:'width:100%')%></div>
+          <div class="panel-footer">Самая разная кухня в ваш уютный дом</div>
+        </div>
+      </div>
+      <%end%>
+      <% @categories[5..7].each do |category| %>
+          <div class="col-sm-4">
+            <div class="panel panel-success">
+              <div class="panel-heading"><%= link_to category.name, subcategories_path(category) %></div>
+              <div class="panel-body"><%=image_tag(category.subcategories.sample.items.sample.pictures.sample.image, class:'img-responsive',style:'width:100%')%></div>
+              <div class="panel-footer">Самая разная кухня в ваш уютный дом</div>
+            </div>
+          </div>
+      <%end%>
+    </div>
+  </div>
+</div>
 <% else %>
-  <p>There is no categories, bro</p>
+    <p>There is no categories, bro</p>
 <% end %>

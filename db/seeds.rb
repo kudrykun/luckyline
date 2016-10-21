@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Order.delete_all
 Picture.delete_all
 ItemColor.delete_all
 Item.delete_all
@@ -13,7 +14,7 @@ Category.delete_all
 NewsItem.delete_all
 Opinion.delete_all
 
-3.times do |i|
+9.times do |i|
   Category.create!(name: "Категория ##{i}")
 
   2.times do |j|
@@ -21,7 +22,8 @@ Opinion.delete_all
     2.times do |k|
       Item.create!(title: "Товар ##{i}#{j}#{k}",
                    description: "Description for item ##{i}",
-                  subcategory: Subcategory.find_by(name: "Подкатегория ##{i}#{j}"))
+                  subcategory: Subcategory.find_by(name: "Подкатегория ##{i}#{j}"),
+                  price: 10000 + k)
       Picture.create!(imageable: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
                         image: File.new("#{Rails.root}/app/assets/images/image.png"))
 
@@ -49,7 +51,8 @@ end
 3.times do |i|
   Opinion.create!(name: "Отзыв ##{i}",
                   text: "Text of opinion ##{i}",
-                  info: "Info of opinion ##{i}")
+                  info: "Info of opinion ##{i}",
+                  order_number: 100+i)
 end
 
 3.times do |i|

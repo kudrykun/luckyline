@@ -1,27 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Luckyline</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
+<html lang="en">
+<head>
+  <title>Luckyline</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
   <body>
-    <table>
-      <tr>
-        <td>
-          <%=link_to 'Каталог', root_path%>
-        </td>
-        <td>
-          <%=link_to 'Новости', news_items_path%>
-        </td>
-        <td>
-          <%=link_to 'Отзывы', opinions_path%>
-        </td>
-      </tr>
-    </table>
+  <%= render 'layouts/navigation'%>
+  <%= render 'layouts/header'%>
     <%= yield %>
   </body>
 </html>
