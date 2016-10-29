@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
 
+
   resources :news_items, only: [:index, :show]
   resources :opinions, only: [:index, :show, :create]
   resources :items, only: [] do
     resources :orders, only: [:create]
   end
-  root 'categories#index'
+
+  get 'catalog', to: 'categories#index', as: 'catalog'
+  root 'main#index'
 
 
   get '/catalog/:category_id', to: 'subcategories#index',as: 'subcategories'

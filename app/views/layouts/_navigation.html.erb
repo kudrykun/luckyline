@@ -6,18 +6,23 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#myPage">Логотип</a>
+      <%=link_to root_path, class: 'navbar-brand' do%>
+        <%=image_tag('logotop.jpeg', alt:'logo',)%>
+      <%end%>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">КАТАЛОГ</a></li>
-        <li><a href="#">Акции</a></li>
-        <li><a href="#">Дизайнерам</a></li>
-        <li><a href="#">Онлайн заявка</a></li>
-        <li><a href="#">Оставить отзыв</a></li>
+        <li><%=link_to 'Каталог', catalog_path%></li>
+        <li>
+          <%=link_to news_items_path do%>
+              Акции
+            <span class="badge"><%=@number_of_news%></span>
+          <%end%>
+        </li>
+        <li data-toggle="modal" data-target="#myModal"><a>Онлайн заявка</a></li>
+        <li><%=link_to 'Отзывы', opinions_path%></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span>Онлайн-заказ</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Оплата и доставка</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-bookmark"></span>Адреса салонов</a></li>
       </ul>

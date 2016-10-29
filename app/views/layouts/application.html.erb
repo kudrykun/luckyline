@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Luckyline</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-  <body>
-  <%= render 'layouts/navigation'%>
-  <%= render 'layouts/header'%>
+  <head>
+    <title>Главная</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--TODO Что делать с этим???-->
+    <style>
+      .thumbnail {
+        padding: 0 0 15px 0;
+        border: none;
+        border-radius: 0;
+      }
+
+      .thumbnail img {
+        width: 80%;
+        height: 80%;
+      }
+    </style>
+  </head>
+
+
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <%=render 'layouts/navigation'%>
+    <%=render 'layouts/modal'%>
+
+    <!--TODO Есть два варианта хедеров и этот должен быть только в main-->
+    <div class="container-fluid bg-1 text-left">
+      <div class="row">
+        <div class="col-md-12">
+          <div><%=image_tag 'g74.png', class: 'logot'%></div>
+          <div class="header-word">
+            <p>++</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <%= yield %>
+
+    <%=render 'layouts/footer'%>
   </body>
 </html>
