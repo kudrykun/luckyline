@@ -17,11 +17,19 @@ Opinion.delete_all
 9.times do |i|
   Category.create!(name: "Категория ##{i}")
 
-  2.times do |j|
+  3.times do |j|
     Subcategory.create!(name: "Подкатегория ##{i}#{j}", category: Category.find_by(name: "Категория ##{i}"))
-    2.times do |k|
+    6.times do |k|
       Item.create!(title: "Товар ##{i}#{j}#{k}",
-                   description: "Description for item ##{i}",
+                   description: "№#{i} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Donec semper magna et ultricies semper. In maximus est a elit
+                                varius porttitor. Nunc vitae sapien facilisis, egestas magna sed,
+                                aliquet erat. Quisque nunc orci, gravida eu bibendum efficitur,
+                                laoreet sed ligula. Fusce varius fermentum nulla eu posuere.
+                                Pellentesque vel volutpat enim, semper sodales dui. Aenean cursus
+                                pharetra ultrices. Praesent sed odio nulla. Nunc sit amet risus
+                                et nulla consequat malesuada vel eu mauris. Fusce turpis nibh,
+                                venenatis ac sapien ac, tempor dapibus mi.",
                   subcategory: Subcategory.find_by(name: "Подкатегория ##{i}#{j}"),
                   price: 10000 + k)
       Picture.create!(imageable: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
@@ -39,7 +47,7 @@ Opinion.delete_all
   end
 end
 
-3.times do |i|
+5.times do |i|
   NewsItem.create!(title: "Новость ##{i}",
                     text: "Description for NewsItem ##{i}")
   2.times do

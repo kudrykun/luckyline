@@ -1,36 +1,47 @@
+<% if @items %>
+    <div id="body">
+      <div class="container-fluid bg-6">
+        <div class="row">
+          <div class="col-md-12">
 
+          </div>
+        </div>
+      </div>
 
-<h1>Catalog -> <%=@category.name%> -> <%=@subcategory.name%></h1>
-<table>
-  <thead>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Images</th>
-    <th>Colors</th>
-  </tr>
-  </thead>
+      <div class="container-fluid">
+        <div class="row content">
+          <div class="col-md-12">
+            <div class="col-md-3 sidenav text-left">
+              <div class="list-group">
+                <a  class="list-group-item ">
+                  <form class="navbar-form" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Поиск">
+                    </div>
+                    <button type="submit" class="btn btn-default">Go</button>
+                  </form>
+                </a>
 
-  <tbody>
-  <% @items.each do |item| %>
-      <tr>
-        <td><%= link_to item.title,item_path(@category,@subcategory,item) %></td>
-        <td><%= item.description %></td>
-        <td>
-          <%if item.pictures%>
-              <%item.pictures.each do |item_image|%>
-                  <%= image_tag item_image.image(:thumb) %>
-              <%end%>
-          <%end%>
-        </td>
-        <td>
-          <%if item.item_colors%>
-              <%item.item_colors.each do |item_color|%>
-                  <%= image_tag item_color.image(:thumb) %>
-              <%end%>
-          <%end%>
-        </td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+                <% @categories.each do |category| %>
+                    <%= link_to category.name, subcategories_path(category), class: 'list-group-item' %>
+                <%end%>
+              </div>
+            </div>
+
+            <!--TODO image_tag(category.subcategories.sample.items.sample.pictures.sample.image-->
+            <% @items.each do |item| %>
+                <div class="col-md-3">
+                  <%= link_to item_path(@category,@subcategory,item) do %>
+                      <%=image_tag '1.jpg', class: 'sc-item-img img-responsive'%>
+                      <div class="panel-footer"><%=item.title%></div>
+                  <%end%>
+                </div>
+            <%end%>
+
+          </div>
+        </div>
+      </div>
+    </div>
+<% else %>
+    <p>There is no items, bro</p>
+<% end %>

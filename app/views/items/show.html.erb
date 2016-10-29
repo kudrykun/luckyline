@@ -1,31 +1,78 @@
-<h1>Catalog -> <%=@category.name%> -> <%=@subcategory.name%> -> <%=@item.title%></h1>
+<div id="body">
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-md-12">
+        <div class="col-md-3 sidenav text-left">
+          <div class="list-group">
+            <a  class="list-group-item ">
+              <form class="navbar-form" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Поиск">
+                </div>
+                <button type="submit" class="btn btn-default">Go</button>
+              </form>
+            </a>
 
-<p>
-  <strong>Title:</strong>
-  <%= @item.title %>
-</p>
+            <% @categories.each do |category| %>
+                <%= link_to category.name, subcategories_path(category), class: 'list-group-item' %>
+            <%end%>
+          </div>
+        </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
+        <div class="col-md-6 text-left">
+          <ul class="nav nav-tabs">
+            <li class=""><a href="#home" data-toggle="tab" aria-expanded="false">Цвета</a></li>
+            <li class="active"><a href="#profile" data-toggle="tab" aria-expanded="true">Инфо</a></li>
+          </ul>
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade" id="home">
+              <div class="panel-group">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <%@item.item_colors.each do |item_color|%>
+                    <div class="col-md-2">
+                      <%= image_tag '1.jpg', class: 'img-thumbnail', id: 'first-image' %>
+                      <div class="text-center"></div>
+                    </div>
+                    <%end%>
+                  </div>
+                </div></div>
+            </div>
 
-<p>
-  <strong>Images</strong>
-  <%if @item.pictures%>
-      <%@item.pictures.each do |item_image|%>
-          <%= image_tag item_image.image(:thumb) %>
-      <%end%>
-  <%end%>
-</p>
+            <!--TODO я не понимаю, что это инфо-->
+            <div class="tab-pane fade active in" id="profile">
+              <p><%=@item.description%></p>
+            </div>
+          </div>
 
-<p>
-  <strong>Colors</strong>
-  <%if @item.item_colors%>
-      <%@item.item_colors.each do |item_color|%>
-          <%= image_tag item_color.image(:thumb) %>
-      <%end%>
-  <%end%>
-</p>
 
-<%=render :partial => 'orders/new', object: @order%>
+          <%@item.pictures.each do |item_image|%>
+          <div class="col-md-6">
+            <%= image_tag '1.jpg', class: 'img-thumbnail', id: 'first-image' %>
+            <div class="text-center"></div>
+          </div>
+          <%end%>
+        </div>
+
+        <div class="col-md-3 navbar navbar-right">
+          <h2>Расчитать стоимость</h2>
+          <form>
+            <div class="form-group">
+              <label for="email">Имя*</label>
+              <input type="text" class="form-control" placeholder="Ваше имя">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Телефон*</label>
+              <input type="text" class="form-control" placeholder="Ваш телефон">
+            </div>
+            <div class="form-group">
+              <label for="email">Почта:</label>
+              <input type="text" class="form-control" placeholder="Ваш email">
+            </div>
+            <button type="button" class="btn btn-default btn-lg">Заказать</button>
+          </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
