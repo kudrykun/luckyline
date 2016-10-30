@@ -55,23 +55,8 @@
         </div>
 
         <div class="col-md-3 navbar navbar-right">
-          <h2>Расчитать стоимость</h2>
-          <form>
-            <div class="form-group">
-              <label for="email">Имя*</label>
-              <input type="text" class="form-control" placeholder="Ваше имя">
-            </div>
-            <div class="form-group">
-              <label for="pwd">Телефон*</label>
-              <input type="text" class="form-control" placeholder="Ваш телефон">
-            </div>
-            <div class="form-group">
-              <label for="email">Почта:</label>
-              <input type="text" class="form-control" placeholder="Ваш email">
-            </div>
-            <button type="button" class="btn btn-default btn-lg">Заказать</button>
-          </form>
-      </div>
+          <%=render :partial => 'orders/new', object: @order%>
+        </div>
       </div>
     </div>
   </div>
