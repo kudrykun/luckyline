@@ -6,4 +6,8 @@ class Item < ApplicationRecord
 
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  include PgSearch
+  pg_search_scope :search_everywhere, against: [:title, :description]
+
 end

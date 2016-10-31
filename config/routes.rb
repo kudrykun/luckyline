@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'results/index'
+
   resources :news_items, only: [:index, :show]
   resources :opinions, only: [:index, :show, :create]
   resources :items, only: [] do
@@ -15,5 +17,7 @@ Rails.application.routes.draw do
   get '/catalog/:category_id', to: 'subcategories#index',as: 'subcategories'
   get '/catalog/:category_id/:subcategory_id', to: 'items#index',as: 'items'
   get '/catalog/:category_id/:subcategory_id/:id', to: 'items#show',as: 'item'
+
+  get 'results', to: 'results#index', as: 'results'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

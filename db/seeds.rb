@@ -33,16 +33,21 @@ Opinion.delete_all
                   subcategory: Subcategory.find_by(name: "Подкатегория ##{i}#{j}"),
                   price: 10000 + k)
       Picture.create!(imageable: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
-                        image: File.new("#{Rails.root}/app/assets/images/image.png"))
+                        image: File.new("#{Rails.root}/app/assets/images/photo1.png"))
 
       Picture.create!(imageable: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
-                        image: File.new("#{Rails.root}/app/assets/images/image1.jpg"))
+                        image: File.new("#{Rails.root}/app/assets/images/photo2.png"))
+
+      Picture.create!(imageable: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
+                      image: File.new("#{Rails.root}/app/assets/images/photo3.png"))
 
       ItemColor.create!(item: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
                         image: File.new("#{Rails.root}/app/assets/images/color.png"))
 
       ItemColor.create!(item: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
                         image: File.new("#{Rails.root}/app/assets/images/color1.png"))
+      ItemColor.create!(item: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
+                        image: File.new("#{Rails.root}/app/assets/images/color3.png"))
     end
   end
 end
