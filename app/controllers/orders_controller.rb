@@ -11,6 +11,8 @@ class OrdersController < ApplicationController
     end
   end
 
+
+  private
   def order_params
     params.require(:order).permit(:name,:phone_number,:email,:item_id)
   end

@@ -54,7 +54,15 @@ end
 
 5.times do |i|
   NewsItem.create!(title: "Новость ##{i}",
-                    text: "Description for NewsItem ##{i}")
+                    text: "№#{i} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Donec semper magna et ultricies semper. In maximus est a elit
+                                varius porttitor. Nunc vitae sapien facilisis, egestas magna sed,
+                                aliquet erat. Quisque nunc orci, gravida eu bibendum efficitur,
+                                laoreet sed ligula. Fusce varius fermentum nulla eu posuere.
+                                Pellentesque vel volutpat enim, semper sodales dui. Aenean cursus
+                                pharetra ultrices. Praesent sed odio nulla. Nunc sit amet risus
+                                et nulla consequat malesuada vel eu mauris. Fusce turpis nibh,
+                                venenatis ac sapien ac, tempor dapibus mi.")
   2.times do
   Picture.create!(imageable: NewsItem.find_by(title: "Новость ##{i}"),
                   image: File.new("#{Rails.root}/app/assets/images/newsitem.png"))
@@ -63,7 +71,15 @@ end
 
 3.times do |i|
   Opinion.create!(name: "Отзыв ##{i}",
-                  text: "Text of opinion ##{i}",
+                  text: "№#{i} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Donec semper magna et ultricies semper. In maximus est a elit
+                                varius porttitor. Nunc vitae sapien facilisis, egestas magna sed,
+                                aliquet erat. Quisque nunc orci, gravida eu bibendum efficitur,
+                                laoreet sed ligula. Fusce varius fermentum nulla eu posuere.
+                                Pellentesque vel volutpat enim, semper sodales dui. Aenean cursus
+                                pharetra ultrices. Praesent sed odio nulla. Nunc sit amet risus
+                                et nulla consequat malesuada vel eu mauris. Fusce turpis nibh,
+                                venenatis ac sapien ac, tempor dapibus mi.",
                   info: "Info of opinion ##{i}",
                   order_number: 100+i)
 end

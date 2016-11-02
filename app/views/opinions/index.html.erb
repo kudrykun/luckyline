@@ -1,21 +1,28 @@
-<h1>Opinions</h1>
-
-<p>
-  <strong>Написать отзыв</strong>
-  <%=render 'opinions/form'%>
-</p>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Text</th>
-    <th>Info/th>
-  </tr>
+<div style="text-align:center;"><h2>Отзывы</h2></div>
+<% if @opinions %>
+<div class="col-md-12">
   <%@opinions.each do |opinion|%>
-      <tr>
-        <td><%=link_to opinion.name, opinion_path(opinion)%></td>
-        <td><%=opinion.text%></td>
-        <td><%=opinion.info%></td>
-      </tr>
+  <p> <span class="quoteses">&#8220;</span><%=opinion.text%></p>
+  <p><span class="glyphicon glyphicon-time"></span> <%=opinion.name%>, 10 Октября, 2016.</p>
   <%end%>
-</table>
+</div>
+<h6>Оставьте свой отзыв!</h6>
+<div class="form-group">
+  <textarea class="form-control" rows="3" required></textarea>
+</div>
+<button type="submit" class="btn ">Оставить</button>
+
+
+
+<div class="center">
+  <ul class="pagination">
+    <li><a href="#">&laquo;</a></li>
+    <li><a class="active" href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">&raquo;</a></li>
+  </ul>
+</div>
+<%else%>
+    There is not opinions bro
+<%end%>

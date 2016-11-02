@@ -14,12 +14,7 @@
             <div class="col-md-3 sidenav text-left">
               <div class="list-group">
                 <a  class="list-group-item ">
-                  <form class="navbar-form" role="search">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Поиск">
-                    </div>
-                    <button type="submit" class="btn btn-default">Go</button>
-                  </form>
+                  <%= render 'layouts/search' %>
                 </a>
 
                 <% @categories.each do |category| %>

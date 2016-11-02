@@ -14,12 +14,7 @@
         <div class="col-md-3 sidenav text-left">
           <div class="list-group">
             <a  class="list-group-item ">
-              <%= form_tag results_path, method: :get, role: 'search',class: 'navbar-form' do %>
-                  <div class="form-group">
-                  <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Поиск' %>
-                  </div>
-                  <%= submit_tag "Go", name: nil , class: 'btn btn-default'%>
-              <% end %>
+              <%= render 'layouts/search' %>
             </a>
 
             <% @categories.each do |category| %>

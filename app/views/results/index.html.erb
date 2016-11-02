@@ -1,6 +1,33 @@
-<h3>Результаты поиска по запросу <em><%= params[:query]%></em></h3>
-<% @search_results.each do |result| %>
-    <h4><%= result.title%></h4>
-    <div><%= result.description.html_safe %></div>
-    <hr>
-<% end %>
+<div class="container-fluid bg-3 text-center">
+  <%= render 'layouts/search' %>
+
+  <p>Результаты по поиску "Паштет"</p>
+  <p><small>Всего результатов: <%=@search_results.size%> </small></p>
+
+  <% @search_results.each do |result| %>
+  <div class="container-fluid bg-3">
+    <div class="media">
+      <div class="media-left ">
+        <%=image_tag result.pictures.sample.image, class: 'media-object'%>
+      </div>
+      <div class="media-body ">
+        <h6 class="media-heading"><%= result.title%></h6><br>
+        <p><span class="glyphicon glyphicon-time"></span> 10 Октября, 2016.</p>
+        <p><%= result.description.html_safe %></p>
+        <br>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+
+<div class="center">
+  <ul class="pagination">
+    <li><a href="http://unnu.16mb.com/Deadline/Store/news.html#">«</a></li>
+    <li><a class="active" href="http://unnu.16mb.com/Deadline/Store/news.html#">1</a></li>
+    <li><a href="http://unnu.16mb.com/Deadline/Store/news.html#">2</a></li>
+    <li><a href="http://unnu.16mb.com/Deadline/Store/news.html#">3</a></li>
+    <li><a href="http://unnu.16mb.com/Deadline/Store/news.html#">»</a></li>
+  </ul>
+</div>
+</div>
