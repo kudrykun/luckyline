@@ -6,14 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Order.delete_all
+=begin
 Picture.delete_all
 ItemColor.delete_all
 Item.delete_all
 Subcategory.delete_all
 Category.delete_all
 NewsItem.delete_all
+=end
 Opinion.delete_all
 
+=begin
 9.times do |i|
   Category.create!(name: "Категория ##{i}")
 
@@ -68,8 +71,9 @@ end
                   image: File.new("#{Rails.root}/app/assets/images/newsitem.png"))
   end
 end
+=end
 
-3.times do |i|
+30.times do |i|
   Opinion.create!(name: "Отзыв ##{i}",
                   text: "№#{i} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                 Donec semper magna et ultricies semper. In maximus est a elit

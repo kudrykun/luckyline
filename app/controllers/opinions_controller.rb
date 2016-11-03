@@ -1,6 +1,6 @@
 class OpinionsController < ApplicationController
   def index
-    @opinions = Opinion.all
+    @opinions = Opinion.paginate(:page => params[:page])
     @opinion = Opinion.new
   end
 

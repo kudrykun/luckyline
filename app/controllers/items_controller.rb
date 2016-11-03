@@ -15,8 +15,6 @@ class ItemsController < ApplicationController
     @item = Item.friendly.find(params[:id])
     @order = Order.new
     @categories = Category.all
-    @category = Category.friendly.find(params[:category_id])
-    @subcategory = Subcategory.friendly.find(params[:subcategory_id])
   end
 
   # GET /items/new

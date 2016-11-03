@@ -9,7 +9,69 @@ header {
   -o-background-size: cover;
   text-align: center;
   color: #aaa;
+  padding-top: 120px;
+  padding-bottom: 150px;
 }
+.primary{
+  border-color: #6bc748;
+  border-width: 3px;
+  max-width: 200px;
+  margin-bottom: 60px;
+}
+.icon-primary{
+  color: #6bc748;
+}
+.info-header{
+  color: #333333;
+}
+#info{
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+#examples{
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.example-item{
+  margin-bottom: 30px;
+}
+.portfolio-hover{
+  background: rgba(107, 199, 72, 0.71);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all ease .5s;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+}
+
+.portfolio-hover-content {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+  top: 50%;
+  margin-top: -12px;
+  color: #fff;
+}
+.portfolio-hover:hover {
+  opacity: 1;
+}
+
+.portfolio-link{
+  display: block;
+  position: relative;
+  margin: 0 auto;
+}
+.btn-dark {
+  border-radius: 0;
+  color: #fff;
+  background-color: rgba(107, 199, 72, 0.71);
+}
+
 .quoteses {
   quotes: "\201c";
   font-size: 44px;
@@ -24,13 +86,8 @@ header {
 }
 .logot{
   min-width: 50%;
-  max-width:30%;
+  max-width: 60%;
   padding-top: 50px;
-}
-
-.row{
-  padding-top: 45px;
-  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -102,7 +159,7 @@ footer {
   background-color: #2f4154;
   color: #000;
 }
-.modal-header, h4, .close {
+.modal-header, .close {
   background-color: #2f4154;
   color: #ffffff !important;
   text-align: center;
@@ -120,7 +177,6 @@ footer {
   color: #fff;
 
 }
-.col-md-3{padding-bottom:25px;}
 
 .bg-6{
   background-color: white;
@@ -202,4 +258,6 @@ img{
 .preview-images img{
   padding-bottom: 20px;
 }
+
+
 
