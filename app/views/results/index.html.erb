@@ -2,7 +2,7 @@
   <%= render 'layouts/search' %>
 
   <p>Результаты по поиску "Паштет"</p>
-  <p><small>Всего результатов: <%=@search_results.size%> </small></p>
+  <p><small>Всего результатов: <%=@search_result_size%> </small></p>
 
   <% @search_results.each do |result| %>
   <div class="container-fluid bg-3">
@@ -12,7 +12,6 @@
       </div>
       <div class="media-body ">
         <h6 class="media-heading"><%= result.title%></h6><br>
-        <p><span class="glyphicon glyphicon-time"></span> 10 Октября, 2016.</p>
         <p><%= result.description.html_safe %></p>
         <br>
       </div>
@@ -22,12 +21,7 @@
 
 
 <div class="center">
-  <ul class="pagination">
-    <li><a href="http://unnu.16mb.com/Deadline/Store/news.html#">«</a></li>
-    <li><a class="active" href="http://unnu.16mb.com/Deadline/Store/news.html#">1</a></li>
-    <li><a href="http://unnu.16mb.com/Deadline/Store/news.html#">2</a></li>
-    <li><a href="http://unnu.16mb.com/Deadline/Store/news.html#">3</a></li>
-    <li><a href="http://unnu.16mb.com/Deadline/Store/news.html#">»</a></li>
-  </ul>
+  <%= paginate @search_results %>
 </div>
+
 </div>

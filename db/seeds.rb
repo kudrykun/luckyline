@@ -5,24 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 Order.delete_all
-=begin
 Picture.delete_all
 ItemColor.delete_all
 Item.delete_all
 Subcategory.delete_all
 Category.delete_all
 NewsItem.delete_all
-=end
 Opinion.delete_all
 
-=begin
-9.times do |i|
+3.times do |i|
   Category.create!(name: "Категория ##{i}")
 
   3.times do |j|
     Subcategory.create!(name: "Подкатегория ##{i}#{j}", category: Category.find_by(name: "Категория ##{i}"))
-    6.times do |k|
+    3.times do |k|
       Item.create!(title: "Товар ##{i}#{j}#{k}",
                    description: "№#{i} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                 Donec semper magna et ultricies semper. In maximus est a elit
@@ -36,13 +34,16 @@ Opinion.delete_all
                   subcategory: Subcategory.find_by(name: "Подкатегория ##{i}#{j}"),
                   price: 10000 + k)
       Picture.create!(imageable: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
-                        image: File.new("#{Rails.root}/app/assets/images/photo1.png"))
-
+                        image: File.new("#{Rails.root}/app/assets/images/kux1.jpg"))
       Picture.create!(imageable: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
-                        image: File.new("#{Rails.root}/app/assets/images/photo2.png"))
-
+                      image: File.new("#{Rails.root}/app/assets/images/kux2.jpg"))
       Picture.create!(imageable: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
-                      image: File.new("#{Rails.root}/app/assets/images/photo3.png"))
+                      image: File.new("#{Rails.root}/app/assets/images/kux3.jpg"))
+      Picture.create!(imageable: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
+                      image: File.new("#{Rails.root}/app/assets/images/kux4.jpg"))
+      Picture.create!(imageable: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
+                      image: File.new("#{Rails.root}/app/assets/images/kux5.jpg"))
+
 
       ItemColor.create!(item: Item.find_by(title: "Товар ##{i}#{j}#{k}"),
                         image: File.new("#{Rails.root}/app/assets/images/color.png"))
@@ -55,7 +56,8 @@ Opinion.delete_all
   end
 end
 
-5.times do |i|
+
+10.times do |i|
   NewsItem.create!(title: "Новость ##{i}",
                     text: "№#{i} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                 Donec semper magna et ultricies semper. In maximus est a elit
@@ -66,12 +68,17 @@ end
                                 pharetra ultrices. Praesent sed odio nulla. Nunc sit amet risus
                                 et nulla consequat malesuada vel eu mauris. Fusce turpis nibh,
                                 venenatis ac sapien ac, tempor dapibus mi.")
-  2.times do
+
   Picture.create!(imageable: NewsItem.find_by(title: "Новость ##{i}"),
-                  image: File.new("#{Rails.root}/app/assets/images/newsitem.png"))
-  end
+                  image: File.new("#{Rails.root}/app/assets/images/news1.jpg"))
+  Picture.create!(imageable: NewsItem.find_by(title: "Новость ##{i}"),
+                  image: File.new("#{Rails.root}/app/assets/images/news2.jpg"))
+  Picture.create!(imageable: NewsItem.find_by(title: "Новость ##{i}"),
+                  image: File.new("#{Rails.root}/app/assets/images/news3.jpg"))
+  Picture.create!(imageable: NewsItem.find_by(title: "Новость ##{i}"),
+                  image: File.new("#{Rails.root}/app/assets/images/news4.jpg"))
 end
-=end
+
 
 30.times do |i|
   Opinion.create!(name: "Отзыв ##{i}",
@@ -93,3 +100,4 @@ end
                   phone_number: "+7 916 770 48 6#{i}",
                   email: "email ##{i}")
 end
+

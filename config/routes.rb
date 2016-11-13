@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'contacts/show'
+
   get 'results/index'
 
   resources :news_items, only: [:index, :show]

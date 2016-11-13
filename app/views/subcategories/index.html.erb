@@ -11,27 +11,29 @@
       <div class="container-fluid">
         <div class="row content">
           <div class="col-md-12">
-            <div class="col-md-3 sidenav text-left">
-              <div class="list-group">
-                <a  class="list-group-item ">
-                  <%= render 'layouts/search' %>
-                </a>
 
-                <% @categories.each do |category| %>
-                    <%= link_to category.name, subcategories_path(category), class: 'list-group-item' %>
-                <%end%>
-              </div>
+            <ol class="breadcrumb text-left">
+              <%=link_to 'Главная', root_path%>
+              <span aria-hidden="true" class="breadcrumb-sep">•</span>
+              <li class="breadcrumb-item"><%=link_to 'Каталог', catalog_path%></li>
+              <span aria-hidden="true" class="breadcrumb-sep">•</span>
+              <li class="breadcrumb-item"><%=@category.name%></a></li>
+            </ol>
+
+            <div class="col-md-12">
+              <% @subcategories.each do |subcategory| %>
+                  <div class="col-md-4 example-item text-center">
+                    <%= link_to items_path(subcategory.category, subcategory), class: 'portfolio-link' do%>
+                        <%=image_tag subcategory.items.sample.pictures.sample.image, class: 'img-responsive' %>
+                    <%end%>
+                    <div class="">
+                      <div class="">
+                        <div class="panel-footer"><%=subcategory.name%></div>
+                      </div>
+                    </div>
+                  </div>
+              <%end%>
             </div>
-
-            <!--TODO image_tag(category.subcategories.sample.items.sample.pictures.sample.image-->
-            <% @subcategories.each do |subcategory| %>
-                <div class="col-md-3">
-                  <%= link_to items_path(subcategory.category, subcategory) do %>
-                      <%=image_tag '1.jpg', class: 'sc-item-img img-responsive'%>
-                      <div class="panel-footer"><%=subcategory.name%></div>
-                  <%end%>
-                </div>
-            <%end%>
 
           </div>
         </div>

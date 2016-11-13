@@ -1,6 +1,6 @@
 <%= form_tag results_path, method: :get, role: 'search',class: 'navbar-form' do %>
     <div class="form-group">
-      <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Поиск' %>
+      <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Поиск по каталогу' %>
     </div>
-    <%= submit_tag "Go", name: nil , class: 'btn btn-default'%>
+    <%= submit_tag "Поиск", name: nil , class: 'btn btn-default'%>
 <% end %>

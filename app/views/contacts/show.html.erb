@@ -1,0 +1,58 @@
+<div id="body">
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+
+          <div class="col-md-6">
+            <%=image_tag '1.jpg', class: 'img-responsive'%>
+          </div>
+          <div class="col-md-6">
+            <%=image_tag '1.jpg', class: 'img-responsive'%>
+          </div>
+          <div class="col-md-6">
+            <%=image_tag '1.jpg', class: 'img-responsive'%>
+          </div>
+          <div class="col-md-6">
+            <%=image_tag '1.jpg', class: 'img-responsive'%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr/>
+
+
+    <div class="col-md-12">
+      <div class="col-md-6 bg-3">
+        <div id="map" style="width:550px;height:450px"></div>
+      </div>
+      <div class="col-md-3">
+        <h6>Lucky-Line</h6>
+        <p>Мытищи, пр-т Олимпийский д.228 ТЦ "ФОРМАТ"</p>
+        <p>Тел: (925)123-44-55</p>
+        <p>Email: wazzup@mail.ru</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function myMap() {
+    var myCenter = new google.maps.LatLng(55.929863, 37.751412);
+    var mapCanvas = document.getElementById("map");
+    var mapOptions = {center: myCenter, zoom: 15};
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+    var marker = new google.maps.Marker({position:myCenter});
+    marker.setMap(map);
+
+    google.maps.event.addListener(marker,'click',function() {
+      var pos = map.getZoom();
+      map.setZoom(9);
+      map.setCenter(marker.getPosition());
+      window.setTimeout(function() {map.setZoom(pos);},3000);
+    });
+  }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>

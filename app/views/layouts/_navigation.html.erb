@@ -6,25 +6,59 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%=link_to root_path, class: 'navbar-brand' do%>
-        <%=image_tag('logotop.jpeg', alt:'logo',)%>
-      <%end%>
+      <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><%=link_to 'Каталог', catalog_path%></li>
-        <li>
-          <%=link_to news_items_path do%>
-              Акции
-            <span class="badge"><%=@number_of_news%></span>
-          <%end%>
-        </li>
+        <!--catalog-->
+        <%if controller_name == 'categories' || controller_name == 'subcategories' || controller_name == 'items'%>
+            <li class="active"><%=link_to 'Каталог', catalog_path%></li>
+        <%else%>
+            <li class=""><%=link_to 'Каталог', catalog_path%></li>
+        <%end%>
+
+        <!--news_items-->
+        <%if controller_name == 'news_items'%>
+            <li class="active"><%=link_to news_items_path do%>
+                  Акции
+                  <span class="badge"><%=@number_of_news%></span>
+              <%end%></li>
+        <%else%>
+            <li><%=link_to news_items_path do%>
+                  Акции
+                  <span class="badge"><%=@number_of_news%></span>
+              <%end%></li>
+        <%end%>
+
+        <!--Заявка-->
         <li data-toggle="modal" data-target="#myModal"><a>Онлайн заявка</a></li>
-        <li><%=link_to 'Отзывы', opinions_path%></li>
+
+        <!--opinions-->
+        <%if controller_name == 'opinions'%>
+            <li class="active"><%=link_to 'Отзывы', opinions_path%></li>
+        <%else%>
+            <li><%=link_to 'Отзывы', opinions_path%></li></li>
+        <%end%>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Оплата и доставка</a></li>
-        <li><a href="map.html"><span class="glyphicon glyphicon-bookmark"></span>Контакты</a></li>
+
+        <li> <%=render 'layouts/search'%> </li>
+
+        <%if controller_name == 'contacts'%>
+            <li class="active">
+              <%=link_to contacts_show_path do%>
+                  <span class="glyphicon glyphicon-bookmark"></span>Контакты
+              <%end%>
+            </li>
+        <%else%>
+            <li>
+              <%=link_to contacts_show_path do%>
+                  <span class="glyphicon glyphicon-bookmark"></span>Контакты
+              <%end%>
+            </li>
+        <%end%>
       </ul>
     </div>
   </div>

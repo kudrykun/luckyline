@@ -11,27 +11,33 @@
       <div class="container-fluid">
         <div class="row content">
           <div class="col-md-12">
-            <div class="col-md-3 sidenav text-left">
-              <div class="list-group">
-                <a  class="list-group-item ">
-                  <%= render 'layouts/search' %>
-                </a>
-
-                <% @categories.each do |category| %>
-                    <%= link_to category.name, subcategories_path(category), class: 'list-group-item' %>
-                <%end%>
-              </div>
-            </div>
 
             <!--TODO image_tag(category.subcategories.sample.items.sample.pictures.sample.image-->
-            <% @items.each do |item| %>
-                <div class="col-md-3">
-                  <%= link_to item_path(@category,@subcategory,item) do %>
-                      <%=image_tag '1.jpg', class: 'sc-item-img img-responsive'%>
-                      <div class="panel-footer"><%=item.title%></div>
-                  <%end%>
-                </div>
-            <%end%>
+
+            <ol class="breadcrumb text-left">
+              <%=link_to 'Главная', root_path%>
+              <span aria-hidden="true" class="breadcrumb-sep">•</span>
+              <li class="breadcrumb-item"><%=link_to 'Каталог', catalog_path%></li>
+              <span aria-hidden="true" class="breadcrumb-sep">•</span>
+              <li class="breadcrumb-item"><%=link_to @category.name, subcategories_path%></a></li>
+              <span aria-hidden="true" class="breadcrumb-sep">•</span>
+              <li class="breadcrumb-item"><%=@subcategory.name%></a></li>
+            </ol>
+
+            <div class="col-md-12">
+              <% @items.each do |item| %>
+                  <div class="col-md-4 example-item text-center">
+                    <%= link_to item_path(@category,@subcategory,item), class: 'portfolio-link' do%>
+                        <%=image_tag item.pictures.sample.image, class: 'img-responsive' %>
+                    <%end%>
+                    <div class="">
+                      <div class="">
+                        <div class="panel-footer"><%=item.title%></div>
+                      </div>
+                    </div>
+                  </div>
+              <%end%>
+            </div>
 
           </div>
         </div>
