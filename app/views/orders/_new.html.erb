@@ -1,16 +1,46 @@
-<h2>Расчитать стоимость</h2>
-<%= form_for [@item,@order] do |f| %>
-    <div class="form-group">
-      <label for="name">Имя*</label>
-      <%= f.text_field :name, class: 'form-control', placeholder: 'Ваше имя' %>
-    </div>
-    <div class="form-group">
-      <label for="phone_number">Телефон*</label>
-      <%= f.text_field :phone_number, class: 'form-control', placeholder: 'Ваш телефон'%>
-    </div>
-    <div class="form-group">
-      <label for="email">Почта:</label>
-      <%= f.text_field :email, class: 'form-control', placeholder: 'Ваш email' %>
-    </div>
-    <%= f.submit 'Заказать', class: 'btn btn-default btn-lg'%>
-<% end %>
+
+
+
+
+<%if controller_name == 'items' && action_name == 'show'%>
+    <%= form_for [@item,@order], role: 'form' do |f| %>
+        <div class="form-group">
+          <label for="name"><span class="glyphicon glyphicon-shopping-cart"></span> Имя*</label>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Ваше имя' %>
+        </div>
+        <div class="form-group">
+          <label for="phone_number"><span class="glyphicon glyphicon-user"></span> Телефон*</label>
+          <%= f.text_field :phone_number, class: 'form-control', placeholder: 'Ваш телефон'%>
+        </div>
+        <%= f.submit 'Заказать звонок', class: 'btn btn-block' do%>
+            <span class="glyphicon glyphicon-ok"></span>
+        <% end %>
+    <% end %>
+<%else%>
+    <%= form_tag ('/orders') do%>
+        <div class="form-group">
+          <label for="name"><span class="glyphicon glyphicon-shopping-cart"></span> Имя*</label>
+          <%= text_field_tag :name, '',class: 'form-control', placeholder: 'Ваше имя' %>
+        </div>
+        <div class="form-group">
+          <label for="phone_number"><span class="glyphicon glyphicon-user"></span> Телефон*</label>
+          <%= text_field_tag :phone_number, '', class: 'form-control', placeholder: 'Ваш телефон' %>
+        </div>
+        <%= submit_tag 'Заказать звонок', class: 'btn btn-block' do%>
+            <span class="glyphicon glyphicon-ok"></span>
+        <% end %>
+    <%end%>
+<%end%>
+    <!--<form role="form">
+      <div class="form-group">
+        <label for="first-name"><span class="glyphicon glyphicon-shopping-cart"></span> Имя*</label>
+        <input type="text" class="form-control" id="first-name" placeholder="Ваше имя">
+      </div>
+      <div class="form-group">
+        <label for="phone-number"><span class="glyphicon glyphicon-user"></span> Телефон*</label>
+        <input type="text" class="form-control" id="phone-number" placeholder="Ваш номер телефона">
+      </div>
+      <button type="submit" class="btn btn-block">Заказать звонок
+        <span class="glyphicon glyphicon-ok"></span>
+      </button>
+    </form>-->

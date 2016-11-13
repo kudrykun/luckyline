@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :items, only: [] do
     resources :orders, only: [:create]
   end
+
+  resources :orders, only: [:create]
+
   get 'item/:id', to: 'items#show', as: 'show_item'
   get 'catalog', to: 'categories#index', as: 'catalog'
   root 'main#index'
