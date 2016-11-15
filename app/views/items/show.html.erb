@@ -13,25 +13,25 @@
     </ol>
   </div>
 
-
   <div class="container-fluid">
     <div class="row-content">
       <div class="col-md-12">
 
         <div class="col-md-6">
           <div class="col-md-2">
-
             <div class="preview-images">
               <%@item.pictures.each do |picture|%>
-                  <%=image_tag picture.image, class: 'img-responsive' %>
+                  <%=image_tag picture.image, class: 'img-responsive', onMouseOver: "changeImg('#{picture.image.to_s}')" %>
               <%end%>
             </div>
-
           </div>
-          <div class="col-md-10">
-            <%=image_tag @item.pictures.first.image, class: 'img-responsive' %>
+
+          <div class="col-md-10 imag">
+            <%=image_tag @item.pictures.first.image, class: 'img-responsive', name: 'bigImg' %>
           </div>
         </div>
+
+
 
 
         <div class="col-md-6 text-left">
@@ -60,7 +60,7 @@
                   </div>
                 </div></div>
             </div>
-            <button type="button" class="btn btn-default btn-block">КУПИ РАСЧИТАТЬ СТОИМОСТЬ</button>
+            <button data-toggle="modal" data-target="#myModal" type="button" class="btn btn-default btn-block">КУПИ РАСЧИТАТЬ СТОИМОСТЬ</button>
           </div>
         </div>
       </div>

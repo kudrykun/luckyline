@@ -1,27 +1,23 @@
-<div style="text-align:center;"><h2>Отзывы</h2></div>
+<div style="text-align:center;">
+  <h2>Отзывы</h2>
+</div>
 <% if @opinions %>
-<div class="col-md-12">
-  <%@opinions.each do |opinion|%>
-  <p> <span class="quoteses">&#8220;</span><%=opinion.text%></p>
-  <p><span class="glyphicon glyphicon-time"></span> <%=opinion.name%>, 10 Октября, 2016.</p>
-  <%end%>
-</div>
-<h6>Оставьте свой отзыв!</h6>
-<div class="form-group">
-  <textarea class="form-control" rows="3" required></textarea>
-</div>
-<button type="submit" class="btn ">Оставить</button>
-
-
-<div class="center">
-  <ul class="pagination">
-    <li><a href="#">&laquo;</a></li>
-    <li><a class="active" href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">&raquo;</a></li>
-  </ul>
-</div>
+    <div class="col-md-12">
+      <%@opinions.each do |opinion|%>
+      <p> <span class="quoteses">&#8220;</span><%=opinion.text%></p>
+      <p><span class="glyphicon glyphicon-time"></span> <%=opinion.name%>, 10 Октября, 2016.</p>
+      <%end%>
+    </div>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <button type="submit" class="btn ">Оставить</button>
+        </div>
+      </div>
+    </div>
+    <div class="center">
+      <%= paginate @opinions %>
+    </div>
 <%else%>
     There is not opinions bro
 <%end%>

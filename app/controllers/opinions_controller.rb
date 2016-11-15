@@ -1,6 +1,6 @@
 class OpinionsController < ApplicationController
   def index
-    @opinions = Opinion.all
+    @opinions = Opinion.all.page(params[:page]).per(5)
     @opinion = Opinion.new
   end
 
