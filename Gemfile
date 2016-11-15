@@ -39,6 +39,7 @@ gem 'rubocop', '~> 0.44.1', require: false
 gem 'pg_search'
 gem 'font-awesome-sass', '~> 4.6.2'
 gem 'kaminari'
+gem 'rails_12factor'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
