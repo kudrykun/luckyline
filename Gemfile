@@ -40,6 +40,7 @@ gem 'pg_search'
 gem 'font-awesome-sass', '~> 4.6.2'
 gem 'kaminari'
 gem 'rails_12factor'
+gem 'russian'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

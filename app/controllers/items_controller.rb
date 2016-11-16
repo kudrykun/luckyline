@@ -13,8 +13,9 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     @item = Item.friendly.find(params[:id])
-    @category = Category.friendly.find(params[:category_id])
-    @subcategory = Subcategory.friendly.find(params[:subcategory_id])
+    @subcategory = @item.subcategory
+    @category = @subcategory.category
+
     @order = Order.new
   end
 

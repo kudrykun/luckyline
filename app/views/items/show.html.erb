@@ -5,9 +5,9 @@
       <span aria-hidden="true" class="breadcrumb-sep">•</span>
       <li class="breadcrumb-item"><%=link_to 'Каталог', catalog_path%></li>
       <span aria-hidden="true" class="breadcrumb-sep">•</span>
-      <li class="breadcrumb-item"><%=link_to @category.name, subcategories_path%></a></li>
+      <li class="breadcrumb-item"><%=link_to @category.name, subcategories_path(@category)%></a></li>
       <span aria-hidden="true" class="breadcrumb-sep">•</span>
-      <li class="breadcrumb-item"><%=link_to @subcategory.name, items_path%></a></li>
+      <li class="breadcrumb-item"><%=link_to @subcategory.name, items_path(@category,@subcategory)%></a></li>
       <span aria-hidden="true" class="breadcrumb-sep">•</span>
       <li class="breadcrumb-item"><%=@item.title%></a></li>
     </ol>
@@ -21,13 +21,13 @@
           <div class="col-md-2">
             <div class="preview-images">
               <%@item.pictures.each do |picture|%>
-                  <%=image_tag asset_path(picture.image), class: 'img-responsive', onMouseOver: "changeImg('#{picture.image.to_s}')" %>
+                  <%=image_tag picture.image, class: 'img-responsive', onMouseOver: "changeImg('#{picture.image.to_s}')" %>
               <%end%>
             </div>
           </div>
 
           <div class="col-md-10 imag">
-            <%=image_tag asset_path(@item.pictures.first.image), class: 'img-responsive', name: 'bigImg' %>
+            <%=image_tag @item.pictures.first.image, class: 'img-responsive', name: 'bigImg' %>
           </div>
         </div>
 

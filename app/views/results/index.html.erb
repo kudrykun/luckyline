@@ -13,7 +13,7 @@
       <div class="media-body ">
         <h6 class="media-heading"><%= result.title%></h6><br>
         <p><%= result.description.html_safe %></p>
-        <a class="right" href="#"><%=link_to 'Узнать больше', news_item_path(news_item)%></a>
+        <%=link_to 'Узнать больше', results_path(result)%>
         <br>
       </div>
     </div>

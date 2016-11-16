@@ -58,9 +58,9 @@
     </div>
   </div>
 </section>
-<section id="examples">
+<section id="examples" >
   <div class="container">
-    <div class="col-lg-10 col-lg-offset-1 text-center">
+    <div class="col-md-12 text-center">
       <div class="row">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -68,22 +68,31 @@
             <hr class="primary">
           </div>
         </div>
+
+
         <div class="row">
           <% @items.each do |item|%>
-          <div class="col-md-6 example-item">
-            <%=link_to show_item_path(item), class: 'portfolio-link' do%>
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <%=item.title%>
+          <div class="col-md-6 col-sm-6">
+            <div class="example-item">
+            <%=link_to show_item_path(item) do%>
+
+              <div class="example-item-image">
+                <%=image_tag item.pictures.sample.image, class: 'img-responsive'%>
+                <!--<img src="http://lorempixel.com/1600/900" class="img-responsive">-->
               </div>
-            </div>
-            <img src="https://placebear.com/485/333" class="img-responsive">
+              <div class="example-item-text">
+                <%= item.title%>
+              </div>
             <%end%>
+            </div>
           </div>
           <%end%>
         </div>
+        <div class="green-button"><%=link_to 'Перейти в каталог', catalog_path, class: 'btn-examples'%></div>
+
+
       </div>
-      <a href="#" class="btn btn-dark">View More Items</a>
+
     </div>
   </div>
 </section>
