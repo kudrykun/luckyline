@@ -22,7 +22,7 @@
 
             <div class="col-md-12">
               <% @subcategories.each do |subcategory| %>
-                  <div class="col-md-4 example-item text-center">
+                  <div class="col-md-4 text-center">
                     <%= link_to items_path(subcategory.category, subcategory), class: 'portfolio-link' do%>
                         <%=image_tag subcategory.items.sample.pictures.sample.image, class: 'img-responsive' %>
                     <%end%>

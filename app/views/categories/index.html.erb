@@ -14,7 +14,7 @@
       </ol>
       <div class="col-md-12">
         <% @categories.each do |category| %>
-        <div class="col-md-4 example-item text-center">
+        <div class="col-md-4 text-center">
           <%= link_to subcategories_path(category), class: 'portfolio-link' do%>
             <!--<img src="https://placebear.com/485/333" class="img-responsive">-->
               <%=image_tag category.subcategories.sample.items.sample.pictures.sample.image, class: 'img-responsive' %>
