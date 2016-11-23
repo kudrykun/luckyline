@@ -13,8 +13,7 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     @item = Item.friendly.find(params[:id])
-    @subcategory = @item.subcategory
-    @category = @subcategory.category
+    @category = @item.category
 
     @order = Order.new
   end

@@ -1,0 +1,75 @@
+<% if @categories && @categories.size != 0 %>
+    <div id="body">
+
+      <div class="container-fluid">
+        <div class="row content">
+
+          <ol class="breadcrumb text-left">
+            <li class="breadcrumb-item"><%=link_to 'Главная', root_path%></li>
+            <span aria-hidden="true" class="breadcrumb-sep">•</span>
+            <li class="breadcrumb-item">Каталог</li>
+          </ol>
+          <div class="col-md-12">
+            <% @categories.each do |category| %>
+                <div class="col-md-4 text-center">
+                  <%= link_to subs_and_items_path(category), class: 'portfolio-link' do%>
+                      <%=image_tag category.items.sample.pictures.sample.image, class: 'img-responsive'%>
+                  <%end%>
+                  <div class="">
+                    <div class="">
+                      <div class="panel-footer"><%=category.title%></div>
+                    </div>
+                  </div>
+                </div>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+<% else %>
+    <% if @items && @items.size != 0 %>
+        <div id="body">
+          <div class="container-fluid bg-6">
+            <div class="row">
+              <div class="col-md-12">
+                <ol class="breadcrumb text-left">
+                  <%=link_to 'Главная', root_path%>
+                  <span aria-hidden="true" class="breadcrumb-sep">•</span>
+                  <li class="breadcrumb-item"><%=link_to 'Каталог', catalog_path%></li>
+                  <span aria-hidden="true" class="breadcrumb-sep">•</span>
+                  <li class="breadcrumb-item"><%= @category.title%></a></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row content">
+              <div class="col-md-12">
+
+                <!--TODO image_tag(category.subcategories.sample.items.sample.pictures.sample.image-->
+
+                <div class="col-md-12">
+                  <% @items.each do |item| %>
+                      <div class="col-md-4 text-center">
+                        <%= link_to show_category_item_path(@category,item), class: 'portfolio-link' do%>
+                            <%=image_tag item.pictures.sample.image, class: 'img-responsive' %>
+                        <%end%>
+                        <div class="">
+                          <div class="">
+                            <div class="panel-footer"><%=item.title%></div>
+                          </div>
+                        </div>
+                      </div>
+                  <%end%>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    <% else %>
+        <p>There is no items, bro</p>
+    <% end %>
+<% end %>
+

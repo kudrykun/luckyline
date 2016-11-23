@@ -15,13 +15,12 @@
       <div class="col-md-12">
         <% @categories.each do |category| %>
         <div class="col-md-4 text-center">
-          <%= link_to subcategories_path(category), class: 'portfolio-link' do%>
-            <!--<img src="https://placebear.com/485/333" class="img-responsive">-->
-              <%=image_tag category.subcategories.sample.items.sample.pictures.sample.image, class: 'img-responsive' %>
+          <%= link_to subs_and_items_path(category), class: 'portfolio-link' do%>
+              <%=image_tag category.items.sample.pictures.sample.image, class: 'img-responsive'%>
           <%end%>
           <div class="">
             <div class="">
-              <div class="panel-footer"><%=category.name%></div>
+              <div class="panel-footer"><%=category.title%></div>
             </div>
           </div>
         </div>

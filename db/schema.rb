@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021123548) do
+ActiveRecord::Schema.define(version: 20161120184304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "slug"
+    t.text    "description"
+    t.integer "parent_id"
+    t.string  "title"
+    t.string  "slug"
+    t.boolean "is_items"
+    t.index ["parent_id"], name: "index_categories_on_parent_id", using: :btree
     t.index ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
   end
 
@@ -49,13 +51,13 @@ ActiveRecord::Schema.define(version: 20161021123548) do
   create_table "items", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "subcategory_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "slug"
-    t.integer  "price"
+    t.integer  "category_id"
+    t.text     "price"
+    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["slug"], name: "index_items_on_slug", unique: true, using: :btree
-    t.index ["subcategory_id"], name: "index_items_on_subcategory_id", using: :btree
   end
 
   create_table "news_items", force: :cascade do |t|
@@ -96,18 +98,7 @@ ActiveRecord::Schema.define(version: 20161021123548) do
     t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable_type_and_imageable_id", using: :btree
   end
 
-  create_table "subcategories", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "slug"
-    t.index ["category_id"], name: "index_subcategories_on_category_id", using: :btree
-    t.index ["slug"], name: "index_subcategories_on_slug", unique: true, using: :btree
-  end
-
   add_foreign_key "item_colors", "items"
-  add_foreign_key "items", "subcategories"
+  add_foreign_key "items", "categories"
   add_foreign_key "orders", "items"
-  add_foreign_key "subcategories", "categories"
 end

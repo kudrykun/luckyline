@@ -1,28 +1,27 @@
 Rails.application.routes.draw do
 
 
-
-  get 'contacts/show'
-
-  get 'results/index'
-
+  root 'main#index' #Главная
+  get 'contacts/show' #Контакты
+  get 'results/index' #Результаты поиска
+  get 'results', to: 'results#index', as: 'results' #Результаты поиска
+  get 'item/:id', to: 'items#show', as: 'show_item' #Показ итема с главной
+  get 'catalog/:category_id/:id', to: 'items#show', as: 'show_category_item' #показ итема из каталога
+  get 'catalog', to: 'categories#index', as: 'catalog' #Каталог
+  get '/catalog/:id', to: 'categories#show',as: 'subs_and_items' #показ подкатегорий
   resources :news_items, only: [:index, :show]
+  resources :orders, only: [:create]
   resources :opinions, only: [:index, :show, :create]
   resources :items, only: [] do
     resources :orders, only: [:create]
   end
 
-  resources :orders, only: [:create]
-
-  get 'item/:id', to: 'items#show', as: 'show_item'
-  get 'catalog', to: 'categories#index', as: 'catalog'
-  root 'main#index'
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+  end
 
 
-  get '/catalog/:category_id', to: 'subcategories#index',as: 'subcategories'
-  get '/catalog/:category_id/:subcategory_id', to: 'items#index',as: 'items'
-  get '/catalog/:category_id/:subcategory_id/:id', to: 'items#show',as: 'item'
 
-  get 'results', to: 'results#index', as: 'results'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -7,10 +7,9 @@ class Item < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  belongs_to :subcategory
   has_many :pictures, as: :imageable, dependent: :destroy
   has_many :item_colors, dependent: :destroy
   has_many :orders, dependent: :destroy
-
+  belongs_to :category
   validates :title, :description, presence: true
 end

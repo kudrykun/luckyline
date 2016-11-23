@@ -1,64 +1,38 @@
 <div id="body">
   <div class="container">
-    <ol class="breadcrumb text-left">
-      <%=link_to 'Главная', root_path%>
-      <span aria-hidden="true" class="breadcrumb-sep">•</span>
-      <li class="breadcrumb-item"><%=link_to 'Каталог', catalog_path%></li>
-      <span aria-hidden="true" class="breadcrumb-sep">•</span>
-      <li class="breadcrumb-item"><%=link_to @category.name, subcategories_path(@category)%></a></li>
-      <span aria-hidden="true" class="breadcrumb-sep">•</span>
-      <li class="breadcrumb-item"><%=link_to @subcategory.name, items_path(@category,@subcategory)%></a></li>
-      <span aria-hidden="true" class="breadcrumb-sep">•</span>
-      <li class="breadcrumb-item"><%=@item.title%></a></li>
-    </ol>
-  </div>
+    <div class="row">
 
-  <div class="container-fluid">
-    <div class="row-content">
       <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><%=link_to 'Каталог', catalog_path%></li>
+          <li><%=link_to @category.title, subs_and_items_path(@category)%></a></li>
+          <li class="active"><%=@item.title%></a></li>
+        </ol>
+      </div>
 
+      <div class="col-md-12">
         <div class="col-md-6">
-          <div class="col-md-2">
-            <div class="preview-images">
-              <%@item.pictures.each do |picture|%>
-                  <%=image_tag picture.image, class: 'img-responsive', onMouseOver: "changeImg('#{picture.image.to_s}')" %>
-              <%end%>
-            </div>
+          <div class="col-md-2 preview-images">
+            <%@item.pictures.each do |picture|%>
+                <%=image_tag picture.image, class: 'img-responsive', onMouseOver: "changeImg('#{picture.image.to_s}')" %>
+            <%end%>
           </div>
-
           <div class="col-md-10 imag">
             <%=image_tag @item.pictures.first.image, class: 'img-responsive', name: 'bigImg' %>
           </div>
         </div>
-
-
-
-
         <div class="col-md-6 text-left">
           <h5><%=@item.title%></h5>
           <ul class="nav nav-tabs">
             <li class="active"><a href="#profile" data-toggle="tab" aria-expanded="false">Инфо</a></li>
-            <li class=""><a href="#home" data-toggle="tab" aria-expanded="true">Цвета</a></li>
-
+            <li class=""><a href="#home" data-toggle="tab" aria-expanded="true">Цены</a></li>
           </ul>
           <div id="myTabContent" class="tab-content">
-
             <div class="tab-pane fade active in" id="profile">
-              <p><strong>Цена за погонный метр 1488228 р.</strong></p>
               <p><%=@item.description%></p>
             </div>
             <div class="tab-pane fade" id="home">
-              <div class="panel-group">
-                <div class="panel panel-default">
-                  <div class="panel-body">
-                    <%@item.item_colors.each do |item_color|%>
-                    <div class="col-md-2">
-                      <%=image_tag item_color.image, class: 'img-thumbnail' %>
-                      <div class="text-center"></div>
-                    </div>
-                    <%end%>
-                  </div>
-                </div></div>
+              <p><%=@item.price.html_safe%></p>
             </div>
             <button data-toggle="modal" data-target="#myModal" type="button" class="btn btn-default btn-block">КУПИ РАСЧИТАТЬ СТОИМОСТЬ</button>
           </div>
