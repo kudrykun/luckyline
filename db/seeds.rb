@@ -48,14 +48,6 @@ Category.create!(title: "Кухонная мебель",is_items: true)
   Item.find_by(title:'МДФ - покрытие ПВХ').pictures.create!(image: File.new("#{Rails.root}/app/assets/images/mdf-4.jpg"))
   Item.find_by(title:'МДФ - покрытие ПВХ').pictures.create!(image: File.new("#{Rails.root}/app/assets/images/mdf-5.jpg"))
   Item.find_by(title:'МДФ - покрытие ПВХ').pictures.create!(image: File.new("#{Rails.root}/app/assets/images/mdf-6.jpg"))
-  Category.find_by(title:"Кухонная мебель").subs.create!(title: "HPL пластики ARPA  LEMARK MELATON Италия")
-  Category.find_by(title:"Кухонная мебель").subs.create!(title: "Пластик Акриловый односторонний AGT глянцевый/ матовый Турция")
-  Category.find_by(title:"Кухонная мебель").subs.create!(title: "Лакированный МДФ двухсторонний ALVIC LUXE высокий глянец / матовый")
-  Category.find_by(title:"Кухонная мебель").subs.create!(title: "Эко-плита CLEAF tss c термо-структурированной поверхностью Италия")
-  Category.find_by(title:"Кухонная мебель").subs.create!(title: "Эмаль двух-компонентная Поверхность устойчивая к износу")
-  Category.find_by(title:"Кухонная мебель").subs.create!(title: "Массив Россия. Берёза-дуб")
-  Category.find_by(title:"Кухонная мебель").subs.create!(title: "МДФ покрытие, ПВХ пленка")
-
 
 3.times do |i|
   NewsItem.create!(title: "Новость ##{i}",

@@ -1,0 +1,38 @@
+<div class="container">
+  <table class="table table-stripped table-hover">
+    <caption>Отзывы</caption>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Имя</th>
+      <th>Текст</th>
+      <th>Инфо</th>
+      <th>Создан</th>
+      <th>Обновлён</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%if @opinions%>
+    <%@opinions.each do |opinion|%>
+        <tr>
+          <th><%= opinion.id %></th>
+          <td><%= opinion.name %></td>
+          <td><%= opinion.text %></td>
+          <td><%= opinion.info %></td>
+          <td><%= time_tag opinion.created_at %></td>
+          <td><%= time_tag opinion.updated_at %></td>
+        </tr>
+    <%end%>
+    <%else%>
+    <tr>
+      <th>-</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <%end%>
+    </tbody>
+  </table>
+</div>

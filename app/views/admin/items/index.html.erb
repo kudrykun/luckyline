@@ -1,0 +1,35 @@
+<div class="container">
+  <table class="table table-stripped table-hover">
+    <caption>Товары</caption>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Категория</th>
+        <th>Создан</th>
+        <th>Обновлён</th>
+      </tr>
+    </thead>
+    <tbody>
+    <%if @items%>
+    <%@items.each do |item|%>
+    <tr>
+      <th><%= item.id %></th>
+      <td><%= item.title %></td>
+      <td><%= Category.find(item.category).title %></td>
+      <td><%= time_tag item.created_at %></td>
+      <td><%= time_tag item.updated_at %></td>
+    </tr>
+    <%end%>
+    <%else%>
+    <tr>
+      <th>-</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <%end%>
+    </tbody>
+  </table>
+</div>

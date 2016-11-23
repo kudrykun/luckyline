@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  namespace :admin do
+    get 'orders/index'
+  end
+
   root 'main#index' #Главная
   get 'contacts/show' #Контакты
   get 'results/index' #Результаты поиска
@@ -18,6 +22,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
+    resources :items, only: [:index]
+    resources :categories, only: [:index]
+    resources :news_items, only: [:index]
+    resources :opinions, only: [:index]
+    resources :orders, only: [:index]
   end
 
 

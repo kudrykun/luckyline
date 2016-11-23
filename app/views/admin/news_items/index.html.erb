@@ -1,0 +1,35 @@
+<div class="container">
+  <table class="table table-stripped table-hover">
+    <caption>Акции</caption>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Название</th>
+      <th>Текст</th>
+      <th>Создан</th>
+      <th>Обновлён</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% if @news_items%>
+    <%@news_items.each do |news_item|%>
+        <tr>
+          <th><%= news_item.id %></th>
+          <td><%= news_item.title %></td>
+          <td><%= news_item.text %></td>
+          <td><%= time_tag news_item.created_at %></td>
+          <td><%= time_tag news_item.updated_at %></td>
+        </tr>
+    <%end%>
+    <%else%>
+    <tr>
+      <th>-</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <%end%>
+    </tbody>
+  </table>
+</div>

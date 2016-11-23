@@ -1,0 +1,44 @@
+<div class="container">
+  <table class="table table-stripped table-hover">
+    <caption>Категории</caption>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Название</th>
+      <th>Категория-родитель</th>
+      <th>Товары</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% if @categories%>
+    <%@categories.each do |category|%>
+        <tr>
+          <th><%= category.id %></th>
+          <td><%= category.title %></td>
+          <td>
+            <%if category.parent%>
+              <%= category.parent.title %>
+            <%else%>
+              Нет
+            <%end%>
+          </td>
+          <td>
+            <% if category.is_items %>
+              Да
+            <%else%>
+              Нет
+            <%end%>
+          </td>
+        </tr>
+    <%end%>
+    <%else%>
+    <tr>
+      <th>-</th>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <%end%>
+    </tbody>
+  </table>
+</div>
