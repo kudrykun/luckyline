@@ -1,0 +1,22 @@
+<div class="container" style="padding-top: 50px">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= @category.title %>
+    </div>
+    <div class="panel-body">
+      Id: <%= @category.id %></br>
+      Название: <%= @category.title %></br>
+      Категория-родитель: <%= @category.parent.title %></br>
+      Содержит товары :
+      <% if @category.is_items %>
+          Да
+      <%else%>
+          Нет
+      <%end%>
+      </br>
+    </div>
+  </div>
+
+  <%=link_to 'Назад', :back%>
+</div>
+

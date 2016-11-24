@@ -22,11 +22,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
-    resources :items, only: [:index]
-    resources :categories, only: [:index]
-    resources :news_items, only: [:index]
-    resources :opinions, only: [:index]
-    resources :orders, only: [:index]
+    resources :items
+    resources :categories
+    resources :news_items
+    resources :opinions
+    resources :orders
   end
 
 

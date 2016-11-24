@@ -11,3 +11,25 @@ h1{
   text-overflow: ellipsis;
   max-width: 150px;
 }
+ul.controls{
+  padding: 0px;
+}
+ul.controls li {
+  display:inline;
+  list-style:none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+ul.controls li span {
+ color: #6bc748;
+  -webkit-transform: scale(1,1);
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 100ms;
+  -moz-transform: scale(1,1);
+  -moz-transition-timing-function: ease-out;
+  -moz-transition-duration: 100ms;
+}
+ul.controls li span:hover {
+  -webkit-transform: scale(1.4,1.4);
+  -moz-transform: scale(1.4,1.4);
+}

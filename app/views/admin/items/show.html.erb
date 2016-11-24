@@ -1,0 +1,24 @@
+<div class="container" style="padding-top: 50px">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= @item.title %>
+    </div>
+    <div class="panel-body">
+      Id: <%= @item.id %></br>
+      Название: <%= @item.title %></br>
+      Описание: <%= @item.description %></br>
+      Цены: <%= @item.price %></br>
+      Категория: <%= Category.find(@item.category).title %></br>
+      Создано: <%= time_tag @item.created_at %></br>
+      Обновлён: <%= time_tag @item.updated_at %></br>
+      Изображения:</br>
+      <ul>
+        <% @item.pictures.each do |picture| %>
+        <li><%=image_tag picture.image(:thumb)%></li>
+        <%end%>
+      </ul>
+    </div>
+  </div>
+
+  <%=link_to 'Назад', :back%>
+</div>

@@ -1,0 +1,16 @@
+<div class="container" style="padding-top: 50px">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= @news_item.title %>
+    </div>
+    <div class="panel-body">
+      Id: <%= @news_item.id %></br>
+      Название: <%= @news_item.title %></br>
+      Текст: <%= @news_item.text %></br>
+      Создано: <%= time_tag @news_item.created_at %></br>
+      Обновлён: <%= time_tag @news_item.updated_at %></br>
+    </div>
+  </div>
+
+  <%=link_to 'Назад', :back%>
+</div>
