@@ -1,17 +1,10 @@
-<h1>Администрирование</h1>
+<div class="container">
 
-<ul>
-  <li>Товары <%=@items_size%></li>
-  <li>Акции <%=@news_items_size%></li>
-  <li>Отзывы <%=@opinions_size%></li>
-  <li>Заказы <%=@orders_size%></li>
-  <li>Категории <%=@categories_size%></li>
-</ul>
-
-<ul>
-  <li>Товары <%=link_to 'Товары',admin_items_path%></li>
-  <li>Акции <%=link_to 'Акции',admin_news_items_path%></li>
-  <li>Отзывы <%=link_to 'Отзывы', admin_opinions_path%></li>
-  <li>Заказы <%=link_to 'Заказы', admin_orders_path%></li>
-  <li>Категории <%=link_to 'Категории', admin_categories_path%></li>
-</ul>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">Панель управления</h1>
+    </div>
+  </div>
+  <%=render 'admin/dashboard/panels'%>
+  <%=render 'admin/dashboard/tasks'%>
+</div>

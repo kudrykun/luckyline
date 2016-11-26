@@ -1,0 +1,40 @@
+<%= form_for ([:admin,@item]), :html => {multipart: true} do |f| %>
+    <% if @item.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+          <ul>
+            <% @item.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title, 'Название' %>
+      <%= f.text_field :title%>
+    </div>
+    <div class="field">
+      <%= f.label :description, 'Описание' %>
+      <%= f.text_area :description%>
+    </div>
+    <div class="field">
+      <%= f.label :price, 'Цены' %>
+      <%= f.text_area :price%>
+    </div>
+    <div class="field">
+      <%= f.label :category_id, 'Категория' %>
+      <%= f.collection_select :category_id, @categories.order(:id), :id, :title%>
+    </div>
+
+    <div class="field">
+      <%= f.label :pictures, 'Изображения' %>
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+<%=link_to 'Назад', admin_items_path%>

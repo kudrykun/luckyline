@@ -1,0 +1,48 @@
+<%= form_for ([:admin,@category]), :html => {multipart: true} do |f| %>
+    <% if @category.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+          <ul>
+            <% @category.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title, 'Название' %>
+      <%= f.text_field :title%>
+    </div>
+    <div class="field">
+      <%= f.label :description, 'Описание' %>
+      <%= f.text_area :description%>
+    </div>
+    <div class="field">
+      <%= f.label :is_items, 'Содержит товары' %>
+      <%= f.check_box :is_items%>
+    </div>
+    <div class="field">
+      <%= f.label :parent_id, 'Родитель' %>
+      <%= f.collection_select :parent_id, @categories.order(:id), :id, :title, include_blank: true%>
+    </div>
+    <div class="field">
+      <%= f.label :subs, 'Подкатегории' %>
+      <%= collection_select :subs,:sub_id,@categories.order(:id), :id, :title,{},{multiple: true}%>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+<%=link_to 'Назад', admin_items_path%>
+
+<!--
+create_table "categories", force: :cascade do |t|
+    t.integer "parent_id"
+    t.string  "slug"
+    t.boolean "is_items"
+    t.index ["parent_id"], name: "index_categories_on_parent_id", using: :btree
+    t.index ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
+  end-->

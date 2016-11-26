@@ -6,7 +6,21 @@
     <div class="panel-body">
       Id: <%= @category.id %></br>
       Название: <%= @category.title %></br>
-      Категория-родитель: <%= @category.parent.title %></br>
+      <%if @category.parent %>
+          Категория-родитель:<%= @category.parent.title %></br>
+      <%else%>
+          Категория-родитель: Нет</br>
+      <%end%>
+      <%if @category.subs.size != 0 %>
+          Подкатегории:
+          <ul>
+            <%@category.subs.each do |sub|%>
+            <li><%=sub.title%></li>
+            <%end%>
+          </ul>
+      <%else%>
+          Подкатегории: Нет</br>
+      <%end%>
       Содержит товары :
       <% if @category.is_items %>
           Да

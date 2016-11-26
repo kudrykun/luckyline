@@ -1,0 +1,27 @@
+<%= form_for ([:admin,@news_item]), :html => {multipart: true} do |f| %>
+    <% if @news_item.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@news_item.errors.count, "error") %> prohibited this news item from being saved:</h2>
+
+          <ul>
+            <% @news_item.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title, 'Название' %>
+      <%= f.text_field :title%>
+    </div>
+    <div class="field">
+      <%= f.label :text, 'Текст акции' %>
+      <%= f.text_area :text%>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+<%=link_to 'Назад', admin_news_items_path%>

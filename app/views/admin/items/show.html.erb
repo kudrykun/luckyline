@@ -20,5 +20,7 @@
     </div>
   </div>
 
-  <%=link_to 'Назад', :back%>
+  <%=link_to 'Назад', admin_items_path%>
+  <%= link_to 'Редактировать',edit_admin_item_path(@item) %>
+  <%= link_to 'Удалить', admin_item_path(@item), method: :delete, data: { confirm: 'Вы уверены?' }%>
 </div>

@@ -1,15 +1,42 @@
 class Admin::NewsItemsController < ApplicationController
   layout 'admin'
+  before_action :set_news_item, only: [:show,:edit,:update,:destroy]
   def index
     @news_items = NewsItem.all
   end
 
   def show
-    @news_item = NewsItem.find(params[:id])
+  end
+
+  def new
+    @news_item = NewsItem.new
+  end
+
+  def edit
+  end
+
+  def create
+    @news_item = NewsItem.create(news_item_params)
+    redirect_to admin_news_item_path(@news_item)
+  end
+
+  def update
+    @news_item.update(news_item_params)
+    redirect_to admin_news_item_path(@news_item)
   end
 
   def destroy
-    NewsItem.find(params[:id]).destroy
+    @news_item.destroy
     redirect_to :back
+  end
+
+  private
+
+  def set_news_item
+    @news_item = NewsItem.find(params[:id])
+  end
+
+  def news_item_params
+    params.require(:news_item).permit(:title,:text)
   end
 end

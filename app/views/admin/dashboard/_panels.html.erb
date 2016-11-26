@@ -1,0 +1,140 @@
+<div class="row">
+  <!--Панель с товарами-->
+  <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <%=icon('shopping-bag', class: 'fa-5x')%>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge"><%=@items_size%></div>
+            <div>Товары</div>
+          </div>
+        </div>
+      </div>
+      <%=link_to admin_items_path do%>
+          <div class="panel-footer">
+            <span class="pull-left">Работать с товарами</span>
+            <span class="pull-right"><%=icon('arrow-circle-right')%></span>
+            <div class="clearfix"></div>
+          </div>
+      <%end%>
+    </div>
+  </div>
+  <!--Панель с категориями-->
+  <div class="col-md-4">
+    <div class="panel panel-blue">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <%=icon('folder-open', class: 'fa-5x')%>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge"><%=@categories_size%></div>
+            <div>Категории</div>
+          </div>
+        </div>
+      </div>
+      <%=link_to admin_categories_path do%>
+          <div class="panel-footer">
+            <span class="pull-left">Работать с категориями</span>
+            <span class="pull-right"><%=icon('arrow-circle-right')%></span>
+            <div class="clearfix"></div>
+          </div>
+      <%end%>
+    </div>
+  </div>
+  <!--Панель с акциями-->
+  <div class="col-md-4">
+    <div class="panel panel-green">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <%=icon('tags', class: 'fa-5x')%>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge"><%=@news_items_size%></div>
+            <div>Акции</div>
+          </div>
+        </div>
+      </div>
+      <%=link_to admin_news_items_path do%>
+          <div class="panel-footer">
+            <span class="pull-left">Работать с акциями</span>
+            <span class="pull-right"><%=icon('arrow-circle-right')%></span>
+            <div class="clearfix"></div>
+          </div>
+      <%end%>
+    </div>
+  </div>
+  <!--Панель с отзывами-->
+  <div class="col-md-4">
+    <div class="panel panel-yellow">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <%=icon('comments-o', class: 'fa-5x')%>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge"><%=@opinions_size%></div>
+            <div>Отзывы</div>
+          </div>
+        </div>
+      </div>
+      <%=link_to admin_opinions_path do%>
+          <div class="panel-footer">
+            <span class="pull-left">Работать с отзывами</span>
+            <span class="pull-right"><%=icon('arrow-circle-right')%></span>
+            <div class="clearfix"></div>
+          </div>
+      <%end%>
+    </div>
+  </div>
+  <!--Панель с заказами-->
+  <div class="col-md-4">
+    <div class="panel panel-shell">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <%=icon('cart-plus', class: 'fa-5x')%>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge"><%=@orders_size%></div>
+            <div>Заказы</div>
+          </div>
+        </div>
+      </div>
+      <%=link_to admin_orders_path do%>
+          <div class="panel-footer">
+            <span class="pull-left">Работать с заказами</span>
+            <span class="pull-right"><%=icon('arrow-circle-right')%></span>
+            <div class="clearfix"></div>
+          </div>
+      <%end%>
+    </div>
+  </div>
+  <!--Панель с задачами-->
+  <div class="col-md-4">
+    <div class="panel panel-red">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <%=icon('check-circle', class: 'fa-5x')%>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div class="huge">0</div>
+            <div>Задачи</div>
+          </div>
+        </div>
+      </div>
+      <%=link_to '#' do%>
+          <div class="panel-footer">
+            <span class="pull-left">Работать с задачами</span>
+            <span class="pull-right"><%=icon('arrow-circle-right')%></span>
+            <div class="clearfix"></div>
+          </div>
+      <%end%>
+    </div>
+  </div>
+</div>

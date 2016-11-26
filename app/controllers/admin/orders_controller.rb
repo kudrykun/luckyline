@@ -12,4 +12,5 @@ class Admin::OrdersController < ApplicationController
     Order.find(params[:id]).destroy
     redirect_to :back
   end
+
 end
