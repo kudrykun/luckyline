@@ -1,16 +1,34 @@
-<div class="container" style="padding-top: 50px">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <%= @news_item.title %>
-    </div>
-    <div class="panel-body">
-      Id: <%= @news_item.id %></br>
-      Название: <%= @news_item.title %></br>
-      Текст: <%= @news_item.text %></br>
-      Создано: <%= time_tag @news_item.created_at %></br>
-      Обновлён: <%= time_tag @news_item.updated_at %></br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">Акция "<%= @news_item.title %>"</h1>
     </div>
   </div>
-
-  <%=link_to 'Назад', :back%>
+  <div class="row">
+    <div class="col-md-12 panels">
+      <div class="panel panel-info">
+        <div class="panel-heading">Название</div>
+        <div class="panel-body"><%= @news_item.title %></div>
+      </div>
+      <div class="panel panel-info">
+        <div class="panel-heading">Текст</div>
+        <div class="panel-body"><%= @news_item.text %></div>
+      </div>
+      <div class="panel panel-info">
+        <div class="panel-heading">Создано</div>
+        <div class="panel-body"><%= time_tag @news_item.created_at %></div>
+      </div>
+      <div class="panel panel-info">
+        <div class="panel-heading">Обновлено</div>
+        <div class="panel-body"><%= time_tag @news_item.updated_at %></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 buttons">
+      <%=link_to 'Назад', admin_news_items_path, class: 'btn btn-default'%>
+      <%= link_to 'Редактировать',edit_admin_news_item_path(@news_item), class: 'btn btn-default' %>
+      <%= link_to 'Удалить', admin_news_item_path(@news_item), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-default'%>
+    </div>
+  </div>
 </div>

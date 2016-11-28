@@ -1,27 +1,56 @@
-<%= form_for ([:admin,@news_item]), :html => {multipart: true} do |f| %>
-    <% if @news_item.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@news_item.errors.count, "error") %> prohibited this news item from being saved:</h2>
-
-          <ul>
-            <% @news_item.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :title, 'Название' %>
-      <%= f.text_field :title%>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">Создать категорию</h1>
     </div>
-    <div class="field">
-      <%= f.label :text, 'Текст акции' %>
-      <%= f.text_area :text%>
+    <div class="col-md-12">
+      <ul class="nav nav-tabs">
+        <li role="presentation">
+          <%= link_to admin_news_items_path do %>
+              <%=icon('list')%>
+              Список
+          <%end%>
+        </li>
+        <li role="presentation" class="active">
+          <%= link_to new_admin_news_item_path do %>
+              <%=icon('plus')%>
+              Создать
+          <%end%>
+        </li>
+      </ul>
     </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-<% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for ([:admin,@news_item]), :html => {multipart: true} do |f| %>
+          <% if @news_item.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@news_item.errors.count, "error") %> prohibited this news item from being saved:</h2>
 
-<%=link_to 'Назад', admin_news_items_path%>
+                <ul>
+                  <% @news_item.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= f.label :title, 'Название' %>
+            <%= f.text_field :title, class: 'form-control'%>
+          </div>
+          <div class="form-group">
+            <%= f.label :text, 'Текст акции' %>
+            <%= f.text_area :text, class: 'form-control'%>
+          </div>
+          <div class="row">
+            <%= f.submit 'Создать', class: 'btn btn-default' %>
+            <%=link_to admin_news_items_path, class: 'btn btn-default' do%>
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                Назад
+            <%end%>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

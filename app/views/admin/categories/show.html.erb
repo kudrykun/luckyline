@@ -1,36 +1,57 @@
-<div class="container" style="padding-top: 50px">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <%= @category.title %>
-    </div>
-    <div class="panel-body">
-      Id: <%= @category.id %></br>
-      Название: <%= @category.title %></br>
-      <%if @category.parent %>
-          Категория-родитель:<%= @category.parent.title %></br>
-      <%else%>
-          Категория-родитель: Нет</br>
-      <%end%>
-      <%if @category.subs.size != 0 %>
-          Подкатегории:
-          <ul>
-            <%@category.subs.each do |sub|%>
-            <li><%=sub.title%></li>
-            <%end%>
-          </ul>
-      <%else%>
-          Подкатегории: Нет</br>
-      <%end%>
-      Содержит товары :
-      <% if @category.is_items %>
-          Да
-      <%else%>
-          Нет
-      <%end%>
-      </br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">Категория "<%= @category.title %>"</h1>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12 panels">
+      <div class="panel panel-info">
+        <div class="panel-heading">Название</div>
+        <div class="panel-body"><%= @category.title %></div>
+      </div>
+      <div class="panel panel-info">
+        <div class="panel-heading">Категория-родитель</div>
+        <div class="panel-body">
+          <%if @category.parent %>
+              <%= @category.parent.title %>
+          <%else%>
+              Нет
+          <%end%>
+        </div>
+      </div>
+      <div class="panel panel-info">
+        <div class="panel-heading">Подкатегории</div>
+        <div class="panel-body">
+          <%if @category.subs.size != 0 %>
+              <ul>
+                <%@category.subs.each do |sub|%>
+                    <li><%=sub.title%></li>
+                <%end%>
+              </ul>
+          <%else%>
+              Нет
+          <%end%>
+        </div>
+      </div>
+      <div class="panel panel-info">
+        <div class="panel-heading">Содержит товары</div>
+        <div class="panel-body">
+          <% if @category.is_items %>
+              Да
+          <%else%>
+              Нет
+          <%end%>
+        </div>
+      </div>
 
-  <%=link_to 'Назад', :back%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 buttons">
+      <%=link_to 'Назад', admin_categories_path, class: 'btn btn-default'%>
+      <%= link_to 'Редактировать',edit_admin_category_path(@category), class: 'btn btn-default' %>
+      <%= link_to 'Удалить', admin_category_path(@category), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-default'%>
+    </div>
+  </div>
 </div>
-

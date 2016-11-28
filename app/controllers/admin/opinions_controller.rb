@@ -2,7 +2,7 @@ class Admin::OpinionsController < ApplicationController
   layout 'admin'
   before_action :set_opinion, only: [:show, :edit, :update, :destroy]
   def index
-    @opinions = Opinion.all
+    @opinions = Opinion.all.order(:id)
   end
 
   def show

@@ -1,7 +1,7 @@
 class Admin::OrdersController < ApplicationController
   layout 'admin'
   def index
-    @orders = Order.all
+    @orders = Order.all.order(:id)
   end
 
   def show
