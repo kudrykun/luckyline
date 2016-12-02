@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="page-header">Редактировать завершенный заказ</h1>
+    </div>
+    <div class="col-md-12">
+      <ul class="nav nav-tabs">
+        <li role="presentation">
+          <%= link_to admin_finished_orders_path do %>
+              <%=icon('list')%>
+              Список
+          <%end%>
+        </li>
+        <li role="presentation" class="active">
+          <%= link_to new_admin_finished_order_path do %>
+              <%=icon('plus')%>
+              Создать
+          <%end%>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for ([:admin,@finished_order]),:html => {multipart: true} do |f| %>
+          <% if @item.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@finished_order.errors.count, "error") %> prohibited this finished order from being saved:</h2>
+
+                <ul>
+                  <% @finished_order.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= f.label :order_number, 'Номер заказа' %>
+            <%= f.number_field :order_number, class: 'form-control'%>
+          </div>
+          <div class="row">
+            <%= f.submit 'Сохранить изменения', class: 'btn btn-default' %>
+            <%=link_to 'Назад', admin_finished_orders_path, class: 'btn btn-default'%>
+            <%= link_to 'Удалить', admin_finished_order_path(@finished_order), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-default'%>
+          </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

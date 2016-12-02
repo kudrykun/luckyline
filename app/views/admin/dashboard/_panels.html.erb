@@ -114,7 +114,7 @@
     </div>
     <%end%>
   </div>
-  <!--Панель с задачами-->
+  <!--Панель с завершенными заказами-->
   <div class="col-md-4">
     <div class="panel panel-red">
       <div class="panel-heading">
@@ -124,13 +124,13 @@
           </div>
           <div class="col-xs-9 text-right">
             <div class="huge">0</div>
-            <div>Задачи</div>
+            <div>Завершенные заказы</div>
           </div>
         </div>
       </div>
-      <%=link_to '#' do%>
+      <%=link_to admin_finished_orders_path do%>
           <div class="panel-footer">
-            <span class="pull-left">Работать с задачами</span>
+            <span class="pull-left">Работать с завершенными заказами</span>
             <span class="pull-right"><%=icon('arrow-circle-right')%></span>
             <div class="clearfix"></div>
           </div>

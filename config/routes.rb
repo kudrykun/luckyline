@@ -8,10 +8,6 @@ Rails.application.routes.draw do
     delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
-  namespace :admin do
-    get 'orders/index'
-  end
-
   root 'main#index' #Главная
   get 'contacts/show' #Контакты
   get 'results/index' #Результаты поиска
@@ -34,6 +30,7 @@ Rails.application.routes.draw do
     resources :news_items
     resources :opinions
     resources :orders
+    resources :finished_orders
   end
 
 
