@@ -1,0 +1,2 @@
+class FinishedOrder < ApplicationRecord
+end

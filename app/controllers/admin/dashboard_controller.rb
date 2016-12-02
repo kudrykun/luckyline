@@ -1,5 +1,4 @@
-class Admin::DashboardController < ApplicationController
-  layout 'admin'
+class Admin::DashboardController < Admin::AdminController
   def index
     @items_size = Item.all.size;
     @news_items_size = NewsItem.all.size;

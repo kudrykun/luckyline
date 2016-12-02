@@ -14,9 +14,11 @@ Category.delete_all
 NewsItem.delete_all
 Opinion.delete_all
 
-Category.create!(title: "Кухонная мебель",is_items: true)
-  Category.find_by(title:"Кухонная мебель").items.create!(
-      title: 'МДФ - покрытие ПВХ',
+1.times do |i|
+Category.create!(title: "Кухонная мебель #{i}",is_items: true)
+9.times do |j|
+      Item.create!(category: Category.find_by(title:"Кухонная мебель #{i}"),
+      title: "МДФ - покрытие ПВХ #{j}" ,
       description: 'Наиболее доступным и недорогим вариантом оформления кухни
       является изготовление мебели из МДФ, покрытой пленкой ПВХ. Сам процесс
       изготовления МДФ плиты с пленкой достаточно прост и экономичен: плита
@@ -37,19 +39,22 @@ Category.create!(title: "Кухонная мебель",is_items: true)
               В стоимость входит: <br>
               <ol>
                 <li>Столешница пластик H=38 мм.</li>
-                <li>Бортик пристеночный L=1000 мм.</li>
+                <li>Бортик пристеночный
+ L=1000 мм.</li>
                 <li>Цоколь наполный пластиковый L=1000 мм.</li>
                 <li>Стол нижний 2-х дверный H=820 мм. Ширина 1000 мм.</li>
                 <li>Шкаф верхний H=720 мм. Ширина 500 мм. - 2шт</li>
               </ol>')
-  Item.find_by(title:'МДФ - покрытие ПВХ').pictures.create!(image: File.new("#{Rails.root}/app/assets/images/mdf-1.jpg"))
-  Item.find_by(title:'МДФ - покрытие ПВХ').pictures.create!(image: File.new("#{Rails.root}/app/assets/images/mdf-2.jpg"))
-  Item.find_by(title:'МДФ - покрытие ПВХ').pictures.create!(image: File.new("#{Rails.root}/app/assets/images/mdf-3.jpg"))
-  Item.find_by(title:'МДФ - покрытие ПВХ').pictures.create!(image: File.new("#{Rails.root}/app/assets/images/mdf-4.jpg"))
-  Item.find_by(title:'МДФ - покрытие ПВХ').pictures.create!(image: File.new("#{Rails.root}/app/assets/images/mdf-5.jpg"))
-  Item.find_by(title:'МДФ - покрытие ПВХ').pictures.create!(image: File.new("#{Rails.root}/app/assets/images/mdf-6.jpg"))
+  Picture.create!(imageable: Item.find_by(title:"МДФ - покрытие ПВХ #{j}"),
+                  image: File.new("#{Rails.root}/app/assets/images/mdf-1.jpg"))
+  Picture.create!(imageable: Item.find_by(title:"МДФ - покрытие ПВХ #{j}"),
+                  image: File.new("#{Rails.root}/app/assets/images/mdf-2.jpg"))
+  Picture.create!(imageable: Item.find_by(title:"МДФ - покрытие ПВХ #{j}"),
+                  image: File.new("#{Rails.root}/app/assets/images/mdf-3.jpg"))
 
-3.times do |i|
+end
+end
+9.times do |i|
   NewsItem.create!(title: "Новость ##{i}",
                     text: "№#{i} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                 Donec semper magna et ultricies semper. In maximus est a elit
@@ -72,7 +77,7 @@ Category.create!(title: "Кухонная мебель",is_items: true)
 end
 
 
-3.times do |i|
+9.times do |i|
   Opinion.create!(name: "Отзыв ##{i}",
                   text: "№#{i} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                 Donec semper magna et ultricies semper. In maximus est a elit
@@ -87,7 +92,7 @@ end
                   order_number: 100+i)
 end
 
-3.times do |i|
+9.times do |i|
   Order.create!(name: "Name ##{i}",
                   phone_number: "+7 916 770 48 6#{i}",
                   email: "email ##{i}")

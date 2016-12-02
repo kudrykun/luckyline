@@ -1,5 +1,4 @@
-class Admin::OpinionsController < ApplicationController
-  layout 'admin'
+class Admin::OpinionsController < Admin::AdminController
   before_action :set_opinion, only: [:show, :edit, :update, :destroy]
   def index
     @opinions = Opinion.all.order(:id)

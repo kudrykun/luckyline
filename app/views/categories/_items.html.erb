@@ -1,0 +1,29 @@
+<div class="container box">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-12  breadcrumbs-panel">
+        <ol class="breadcrumb">
+          <li><%=link_to 'Главная', root_path%></li>
+          <li><%=link_to 'Каталог', catalog_path%></li>
+          <li class="active"><%= @category.title%></a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+        <% @items.each do |item| %>
+            <div class="col-md-4 text-center">
+              <%= link_to show_category_item_path(@category,item), class: 'portfolio-link' do%>
+                  <%=image_tag item.pictures.sample.image, class: 'img-responsive' %>
+              <%end%>
+              <div class="">
+                <div class="">
+                  <div class="panel-footer"><%=item.title%></div>
+                </div>
+              </div>
+            </div>
+        <%end%>
+    </div>
+  </div>
+</div>

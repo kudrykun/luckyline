@@ -1,5 +1,4 @@
-class Admin::ItemsController < ApplicationController
-  layout 'admin'
+class Admin::ItemsController < Admin::AdminController
   before_action :set_item, only: [:show,:edit,:update,:destroy]
   # GET /items
   # GET /items.json

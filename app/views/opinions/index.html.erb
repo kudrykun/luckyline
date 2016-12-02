@@ -1,26 +1,32 @@
-<div style="text-align:center;">
-  <h2>Отзывы</h2>
-</div>
 <% if @opinions %>
+<div class="container box opinions">
+  <div class="row">
     <div class="col-md-12">
-      <%@opinions.each do |opinion|%>
-      <p> <span class="quoteses">&#8220;</span><%=opinion.text%></p>
-      <p><span class="glyphicon glyphicon-time"></span> <%=opinion.name%>, <%=time_tag opinion.created_at%>.</p>
-      <%end%>
+      <h2>Отзывы</h2>
     </div>
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-md-12">
-          <button data-toggle="modal" data-target="#opinionModal" type="submit" class="btn ">Оставить отзыв</button>
-        </div>
+  </div>
+  <div class="row">
+    <%@opinions.each do |opinion|%>
+    <div class="col-md-12">
+      <p> <span class="quoteses">&#8220;</span><%=opinion.text%></p>
+      <small class="date"><span class="glyphicon glyphicon-time"></span> <%=opinion.name%>, <%=time_tag opinion.created_at%>.</small>
+    </div>
+    <%end%>
+  </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button data-toggle="modal" data-target="#opinionModal" type="submit" class="btn ">Оставить отзыв</button>
       </div>
     </div>
-    <div class="center">
-      <%= paginate @opinions %>
-    </div>
+  <div class="row">
+    <%= paginate @opinions %>
+  </div>
+</div>
 <%else%>
     There is not opinions bro
 <%end%>
+
+
 
 <div class="modal fade" id="opinionModal" role="dialog">
   <div class="modal-dialog">

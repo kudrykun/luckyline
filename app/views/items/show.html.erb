@@ -1,43 +1,36 @@
-<div id="body">
-  <div class="container">
-    <div class="row">
 
+<div class="container box bg-offwhite">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 style="padding-bottom: 30px">
+        <%=@item.title%>
+      </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7 col-sm-12 col-xs-12 image-box">
       <div class="col-md-12">
-        <ol class="breadcrumb">
-          <li><%=link_to 'Каталог', catalog_path%></li>
-          <li><%=link_to @category.title, subs_and_items_path(@category)%></a></li>
-          <li class="active"><%=@item.title%></a></li>
-        </ol>
+        <%=image_tag @item.pictures.first.image, class: 'img-responsive', name: 'bigImg' %>
       </div>
-
-      <div class="col-md-12">
-        <div class="col-md-6">
-          <div class="col-md-2 preview-images">
-            <%@item.pictures.each do |picture|%>
+      <div class="col-md-12 preview-images">
+        <div class="row">
+          <%@item.pictures.each do |picture|%>
+              <div class="col-md-3 col-xs-3 preview-image">
                 <%=image_tag picture.image, class: 'img-responsive', onMouseOver: "changeImg('#{picture.image.to_s}')" %>
-            <%end%>
-          </div>
-          <div class="col-md-10 imag">
-            <%=image_tag @item.pictures.first.image, class: 'img-responsive', name: 'bigImg' %>
-          </div>
-        </div>
-        <div class="col-md-6 text-left">
-          <h5><%=@item.title%></h5>
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#profile" data-toggle="tab" aria-expanded="false">Инфо</a></li>
-            <li class=""><a href="#home" data-toggle="tab" aria-expanded="true">Цены</a></li>
-          </ul>
-          <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade active in" id="profile">
-              <p><%=@item.description%></p>
-            </div>
-            <div class="tab-pane fade" id="home">
-              <p><%=@item.price.html_safe%></p>
-            </div>
-            <button data-toggle="modal" data-target="#myModal" type="button" class="btn btn-default btn-block">КУПИ РАСЧИТАТЬ СТОИМОСТЬ</button>
-          </div>
+              </div>
+          <%end%>
         </div>
       </div>
+    </div>
+    <div class="col-md-5 col-sm-12 col-xs-12 price">
+      <strong>Цены:</strong>
+      <p><%=@item.price.html_safe%></p>
+    </div>
+  </div>
+  <div class="row description">
+    <div class="col-md-12">
+      <strong>Описание:</strong>
+      <p><%=@item.description%></p>
     </div>
   </div>
 </div>

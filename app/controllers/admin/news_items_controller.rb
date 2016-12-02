@@ -1,5 +1,4 @@
-class Admin::NewsItemsController < ApplicationController
-  layout 'admin'
+class Admin::NewsItemsController < Admin::AdminController
   before_action :set_news_item, only: [:show,:edit,:update,:destroy]
   def index
     @news_items = NewsItem.all.order(:id)

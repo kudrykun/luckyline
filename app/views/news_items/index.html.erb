@@ -1,20 +1,16 @@
-<%if @news_items%>
-<div id="body">
-  <div class="container-fluid bg-3">
+<div class="container box news-items">
+  <div class="row">
     <%@news_items.each do |news_item|%>
-    <div class="media">
-      <div class="media-left ">
-        <%=image_tag(news_item.pictures.sample.image, class: 'media-object')%>
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <%=image_tag(news_item.pictures.sample.image, class: 'img-responsive')%>
       </div>
-      <div class="media-body ">
-        <h6 class="media-heading"><%=news_item.title%></h6><br/>
-        <p><span class="glyphicon glyphicon-time"></span> <%=time_tag news_item.created_at%></p>
+      <div class="col-md-6">
+        <h6 class="media-heading"><%=news_item.title%> <small class="date"><span class="glyphicon glyphicon-time"></span> <%=time_tag news_item.created_at%></small></h6>
         <p><%=news_item.text%></p><br/>
-        <a class="right" href="#"><%=link_to 'Узнать больше', news_item_path(news_item)%></a>
+        <%=link_to 'Узнать больше', news_item_path(news_item), class: 'btn-examples'%>
       </div>
     </div>
-    <hr/>
     <%end%>
   </div>
 </div>
-<%end%>

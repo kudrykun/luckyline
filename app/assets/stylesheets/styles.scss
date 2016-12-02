@@ -9,6 +9,104 @@ a:hover{
   background-color: #6bc748;
   border-color: #6bc748;
 }
+.box{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-left: 20px;
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+.title-box > hr{
+  max-width: 400px;
+}
+.bg-offwhite{
+  background-color: #f2f2f2;
+}
+.title-box > hr{
+  border-color: #bbbbbb;
+}
+
+.contacts{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.contacts-info{
+  padding-left: 20px;
+}
+.map-container{
+  padding-right: 20px;
+}
+
+.breadcrumb{
+  background-color: #f2f2f2;
+}
+
+.breadcrumbs-panel{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.panel-footer{
+  background-color: #f2f2f2;
+}
+
+.news-items > .row > .col-md-12:nth-child(2n){
+  background-color: #f6f6f6;
+}
+
+.news-items > .row > .col-md-12 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+small.date {
+  color: #cecdcd;
+}
+
+.opinions > .row > .col-md-12:nth-child(2n){
+  background-color: #f6f6f6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.image-box{
+  background-color: #f2f2f2;
+}
+.preview-images.col-md-12{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.preview-images > .row{
+  margin-top: 10px;
+}
+.preview-images > .row > .col-md-3 {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.preview-image > img {
+  filter: grayscale(70%);
+  opacity: .5;
+  transition: all ease .5s;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+}
+.preview-image > img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.description {
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.price{
+  padding-top: 40px;
+}
+
+
 header {
   background: image-url('header2.jpg') no-repeat;
   background-repeat: no-repeat;
@@ -285,19 +383,9 @@ footer {
   color: #fff;
 
 }
-.col-md-3{padding-bottom:25px;}
 
 .bg-6{
   background-color: white;
-}
-.breadcrumb{
-  background-color:white ;
-}
-#body{
-  background-color:white ;
-  max-width: 1440px;
-  max-height: 12000px;
-  margin: auto;
 }
 .thumbnail{
   background-color:#ECECE9 ;
@@ -345,11 +433,5 @@ ul.pagination li a.active {
   float: left;
 }
 
-img{
-  vertical-align: bottom;
-  margin: 0;
-}
-.preview-images img{
-  padding-bottom: 20px;
-}
+
 
