@@ -10,18 +10,16 @@ class OpinionsController < ApplicationController
 
   def create
     @opinion = Opinion.new(opinion_params)
-
-    respond_to do |format|
-      if @opinion.save
-        format.html { redirect_to :back, notice: 'Item was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if FinishedOrder.exists?(order_number: params[:order_number].to_i)
+      @opinion.save
+      redirect_to :back, notice: 'Item was successfully created.'
+    else
+      redirect_to :back, notice: 'Item was not created.'
     end
   end
 
   private
   def opinion_params
-    params.require(:opinion).permit(:name,:text, :info)
+    params.require(:opinion).permit(:name,:text,:info,:order_number)
   end
 end
