@@ -29,7 +29,6 @@
           <th>ID</th>
           <th>Название</th>
           <th>Категория-родитель</th>
-          <th>Товары</th>
           <th></th>
         </tr>
         </thead>
@@ -42,13 +41,6 @@
                   <td>
                     <%if category.parent%>
                         <%= category.parent.title %>
-                    <%else%>
-                        Нет
-                    <%end%>
-                  </td>
-                  <td>
-                    <% if category.is_items %>
-                        Да
                     <%else%>
                         Нет
                     <%end%>

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   devise_for :users, :skip => [:sessions]
   as :user do
     get 'login' => 'devise/sessions#new', :as => :new_user_session
@@ -13,7 +12,8 @@ Rails.application.routes.draw do
   get 'results/index' #Результаты поиска
   get 'results', to: 'results#index', as: 'results' #Результаты поиска
   get 'item/:id', to: 'items#show', as: 'show_item' #Показ итема с главной
-  get 'catalog/:category_id/:id', to: 'items#show', as: 'show_category_item' #показ итема из каталога
+  get 'catalog/:category_id/item/:id', to: 'items#show', as: 'show_category_item' #показ итема из каталога
+  get 'catalog/:category_id/gallery/:id', to: 'galleries#show', as: 'show_category_gallery' #показ итема из каталога
   get 'catalog', to: 'categories#index', as: 'catalog' #Каталог
   get '/catalog/:id', to: 'categories#show',as: 'subs_and_items' #показ подкатегорий
   resources :news_items, only: [:index, :show]
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     resources :news_items
     resources :opinions
     resources :orders
+    resources :galleries
     resources :finished_orders
   end
 

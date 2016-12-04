@@ -27,12 +27,7 @@
             <%= f.label :description, 'Описание' %>
             <%= f.text_area :description, class: 'form-control'%>
           </div>
-          <div class="checkbox">
 
-            <%= f.label :is_items do%>
-                <%= f.check_box :is_items%> Содержит товары
-            <%end%>
-          </div>
           <div class="form-group">
             <%= f.label :parent_id, 'Родитель' %>
             <%= f.collection_select :parent_id, @categories.order(:id), :id, :title, include_blank: true, class: 'form-control'%>

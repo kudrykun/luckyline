@@ -22,6 +22,28 @@
     </div>
     <%end%>
   </div>
+  <div class="col-md-4">
+    <%=link_to admin_galleries_path, class:'panel-hover' do%>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <%=icon('shopping-bag', class: 'fa-5x icon-admin',)%>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div class="huge"><%=@galleries_size%></div>
+                <div>Галереи</div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <span class="pull-left">Работать с галереями</span>
+            <span class="pull-right"><%=icon('arrow-circle-right')%></span>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+    <%end%>
+  </div>
   <!--Панель с категориями-->
   <div class="col-md-4">
     <%=link_to admin_categories_path, class:'panel-hover' do%>

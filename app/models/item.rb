@@ -11,5 +11,5 @@ class Item < ApplicationRecord
   has_many :item_colors, dependent: :destroy
   has_many :orders, dependent: :destroy
   belongs_to :category
-  validates :title, :description, presence: true
+  validates :title, presence: true
 end

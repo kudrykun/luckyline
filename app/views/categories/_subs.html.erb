@@ -19,8 +19,16 @@
     <div class="col-md-12">
       <% @categories.each do |category| %>
           <div class="col-md-4 text-center">
+            <%if category.items.size != 0%>
             <%= link_to subs_and_items_path(category), class: 'portfolio-link' do%>
                 <%=image_tag category.items.sample.pictures.sample.image, class: 'img-responsive'%>
+            <%end%>
+            <%else%>
+                <%if category.galleries.size != 0%>
+                    <%= link_to subs_and_items_path(category), class: 'portfolio-link' do%>
+                        <%=image_tag category.galleries.sample.pictures.sample.image, class: 'img-responsive'%>
+                    <%end%>
+                <%end%>
             <%end%>
             <div class="">
               <div class="">

@@ -4,10 +4,8 @@ class CategoriesController < ApplicationController
   end
   def show
     @category = Category.friendly.find(params[:id]);
-    if @category.is_items
-      @items = @category.items
-    else
-      @categories = @category.subs
-    end
+    @categories = @category.subs
+    @items = @category.items
+    @galleries = @category.galleries
   end
 end

@@ -1,0 +1,25 @@
+<div class="container box">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-12  breadcrumbs-panel">
+        <ol class="breadcrumb">
+          <li><%=link_to 'Главная', root_path%></li>
+          <li><%=link_to 'Каталог', catalog_path%></li>
+          <li><%=link_to @gallery.category.title, subs_and_items_path(@gallery.category)%></li>
+          <li class="active">@gallery.title</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <% @gallery.pictures.each do |picture| %>
+          <div class="col-md-4 text-center">
+            <%= link_to '#', class: 'portfolio-link' do%>
+                <%=image_tag picture.image, class: 'img-responsive'%>
+            <%end%>
+          </div>
+      <%end%>
+    </div>
+  </div>
+</div>
