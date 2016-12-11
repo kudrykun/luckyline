@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'results/index' #Результаты поиска
   get 'results', to: 'results#index', as: 'results' #Результаты поиска
   get 'item/:id', to: 'items#show', as: 'show_item' #Показ итема с главной
+  get 'gallery/:id', to: 'galleries#show', as: 'show_gallery' #Показ итема с главной
   get 'catalog/:category_id/item/:id', to: 'items#show', as: 'show_category_item' #показ итема из каталога
   get 'catalog/:category_id/gallery/:id', to: 'galleries#show', as: 'show_category_gallery' #показ итема из каталога
   get 'catalog', to: 'categories#index', as: 'catalog' #Каталог

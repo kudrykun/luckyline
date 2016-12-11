@@ -1,7 +1,8 @@
 class ResultsController < ApplicationController
   def index
-    @search_results = Item.search_everywhere(params[:query])
-    @search_result_size = @search_results.size
-    @search_results = @search_results.page(params[:page]).per(10)
+    @query = params[:query]
+    @search_item_results = Item.search_everywhere(@query)
+    @search_gallery_results = Gallery.search_everywhere(@query)
+    @search_result_size = @search_item_results.size + @search_gallery_results.size
   end
 end

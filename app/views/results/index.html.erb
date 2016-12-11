@@ -1,28 +1,40 @@
-<div class="container-fluid bg-3 text-center">
-  <%= render 'layouts/search' %>
+<div class="container box">
+  <div class="row">
+    <div class="col-md-12">
+      <%= render 'results/search_form' %><br>
 
-  <p>Результаты по поиску "Паштет"</p>
-  <p><small>Всего результатов: <%=@search_result_size%> </small></p>
-
-  <% @search_results.each do |result| %>
-  <div class="container-fluid bg-3">
-    <div class="media">
-      <div class="media-left ">
-        <%=image_tag result.pictures.sample.image, class: 'media-object'%>
-      </div>
-      <div class="media-body ">
-        <h6 class="media-heading"><%= result.title%></h6><br>
-        <p><%= result.description.html_safe %></p>
-        <%=link_to 'Узнать больше', results_path(result)%>
-        <br>
-      </div>
+      <p>Результаты поиска по запросу "<%=@query%>"</p>
+      <p><small>Всего результатов: <%=@search_result_size%> </small></p>
     </div>
   </div>
-  <% end %>
-
-
-<div class="center">
-  <%= paginate @search_results %>
-</div>
-
+  <div class="row">
+    <% @search_item_results.each do |result| %>
+        <div class="col-md-4">
+          <div class="item-container">
+            <%= link_to show_item_path(result) do%>
+                <div class="item">
+                  <div class="panel-footer">
+                    <%= result.title%>
+                  </div>
+                  <%=image_tag result.pictures.sample.image, class: 'img-responsive'%>
+                </div>
+            <%end%>
+          </div>
+        </div>
+    <% end %>
+    <% @search_gallery_results.each do |result| %>
+        <div class="col-md-4">
+          <div class="item-container">
+            <%= link_to show_gallery_path(result) do%>
+                <div class="item">
+                  <div class="panel-footer">
+                    <%= result.title%>
+                  </div>
+                  <%=image_tag result.pictures.sample.image, class: 'img-responsive'%>
+                </div>
+            <%end%>
+          </div>
+        </div>
+    <% end %>
+  </div>
 </div>

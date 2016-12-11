@@ -38,6 +38,18 @@
 
           <div class="form-group">
             <%= f.label :pictures, 'Изображения' %>
+            <div class="row">
+              <%@item.pictures.each do |picture|%>
+              <div class="col-md-2">
+                <div class="image-container">
+                  <div class="image">
+                    <%=image_tag picture.image, class: 'img-responsive'%>
+                  </div>
+                </div>
+              </div>
+              <%end%>
+            </div>
+
             <%= file_field_tag "images[]", type: :file, multiple: true %>
           </div>
           <div class="row">

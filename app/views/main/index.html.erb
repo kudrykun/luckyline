@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 text-center">
+      <div class="col-md-4 col-sm-6 text-center">
         <div class="info-box">
           <%=icon('cloud', class: 'fa-4x icon-primary')%>
           <h3>Thing</h3>
@@ -16,7 +16,7 @@
             Morbi finibus eget libero ac porta. </p>
         </div>
       </div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-4 col-sm-6 text-center">
         <div class="info-box">
           <%=icon('coffee', class: 'fa-4x icon-primary')%>
           <h3>Anything</h3>
@@ -24,7 +24,7 @@
             Pellentesque maximus nec urna eu sollicitudin.</p>
         </div>
       </div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-4 col-sm-6 text-center">
         <div class="info-box">
           <%=icon('phone', class: 'fa-4x icon-primary')%>
           <h3>Something</h3>
@@ -33,7 +33,7 @@
             Pellentesque sed dignissim quam.</p>
         </div>
       </div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-4 col-sm-6 text-center">
         <div class="info-box">
           <%=icon('star', class: 'fa-4x icon-primary')%>
           <h3>Never</h3>
@@ -41,7 +41,7 @@
             Proin blandit odio vitae rhoncus auctor.</p>
         </div>
       </div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-4 col-sm-6 text-center">
         <div class="info-box">
           <%=icon('tree', class: 'fa-4x icon-primary')%>
           <h3>Ever</h3>
@@ -49,7 +49,7 @@
             Suspendisse rhoncus elit id massa porttitor rutrum.</p>
         </div>
       </div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-4 col-sm-6 text-center">
         <div class="info-box">
           <%=icon('users', class: 'fa-4x icon-primary')%>
           <h3>Forever <3</h3>
@@ -73,12 +73,16 @@
 
         <div class="row">
           <% @items.each do |item|%>
-          <div class="col-md-6 col-sm-6">
+          <div class="col-md-6 col-sm-6 col-xs-6">
             <div class="example-item">
             <%=link_to show_item_path(item) do%>
 
               <div class="example-item-image">
-                <%=image_tag item.pictures.sample.image, class: 'img-responsive'%>
+                <div class="image-container">
+                  <div class="image">
+                    <%=image_tag item.pictures.sample.image, class: 'img-responsive'%>
+                  </div>
+                </div>
                 <!--<img src="http://lorempixel.com/1600/900" class="img-responsive">-->
               </div>
               <div class="example-item-text">

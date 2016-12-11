@@ -1,4 +1,7 @@
 class Gallery < ApplicationRecord
+  #Use this for really simple search througth one model
+  include PgSearch
+  pg_search_scope :search_everywhere, against: [:title]
   belongs_to :category
 
   #It is help to make nice routes

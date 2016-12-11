@@ -1,0 +1,6 @@
+<%= form_tag results_path, method: :get, role: 'search',class: 'form-inline' do %>
+    <div class="form-group">
+      <%= text_field_tag :query, params[:query], class: 'form-control search-form', placeholder: 'Поиск по каталогу' %>
+    </div>
+    <%= submit_tag "Поиск", name: nil , class: 'btn btn-default btn-search'%>
+<% end %>

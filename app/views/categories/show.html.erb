@@ -12,48 +12,59 @@
           </li>
         </ol>
       </div>
+      <div class="col-md-12">
+        <div class="pull-right">
+          <%= render 'results/search_form' %>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <% if @categories && @categories.size != 0 %>
       <% @categories.each do |category| %>
-          <div class="col-md-4 text-center">
-            <%= link_to subs_and_items_path(category), class: 'portfolio-link' do%>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="item-container">
+              <%= link_to subs_and_items_path(category) do%>
+              <div class="item">
+                <div class="panel-footer">
+                  <%=category.title%>
+                </div>
                 <%=image_tag category.items.sample.pictures.sample.image, class: 'img-responsive'%>
-            <%end%>
-            <div class="">
-              <div class="">
-                <div class="panel-footer"><%=category.title%></div>
               </div>
+              <%end%>
             </div>
           </div>
       <%end%>
       <% end %>
       <% if @items && @items.size != 0 %>
       <% @items.each do |item| %>
-          <div class="col-md-4 text-center">
-            <%= link_to show_category_item_path(@category,item), class: 'portfolio-link' do%>
-                <%=image_tag item.pictures.sample.image, class: 'img-responsive' %>
-            <%end%>
-            <div class="">
-              <div class="">
-                <div class="panel-footer"><%=item.title%></div>
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="item-container">
+                  <%= link_to show_category_item_path(@category,item) do%>
+                      <div class="item">
+                        <div class="panel-footer">
+                          <%=item.title%>
+                        </div>
+                        <%=image_tag item.pictures.sample.image, class: 'img-responsive' %>
+                      </div>
+                  <%end%>
+                </div>
               </div>
-            </div>
-          </div>
       <%end%>
       <% end %>
       <% if @galleries && @galleries.size != 0 %>
           <% @galleries.each do |gallery| %>
-              <div class="col-md-4 text-center">
-                <%= link_to show_category_gallery_path(@category,gallery), class: 'portfolio-link' do%>
-                    <%=image_tag gallery.pictures.sample.image, class: 'img-responsive' %>
-                <%end%>
-                <div class="">
-                  <div class="">
-                    <div class="panel-footer"><%=gallery.title%></div>
-                  </div>
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="item-container">
+                  <%= link_to show_category_gallery_path(@category,gallery) do%>
+                      <div class="item">
+                        <div class="panel-footer">
+                          <%=gallery.title%>
+                        </div>
+                        <%=image_tag gallery.pictures.sample.image, class: 'img-responsive' %>
+                      </div>
+                  <%end%>
                 </div>
               </div>
           <%end%>

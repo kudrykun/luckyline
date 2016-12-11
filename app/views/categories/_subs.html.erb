@@ -13,27 +13,37 @@
           </li>
         </ol>
       </div>
+      <div class="col-md-12">
+        <div class="pull-right">
+          <%= render 'results/search_form' %>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <% @categories.each do |category| %>
-          <div class="col-md-4 text-center">
-            <%if category.items.size != 0%>
-            <%= link_to subs_and_items_path(category), class: 'portfolio-link' do%>
-                <%=image_tag category.items.sample.pictures.sample.image, class: 'img-responsive'%>
-            <%end%>
-            <%else%>
-                <%if category.galleries.size != 0%>
-                    <%= link_to subs_and_items_path(category), class: 'portfolio-link' do%>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="item-container">
+              <%if category.items.size != 0%>
+                  <%= link_to subs_and_items_path(category) do%>
+                      <div class="item">
+                        <div class="panel-footer">
+                          <%=category.title%>
+                        </div>
+                        <%=image_tag category.items.sample.pictures.sample.image, class: 'img-responsive'%>
+                      </div>
+                  <%end%>
+              <%else%>
+                  <%= link_to subs_and_items_path(category) do%>
+                      <div class="item">
+                        <div class="panel-footer">
+                          <%=category.title%>
+                        </div>
                         <%=image_tag category.galleries.sample.pictures.sample.image, class: 'img-responsive'%>
-                    <%end%>
-                <%end%>
-            <%end%>
-            <div class="">
-              <div class="">
-                <div class="panel-footer"><%=category.title%></div>
-              </div>
+                      </div>
+                  <%end%>
+              <%end%>
             </div>
           </div>
       <%end%>
