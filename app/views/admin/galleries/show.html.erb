@@ -11,6 +11,10 @@
         <div class="panel-body"><%= @gallery.title %></div>
       </div>
       <div class="panel panel-info">
+        <div class="panel-heading">Название</div>
+        <div class="panel-body"><%= @gallery.description %></div>
+      </div>
+      <div class="panel panel-info">
         <div class="panel-heading">Категория</div>
         <div class="panel-body"><%= Category.find(@gallery.category).title %></div>
       </div>

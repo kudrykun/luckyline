@@ -55,6 +55,6 @@ class Admin::GalleriesController < Admin::AdminController
   end
 
   def gallery_params
-    params.require(:gallery).permit(:title, :category_id)
+    params.require(:gallery).permit(:title, :description, :category_id)
   end
 end

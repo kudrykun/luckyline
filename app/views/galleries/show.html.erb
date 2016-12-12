@@ -11,6 +11,17 @@
       </div>
     </div>
   </div>
+  <%if @gallery.description%>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default description-panel">
+        <div class="panel-body">
+          <%=@gallery.description.html_safe%>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%end%>
   <div class="row">
     <div class="col-md-12">
       <% @gallery.pictures.each do |picture| %>

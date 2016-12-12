@@ -28,6 +28,8 @@
         <tr>
           <th>ID</th>
           <th>Название</th>
+          <th>Описание</th>
+          <th>Категория</th>
           <th>Создан</th>
           <th>Обновлён</th>
           <th></th>
@@ -39,6 +41,7 @@
                 <tr>
                   <th><%= gallery.id %></th>
                   <td><%= gallery.title %></td>
+                  <td><%= gallery.description %></td>
                   <td><%= Category.find(gallery.category).title %></td>
                   <td><%= time_tag gallery.created_at %></td>
                   <td><%= time_tag gallery.updated_at %></td>
