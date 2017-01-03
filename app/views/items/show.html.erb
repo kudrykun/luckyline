@@ -12,21 +12,8 @@
       <div class="col-md-12">
         <div class="image-container">
           <div class="image">
-            <%=image_tag @item.pictures.first.image, class: 'img-responsive', name: 'bigImg' %>
+            <%=render 'items/carousel'%>
           </div>
-        </div>
-      </div>
-      <div class="col-md-12 preview-images">
-        <div class="row">
-          <%@item.pictures.each do |picture|%>
-              <div class="col-md-3 col-xs-3 preview-image">
-                <div class="image-container">
-                  <div class="image">
-                    <%=image_tag picture.image, class: 'img-responsive', onMouseOver: "changeImg('#{picture.image.to_s}')" %>
-                  </div>
-                </div>
-              </div>
-          <%end%>
         </div>
       </div>
     </div>

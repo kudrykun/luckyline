@@ -528,19 +528,16 @@ ul.pagination li a.active {
 .bg-3{
   margin: 10px;
 }
-.image1{
-  position: absolute;
-  bottom: 0;
+
+#item-images-carousel{
+  height: 100%;
 }
-.image2{
-  float: left;
+
+#item-images-carousel .carousel-inner{
+  height: 100%;
 }
-.image3{
-  float: right;
-}
-.image4{
-  float: left;
-}
+
+
 
 
 
