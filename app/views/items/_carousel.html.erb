@@ -15,11 +15,11 @@
     <%@item.pictures.each do |picture|%>
         <%if picture == @item.pictures.first%>
             <div class="item active">
-              <%=image_tag picture.image%>
+              <%=image_tag picture.image, class: 'modal-image'%>
             </div>
         <%else%>
             <div class="item">
-              <%=image_tag picture.image%>
+              <%=image_tag picture.image, class: 'modal-image'%>
             </div>
         <%end%>
     <%end%>

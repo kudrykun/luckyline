@@ -97,12 +97,12 @@ img{
   max-width:100%;
 }
 
-a:focus{
+.btn-examples:focus{
   color: #fff;
   background-color: #6bc748;
   border-color: #6bc748;
 }
-a:hover{
+.btn-examples:hover{
   color: #fff;
   background-color: #6bc748;
   border-color: #6bc748;
@@ -535,6 +535,10 @@ ul.pagination li a.active {
 
 #item-images-carousel .carousel-inner{
   height: 100%;
+}
+
+#myModal > .modal-dialog {
+  width: 90%;
 }
 
 
