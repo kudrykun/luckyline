@@ -14,12 +14,26 @@
   <div class="carousel-inner" role="listbox">
     <%@item.pictures.each do |picture|%>
         <%if picture == @item.pictures.first%>
-            <div class="item active">
-              <%=image_tag picture.image, class: 'modal-image'%>
+            <div class="item modal-image active">
+              <div class="gallery-hover">
+                <div class="gallery-hover-content">
+                  <%= icon('search-plus')%>
+                </div>
+              </div>
+              <div class="pic-container">
+                <%=image_tag picture.image%>
+              </div>
             </div>
         <%else%>
-            <div class="item">
-              <%=image_tag picture.image, class: 'modal-image'%>
+            <div class="item modal-image">
+              <div class="gallery-hover">
+                <div class="gallery-hover-content">
+                  <%= icon('search-plus')%>
+                </div>
+              </div>
+              <div class="pic-container">
+                <%=image_tag picture.image%>
+              </div>
             </div>
         <%end%>
     <%end%>
