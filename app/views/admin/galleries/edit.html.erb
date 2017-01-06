@@ -34,8 +34,23 @@
 
           <div class="form-group">
             <%= f.label :pictures, 'Изображения' %>
+            <div class="row">
+              <%@gallery.pictures.each do |picture|%>
+                  <div class="col-md-2">
+                    <div class="image-container">
+                      <div class="image">
+                        <%=link_to admin_picture_path(picture), method: :delete, :remote => true, :class => 'delete-image' do %>
+                            <%=image_tag picture.image,class: 'img-responsive'%>
+                        <%end%>
+                      </div>
+                    </div>
+                  </div>
+              <%end%>
+            </div>
+
             <%= file_field_tag "images[]", type: :file, multiple: true %>
           </div>
+
           <div class="row">
             <%= f.submit 'Сохранить изменения', class: 'btn btn-default' %>
             <%=link_to 'Назад', admin_galleries_path, class: 'btn btn-default'%>

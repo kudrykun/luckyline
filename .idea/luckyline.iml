@@ -152,6 +152,7 @@
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.7.0, RVM: ruby-2.3.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.6.0, RVM: ruby-2.3.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.2.1, RVM: ruby-2.3.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v2.0.2, RVM: ruby-2.3.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kaminari (v0.17.0, RVM: ruby-2.3.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.0.8, RVM: ruby-2.3.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.0.3, RVM: ruby-2.3.3) [gem]" level="application" />
@@ -167,6 +168,7 @@
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.6.8.1, RVM: ruby-2.3.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, RVM: ruby-2.3.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="paperclip (v5.1.0, RVM: ruby-2.3.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="paperclip-dropbox (v0.0.2, RVM: ruby-2.3.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="parser (v2.3.1.4, RVM: ruby-2.3.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.19.0, RVM: ruby-2.3.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg_search (v1.0.6, RVM: ruby-2.3.3) [gem]" level="application" />

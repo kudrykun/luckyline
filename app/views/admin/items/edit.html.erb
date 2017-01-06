@@ -43,7 +43,9 @@
               <div class="col-md-2">
                 <div class="image-container">
                   <div class="image">
-                    <%=image_tag picture.image, class: 'img-responsive'%>
+                    <%=link_to admin_picture_path(picture), method: :delete, :remote => true, :class => 'delete-image' do %>
+                      <%=image_tag picture.image,class: 'img-responsive'%>
+                    <%end%>
                   </div>
                 </div>
               </div>
