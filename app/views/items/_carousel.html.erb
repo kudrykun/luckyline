@@ -21,7 +21,7 @@
                 </div>
               </div>
               <div class="pic-container">
-                <%=image_tag picture.image%>
+                <%=image_tag picture.image(:for_show)%>
               </div>
             </div>
         <%else%>
@@ -32,7 +32,7 @@
                 </div>
               </div>
               <div class="pic-container">
-                <%=image_tag picture.image%>
+                <%=image_tag picture.image(:for_show)%>
               </div>
             </div>
         <%end%>

@@ -46,7 +46,7 @@
                         <div class="panel-footer">
                           <%=item.title%>
                         </div>
-                        <%=image_tag item.pictures.sample.image, class: 'img-responsive' %>
+                        <%=image_tag item.pictures.sample.image(:for_grid), class: 'img-responsive' %>
                       </div>
                   <%end%>
                 </div>
