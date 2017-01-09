@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
   def index
+    set_meta_tags title: 'Каталога тайтл',
+                  description: 'Описание для каталога'
     @categories = Category.friendly.where(parent: nil)
   end
   def show
@@ -7,5 +9,7 @@ class CategoriesController < ApplicationController
     @categories = @category.subs
     @items = @category.items
     @galleries = @category.galleries
+    set_meta_tags title: @category.meta_title,
+                  description: @category.meta_description
   end
 end

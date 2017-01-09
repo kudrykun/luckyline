@@ -14,8 +14,9 @@ class ItemsController < ApplicationController
   def show
     @item = Item.friendly.find(params[:id])
     @category = @item.category
-
     @order = Order.new
+    set_meta_tags title: @item.meta_title,
+                  description: @item.meta_description
   end
 
   # GET /items/new

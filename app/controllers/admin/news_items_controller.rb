@@ -36,6 +36,6 @@ class Admin::NewsItemsController < Admin::AdminController
   end
 
   def news_item_params
-    params.require(:news_item).permit(:title,:text)
+    params.require(:news_item).permit(:title,:text,:meta_title,:meta_description)
   end
 end

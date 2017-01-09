@@ -1,6 +1,8 @@
 class OpinionsController < ApplicationController
 
   def index
+    set_meta_tags title: 'Отзывов тайтл',
+                  description: 'Описание отзывов'
     @opinions = Opinion.all.page(params[:page]).per(5)
     @opinion = Opinion.new
   end

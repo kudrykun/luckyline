@@ -43,6 +43,14 @@
             <%= f.label :text, 'Текст акции' %>
             <%= f.text_area :text, class: 'form-control'%>
           </div>
+          <div class="form-group">
+            <%= f.label :meta_title, 'Мета-название' %>
+            <%= f.text_field :title, class: 'form-control'%>
+          </div>
+          <div class="form-group">
+            <%= f.label :meta_description, 'Мета-описание' %>
+            <%= f.text_area :description, class: 'form-control'%>
+          </div>
           <div class="row">
             <%= f.submit 'Создать', class: 'btn btn-default' %>
             <%=link_to admin_news_items_path, class: 'btn btn-default' do%>

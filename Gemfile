@@ -46,6 +46,7 @@ gem 'devise'
 gem 'rails_db_dump', '~>1.0.0'
 gem 'paperclip-dropbox'
 gem 'yaml_db'
+gem 'meta-tags'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
