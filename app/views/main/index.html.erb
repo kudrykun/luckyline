@@ -3,57 +3,55 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h4 class="info-header">К вашим услугам</h4>
+        <h3 class="info-header">К вашим услугам</h3>
         <hr class="primary">
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 col-sm-6 text-center">
-        <div class="info-box">
-          <%=icon('cloud', class: 'fa-4x icon-primary')%>
-          <h3>Thing</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Morbi finibus eget libero ac porta. </p>
+      <div class="col-md-12">
+        <div class="col-md-4 col-sm-6 text-center">
+          <div class="info-box">
+            <%=icon('th', class: 'fa-4x icon-primary')%>
+            <h4>Широкий ассортимент</h4>
+            <p>Магазин мебели в Мытищах предоставляет Вам большой выбор товаров.</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 text-center">
+          <div class="info-box">
+            <%=icon('building', class: 'fa-4x icon-primary')%>
+            <h4>Мебельный центр</h4>
+            <p>Мы находимся в специализированном ТЦ "Формат" и наши двери всегда открыты для Вас!</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 text-center">
+          <div class="info-box">
+            <%=icon('map', class: 'fa-4x icon-primary')%>
+            <h4>Мебель в Москве и области</h4>
+            <p>Мы доставим ваш заказ в Москву, Мытищи, Королёв, Щёлково и т.д. </p>
+          </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-6 text-center">
-        <div class="info-box">
-          <%=icon('coffee', class: 'fa-4x icon-primary')%>
-          <h3>Anything</h3>
-          <p>Suspendisse tristique semper ex in facilisis.
-            Pellentesque maximus nec urna eu sollicitudin.</p>
+      <div class="col-md-12">
+        <div class="col-md-4 col-sm-6 text-center">
+          <div class="info-box">
+            <%=icon('industry', class: 'fa-4x icon-primary')%>
+            <h4>Качественное производство</h4>
+            <p>Производство мебели на немецком и итальянском оборудовании. Использование комплектующих ведущих европейских компаний. </p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-6 text-center">
-        <div class="info-box">
-          <%=icon('phone', class: 'fa-4x icon-primary')%>
-          <h3>Something</h3>
-          <p>Phasellus et tortor orci. Sed at facilisis diam.
-            Pellentesque sed dignissim quam.
-            Pellentesque sed dignissim quam.</p>
+        <div class="col-md-4 col-sm-6 text-center">
+          <div class="info-box">
+            <%=icon('television', class: 'fa-4x icon-primary')%>
+            <h4>Индивидуальное проектирование</h4>
+            <p>Учесть все Ваши пожелания - наша главная задача.Мы создаем мебель для Вас по уникальным проектам и размерам.</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-6 text-center">
-        <div class="info-box">
-          <%=icon('star', class: 'fa-4x icon-primary')%>
-          <h3>Never</h3>
-          <p>Sed leo magna, porttitor id leo ac, mollis tincidunt risus.
-            Proin blandit odio vitae rhoncus auctor.</p>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6 text-center">
-        <div class="info-box">
-          <%=icon('tree', class: 'fa-4x icon-primary')%>
-          <h3>Ever</h3>
-          <p>Praesent vel purus et lacus dapibus eleifend.
-            Suspendisse rhoncus elit id massa porttitor rutrum.</p>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6 text-center">
-        <div class="info-box">
-          <%=icon('users', class: 'fa-4x icon-primary')%>
-          <h3>Forever <3</h3>
-          <p>Duis pulvinar ut risus vitae pulvinar. Integer nec pretium odio, quis condimentum metus.</p>
+        <div class="col-md-4 col-sm-6 text-center">
+          <div class="info-box">
+            <%=icon('truck', class: 'fa-4x icon-primary')%>
+            <h4>Комфортное обслуживание</h4>
+            <p>Выезд замерщика на дом, доставка мебели любый габаритов и сборка Вашей кухни.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -80,7 +78,7 @@
               <div class="example-item-image">
                 <div class="image-container">
                   <div class="image">
-                    <%=image_tag item.pictures.sample.image, class: 'img-responsive'%>
+                    <%=image_tag item.pictures.sample.image(:for_show), class: 'img-responsive'%>
                   </div>
                 </div>
                 <!--<img src="http://lorempixel.com/1600/900" class="img-responsive">-->
