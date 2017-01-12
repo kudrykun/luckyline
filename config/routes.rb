@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :galleries
     resources :finished_orders
-    resources :pictures, only: [:destroy]
+    resources :pictures, only: [:destroy,:update,:edit]
   end
 
 

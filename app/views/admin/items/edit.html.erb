@@ -47,15 +47,23 @@
             <%= f.label :pictures, 'Изображения' %>
             <div class="row">
               <%@item.pictures.each do |picture|%>
-              <div class="col-md-2">
-                <div class="image-container">
-                  <div class="image">
+                <div class="col-md-3">
+                  <div class="image-wrapper">
                     <%=link_to admin_picture_path(picture), method: :delete, :remote => true, :class => 'delete-image' do %>
-                      <%=image_tag picture.image,class: 'img-responsive'%>
+                    <div class="image-hover">
+                      <div class="image-hover-content">
+                        <%=icon ('times')%>
+                      </div>
+                    </div>
+                    <div class="image-container">
+                      <div class="image">
+                          <%=image_tag picture.image,class: 'img-responsive'%>
+
+                      </div>
+                    </div>
                     <%end%>
                   </div>
                 </div>
-              </div>
               <%end%>
             </div>
 
