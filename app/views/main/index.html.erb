@@ -70,26 +70,76 @@
 
 
         <div class="row">
-          <% @items.each do |item|%>
           <div class="col-md-6 col-sm-6 col-xs-6">
             <div class="example-item">
-            <%=link_to show_item_path(item) do%>
-
+            <%=link_to show_item_path(@item1) do%>
               <div class="example-item-image">
                 <div class="image-container">
                   <div class="image">
-                    <%=image_tag item.pictures.sample.image(:for_show), class: 'img-responsive'%>
+                    <%=image_tag @item1.pictures.sample.image(:for_show), class: 'img-responsive'%>
                   </div>
                 </div>
                 <!--<img src="http://lorempixel.com/1600/900" class="img-responsive">-->
               </div>
               <div class="example-item-text">
-                <%= item.title%>
+                <%= @item1.title%>
               </div>
             <%end%>
             </div>
           </div>
-          <%end%>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="example-item">
+              <%=link_to show_item_path(@item2) do%>
+                  <div class="example-item-image">
+                    <div class="image-container">
+                      <div class="image">
+                        <%=image_tag @item2.pictures.sample.image(:for_show), class: 'img-responsive'%>
+                      </div>
+                    </div>
+                    <!--<img src="http://lorempixel.com/1600/900" class="img-responsive">-->
+                  </div>
+                  <div class="example-item-text">
+                    <%= @item2.title%>
+                  </div>
+              <%end%>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="example-item">
+              <%=link_to show_item_path(@item3) do%>
+                  <div class="example-item-image">
+                    <div class="image-container">
+                      <div class="image">
+                        <%=image_tag @item3.pictures.sample.image(:for_show), class: 'img-responsive'%>
+                      </div>
+                    </div>
+                    <!--<img src="http://lorempixel.com/1600/900" class="img-responsive">-->
+                  </div>
+                  <div class="example-item-text">
+                    <%= @item3.title%>
+                  </div>
+              <%end%>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="example-item">
+              <%=link_to show_item_path(@item4) do%>
+                  <div class="example-item-image">
+                    <div class="image-container">
+                      <div class="image">
+                        <%=image_tag @item4.pictures.sample.image(:for_show), class: 'img-responsive'%>
+                      </div>
+                    </div>
+                    <!--<img src="http://lorempixel.com/1600/900" class="img-responsive">-->
+                  </div>
+                  <div class="example-item-text">
+                    <%= @item4.title%>
+                  </div>
+              <%end%>
+            </div>
+          </div>
         </div>
         <div class="green-button"><%=link_to 'Перейти в каталог', catalog_path, class: 'btn-examples'%></div>
 

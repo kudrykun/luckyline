@@ -309,26 +309,11 @@ header {
 .example-item {
   max-width: 500px;
   margin: 0 auto;
-  filter: grayscale(70%);
-  opacity: .5;
-  transition: all ease .5s;
-  -webkit-transition: all ease .5s;
-  -moz-transition: all ease .5s;
 }
 
-.example-item:hover{
-  opacity: 1;
-  filter: grayscale(0%);
-  .example-item-text{
-    opacity: 1;
-  }
-}
+
 .example-item-text{
   color: #000000;
-  opacity: 0;
-  transition: all ease .5s;
-  -webkit-transition: all ease .5s;
-  -moz-transition: all ease .5s;
 }
 
 .portfolio-hover{
@@ -577,7 +562,18 @@ ul.pagination li a.active {
 #item-images-carousel carousel-control { background-image: none}
 
 
-
+.example-item{
+  -webkit-transform: scale(1,1);
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 100ms;
+  -moz-transform: scale(1,1);
+  -moz-transition-timing-function: ease-out;
+  -moz-transition-duration: 100ms;
+}
+.example-item:hover{
+  -webkit-transform: scale(1.05,1.05);
+  -moz-transform: scale(1.05,1.05);
+}
 
 
 
