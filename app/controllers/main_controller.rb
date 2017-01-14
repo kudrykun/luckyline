@@ -1,8 +1,7 @@
 class MainController < ApplicationController
   def index
-    set_meta_tags title: 'Кухни в Мытищах Luckyline: мебель, фурнитура, бытовая техника',
-                  description: 'Купить кухни в Мытищах с доставкой по Москве и Московской области по приемлемой цене.
-                                  Оценить преимущества магазина LuckyLine и ознакомится с каталогом товаров.'
+    set_meta_tags title: 'Кухни LuckyLine: мебель, в Москве,Мытищах и Московской области',
+                  description: 'Кухни LuckyLine в Мытищах от фабрики – купить кухни в Королёве, Фрязино, Пушкино, Балашихе, Щёлково и других городах Московской области. '
     @items = Item.all.sample(4)
     @item1 = @items.first
     @item2 = @items.second
