@@ -1,0 +1,16 @@
+<%if controller_name == 'main'%>
+    <header>
+      <div class="container">
+        <div class="logotype">
+          <%=image_tag('g74.png', class:'logot')%>
+        </div>
+        <div class="green-button"><a href="#info" class="btn-examples page-scroll">Узнать о нас больше</a></div>
+      </div>
+    </header>
+<%else%>
+    <header class="not-main">
+      <div class="container">
+        <div class="green-button"><a href="#info" class="btn-examples page-scroll">Узнать о нас больше</a></div>
+      </div>
+    </header>
+<%end%>

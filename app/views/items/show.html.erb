@@ -2,9 +2,9 @@
 <div class="container box bg-offwhite">
   <div class="row">
     <div class="col-md-12">
-      <h4 style="padding-bottom: 30px">
+      <h1 class="main-header">
         <%=@item.title%>
-      </h4>
+      </h1>
     </div>
   </div>
   <div class="row">
@@ -18,14 +18,14 @@
       </div>
     </div>
     <div class="col-md-5 col-sm-12 col-xs-12 price">
-      <strong>Цены:</strong>
+      <span style="font-weight: 700;">Цены:</span>
       <p><%=@item.price.html_safe%></p>
     </div>
   </div>
   <%if @item.description != ""%>
   <div class="row description">
     <div class="col-md-12">
-      <strong>Описание:</strong>
+      <h4>Описание:</h4>
       <p><%=@item.description.html_safe%></p>
     </div>
   </div>

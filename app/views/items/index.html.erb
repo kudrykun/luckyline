@@ -27,8 +27,9 @@
             <div class="col-md-12">
               <% @items.each do |item| %>
                   <div class="col-md-4 text-center">
+                    <%sample_img = item.pictures.sample%>
                     <%= link_to item_path(@category,@subcategory,item), class: 'portfolio-link' do%>
-                        <%=image_tag item.pictures.sample.image, class: 'img-responsive' %>
+                        <%=image_tag sample_img.image, alt: sample_img.alt, class: 'img-responsive' %>
                     <%end%>
                     <div class="">
                       <div class="">

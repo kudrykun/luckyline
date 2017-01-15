@@ -31,7 +31,8 @@
                         <div class="panel-footer">
                           <%=category.title%>
                         </div>
-                        <%=image_tag category.items.sample.pictures.sample.image, class: 'img-responsive'%>
+                        <%sample_img = category.items.sample.pictures.sample%>
+                        <%=image_tag sample_img.image, alt: sample_img.alt, class: 'img-responsive'%>
                       </div>
                   <%end%>
               <%else%>
@@ -40,7 +41,8 @@
                         <div class="panel-footer">
                           <%=category.title%>
                         </div>
-                        <%=image_tag category.galleries.sample.pictures.sample.image, class: 'img-responsive'%>
+                        <%sample_img = category.galleries.sample.pictures.sample%>
+                        <%=image_tag sample_img.image, alt: sample_img.alt, class: 'img-responsive'%>
                       </div>
                   <%end%>
               <%end%>
