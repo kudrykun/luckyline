@@ -10,17 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111225948) do
+ActiveRecord::Schema.define(version: 20170117122320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.integer "parent_id"
-    t.string  "title"
-    t.string  "slug"
-    t.string  "meta_title"
-    t.string  "meta_description"
+    t.integer  "parent_id"
+    t.string   "title"
+    t.string   "slug"
+    t.string   "meta_title"
+    t.string   "meta_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
     t.index ["parent_id"], name: "index_categories_on_parent_id", using: :btree
     t.index ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
   end

@@ -44,9 +44,10 @@ gem 'russian'
 gem 'seed_dump'
 gem 'devise'
 gem 'rails_db_dump', '~>1.0.0'
-gem 'paperclip-dropbox'
+gem 'paperp-dropbox'
 gem 'yaml_db'
 gem 'meta-tags'
+gem 'sitemap_generator'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -63,4 +64,6 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "unicorn"

@@ -181,6 +181,8 @@ GEM
     seed_dump (3.2.4)
       activerecord (>= 4)
       activesupport (>= 4)
+    sitemap_generator (5.2.0)
+      builder (~> 3.0)
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -244,6 +246,7 @@ DEPENDENCIES
   russian
   sass-rails (~> 5.0)
   seed_dump
+  sitemap_generator
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
