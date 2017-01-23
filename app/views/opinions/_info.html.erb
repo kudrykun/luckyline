@@ -1,12 +1,12 @@
 <div class="opinion-info">
   <%if opinion.ok != ''%>
-      <%=link_to opinion.ok do%>
+      <%=link_to opinion.ok, target: '_blank' do%>
           <%=icon('odnoklassniki', class:'ok')%>
           <%=opinion.name%>
       <%end%>
   <%else%>
       <%if opinion.vk != ''%>
-          <%=link_to opinion.vk do%>
+          <%=link_to opinion.vk, target: '_blank' do%>
               <%=icon('vk', class: 'vk')%>
               <%=opinion.name%>
           <%end%>
