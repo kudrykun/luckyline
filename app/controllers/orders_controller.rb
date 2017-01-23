@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     end
     respond_to do |format|
       if @order.save
-        format.html { redirect_to :back, notice: 'Order was successfully created.' }
+        format.html { redirect_to thank_you_path, notice: 'Order was successfully created.' }
       else
         format.html { redirect_to root_path, notice: 'Order was not successfully created.' }
       end

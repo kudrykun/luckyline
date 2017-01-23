@@ -157,14 +157,23 @@ img{
   padding-top: 20px;
   padding-bottom: 20px;
 }
-small.date {
+
+.opinion-info{
+  font-size: 89%;
+  line-height: 2.067;
   color: #cecdcd;
 }
 
+.opinion-info > time{
+  padding-left: 30px;
+}
+
+.opinions > .row > .col-md-12{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 .opinions > .row > .col-md-12:nth-child(2n){
   background-color: #f6f6f6;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 .image-box{
   background-color: #f2f2f2;
@@ -583,3 +592,9 @@ ul.pagination li a.active {
   margin-top: 15px;
 }
 
+.vk {
+  color: #507299;
+}
+.ok{
+  color: #f58220;
+}

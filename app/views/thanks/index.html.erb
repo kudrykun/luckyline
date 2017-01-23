@@ -1,0 +1,12 @@
+<h1>Thanks#index</h1>
+<h1>Осталось <span id="timer">5</span></h1>
+<script>
+    window.setInterval(function () {
+        var timer = $('#timer').text();
+        timer -= 1;
+        $('#timer').text(timer)
+    },1000)
+    window.setTimeout(function() {
+        window.location.href = '<%=root_url%>';
+    }, 5000);
+</script>

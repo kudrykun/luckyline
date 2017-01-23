@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /admin
-Disallow: /forum
-Disallow: /cgi-bin
-Host: www.lucky-line-mebel.ru
-
