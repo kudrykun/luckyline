@@ -8,24 +8,24 @@
       <div class="modal-body">
         <%= form_for @opinion do |f| %>
             <div class="form-group">
-              <label for="name"><span class="glyphicon glyphicon-shopping-cart"></span> Имя*</label>
-              <%= f.text_field :name, class: 'form-control', placeholder: 'Ваше имя' %>
+              <label for="name"><span class="glyphicon glyphicon-shopping-cart"></span> Имя*</label> <span class="namespan"></span>
+              <%= f.text_field :name, class: 'form-control', placeholder: 'Ваше имя', required: true, pattern: '[а-яА-ЯЁё]{3,15}'%>
             </div>
             <div class="form-group">
               <label for="order_number"><span class="glyphicon glyphicon-user"></span> Номер вашего заказа*</label>
-              <%= f.number_field :order_number, class: 'form-control', placeholder: 'Номер вашего заказа'%>
+              <%= f.number_field :order_number, class: 'form-control', placeholder: 'Номер вашего заказа', required: true%>
             </div>
             <div class="form-group">
-              <label for="text"><span class="glyphicon glyphicon-user"></span> Отзыв*</label>
-              <%= f.text_area :text, class: 'form-control', placeholder: 'Ваш отзыв'%>
+              <label for="text"><span class="glyphicon glyphicon-user"></span> Отзыв*</label> <span class="textspan"></span>
+              <%= f.text_area :text, class: 'form-control', placeholder: 'Ваш отзыв', required: true, pattern: '.{10,500}'%>
             </div>
             <div class="form-group">
-              <label for="name"><%=icon('vk', class: 'vk')%> Ссылка на ваш профиль ВКонтакте</label>
-              <%= f.text_field :vk, class: 'form-control', placeholder: 'Ссылка' %>
+              <label for="name"><%=icon('vk', class: 'vk')%> Ссылка на ваш профиль ВКонтакте</label> <span class="vkspan"></span>
+              <%= f.text_field :vk, class: 'form-control', placeholder: 'https://vk.com/id12345678 или https://vk.com/username',pattern: '((https:\/\/vk\.com\/id[\d]+)|(https:\/\/vk\.com\/[a-zA-Z\d_]+)|)' %>
             </div>
             <div class="form-group">
-              <label for="name"> <%=icon('odnoklassniki', class:'ok')%> Ссылка на ваш профиль в Одноклассники</label>
-              <%= f.text_field :ok, class: 'form-control', placeholder: 'Ссылка' %>
+              <label for="name"> <%=icon('odnoklassniki', class:'ok')%> Ссылка на ваш профиль в Одноклассники</label> <span class="okspan"></span>
+              <%= f.text_field :ok, class: 'form-control', placeholder: 'https://ok.ru/profile/123456789123 или https://ok.ru/username',pattern: '((https:\/\/ok\.ru\/profile\/[\d]+)|(https:\/\/ok\.ru\/[a-zA-z\d\.]{5,})|)' %>
             </div>
             <div class="form-group">
               <%= f.label :image, 'Изображение' %>
@@ -44,3 +44,54 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('#opinion_name').blur(function(){
+      var reg = /^[а-яА-ЯЁё]{3,15}$/;
+      var value = $('#opinion_name').val();
+      if (!reg.test(value)) {
+
+          $(".namespan").html('Имя должно состоять из 3-15 букв ');
+          $("#opinion_name").addClass('field-incorrect');
+      }else {
+          $(".namespan").html('');
+          $("#opinion_name").removeClass('field-incorrect');
+      }
+  })
+  $('#opinion_text').blur(function(){
+      var reg = /.{10,500}/;
+      var value = $('#opinion_text').val();
+      if (!reg.test(value)) {
+
+          $(".textspan").html('Текст отзыва должен состоять из 10-500 символов ');
+          $("#opinion_text").addClass('field-incorrect');
+      }else {
+          $(".textspan").html('');
+          $("#opinion_text").removeClass('field-incorrect');
+      }
+  })
+  $('#opinion_vk').blur(function(){
+      var reg = /^((https:\/\/vk\.com\/id[\d]+)|(https:\/\/vk\.com\/[a-zA-Z\d_]+)|)$/;
+      var value = $('#opinion_vk').val();
+      if (!reg.test(value)) {
+
+          $(".vkspan").html('Введите существующую ссылку ');
+          $("#opinion_vk").addClass('field-incorrect');
+      }else {
+          $(".vkspan").html('');
+          $("#opinion_vk").removeClass('field-incorrect');
+      }
+  })
+  $('#opinion_ok').blur(function(){
+      var reg = /^((https:\/\/ok\.ru\/profile\/[\d]+)|(https:\/\/ok\.ru\/[a-zA-z\d\.]{5,})|)$/;
+      var value = $('#opinion_ok').val();
+      if (!reg.test(value)) {
+
+          $(".okspan").html('Введите существующую ссылку ');
+          $("#opinion_ok").addClass('field-incorrect');
+      }else {
+          $(".okspan").html('');
+          $("#opinion_ok").removeClass('field-incorrect');
+      }
+  })
+</script>
