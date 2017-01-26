@@ -1,8 +1,58 @@
 .namespan,.textspan, .vkspan, .okspan{
-  color: red;
+  color: #fd4949;
   font-size: 80%;
 }
 
 .field-incorrect{
  border-color: rgb(247, 167, 167);
+}
+
+.left-quotes{
+  font-size: 8em;
+  font-family: sans-serif;
+  color: #6bc748;
+  line-height: 140px;
+}
+
+.opinion-info{
+  font-size: 89%;
+  line-height: 2.067;
+  color: #cecdcd;
+}
+
+.opinion-info > time{
+  padding-left: 30px;
+}
+
+.opinions > .row > .col-md-12{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.opinions > .row > .col-md-12:nth-child(2n){
+  background-color: #f6f6f6;
+}
+
+.opinions > .row > .col-sm-12{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.opinions > .row > .col-sm-12:nth-child(2n){
+  background-color: #f6f6f6;
+}
+
+.opinions > .row > .col-xs-12{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.opinions > .row > .col-xs-12:nth-child(2n){
+  background-color: #f6f6f6;
+}
+
+@media screen and (max-width: 991px){
+  .opinion-image > img{
+    width: 82%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3%;
+  }
 }

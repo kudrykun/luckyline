@@ -1,67 +1,120 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+		<link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet">
+		<style>
+			body {
+				background-image: url('/background.jpg');
+				background-position: center -373px;
+			}
+			.error-code{
+				font-family: 'Waiting for the Sunrise', cursive;
+				color: #3e5369;
+    			font-size: 15em;
+    			margin-left: auto;
+    			margin-right: auto;
+    			text-align: center;
+    			-webkit-transform: scale(1,1);
+                -webkit-transition-timing-function: ease-out;
+                -webkit-transition-duration: 100ms;
+                -moz-transform: scale(1,1);
+                -moz-transition-timing-function: ease-out;
+                -moz-transition-duration: 100ms;
+			}
+   			.error-code:hover{
+                -webkit-transform: scale(1.05,1.05);
+                -moz-transform: scale(1.05,1.05);
+			}
+			.error-message{
+				color: #3e5369;
+    			width: 70%;
+    			margin-left: auto;
+    			margin-right: auto;
+    			font-size: 1.5em;
+    			margin-top: 2%;
+			}
+			.search-row{
+				margin-top: 4%;
+			}
+			.button-row{
+				width: 300px;
+    			margin-left: auto;
+    			margin-right: auto;
+    			margin-top: 6%;
+			}
+			.catalog-button{
+				display: block;
+    			text-decoration: none;
+    			color: white;
+    			border: 1px solid;
+    			border-color: #63b03d;
+    			border-radius: 3px;
+    			background-color: #63b03d;
+    			font-size: 1.4em;
+    			text-align: center;
+    			width: 100%;
+    			padding-bottom: 20px;
+    			padding-top: 20px;
+			}
+			.catalog-button:hover{background-color: #6bc748;}
+			.catalog-button:focus{background-color: #6bc748;}
+			.search-field{
+				width: 70%;
+    			margin-left: auto;
+    			margin-right: auto;
+			}
+			.search-form{
+				float: left;
+    			max-width: 72%;
+    			width: 100%;
+    			border: 2px solid #bdc3c7;
+    			border-radius: 6px;
+    			height: 42px;
+    			padding-left: 10px
+			}
+			.search-button{
+				color: white;
+    			background-color: #34495e;
+    			border: 1px solid #34495e;
+    			border-radius: 5px;
+    			height: 47px;
+    			padding: 10px 35px;
+    			margin-left: 10px;
+			}
+			.search-button:hover{background-color: #2f4154;}
+			.search-button:focus{background-color: #2f4154;}
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
-
-<body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
+			@media screen and (max-width: 768px){
+				.search-button{
+					padding: 10px 8px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="error-code">
+				404
+			</div>
+			<div class="error-message">
+				Непорядок!<br> То, что Вы искали, было удалено <nobr>\(o_o)/</nobr> <br>
+				Воспользуйтесь поисом по сайту мебельного магазина Lucky Line и Вы найдете то, что искали: 
+			</div>
+			<div class="search-row">
+				<form role="search" action="/results" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+    				<div class="search-field">
+      					<input type="text" name="query" id="query" class="form-control search-form" placeholder="Поиск по каталогу Lucky Line" required="true">
+    				</div>
+    				<div class="search-submit">
+						<input type="submit" class="search-button" value="Поиск" data-disable-with="Поиск">
+					</div>
+				</form>
+			</div>
+			<div class="button-row">
+				<a href="/catalog" class="catalog-button">Каталог Lucky Line</a>
+			</div>
+		</div>
+	</body>
 </html>

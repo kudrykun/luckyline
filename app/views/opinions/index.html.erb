@@ -7,15 +7,21 @@
   </div>
   <div class="row">
     <%@opinions.each do |opinion|%>
-    <div class="col-md-12">
+    <div class="col-md-12 col-sm-12 col-xs-12">
         <% if opinion.image_file_name != nil %>
-          <div class="col-md-8">
+          <div class="col-md-1 col-sm-1 col-xs-12">
+            <span class="left-quotes">&#8220</span>
+          </div>
+          <div class="col-md-7 col-sm-11 col-xs-12">
             <%=opinion.text%>
             <%=render 'opinions/info', opinion: opinion%>
           </div>
-          <div class="col-md-4"><%=image_tag opinion.image, class: 'img-responsive'%></div>
+          <div class="col-md-4 col-sm-12 opinion-image"><%=image_tag opinion.image, class: 'img-responsive'%></div>
         <% else %>
-          <div class="col-md-12">
+          <div class="col-md-1 col-sm-1 col-xs-12">
+            <span class="left-quotes">&#8220</span>
+          </div>
+          <div class="col-md-11 col-sm-11 col-xs-12">
             <%=opinion.text%>
             <%=render 'opinions/info', opinion: opinion%>
           </div>
