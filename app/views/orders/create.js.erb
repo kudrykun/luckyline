@@ -1,0 +1,19 @@
+$('.modal-header').find('h4').fadeOut(500, function() {
+    $(this).text('Спасибо, ' + '<%=@order.name%>!');
+    $(this).fadeIn(500);
+});
+
+$('.modal-header').find('p').fadeOut(500, function() {
+    $(this).html("Мы перезвоним Вам в течении 48 часов.<br>" +
+                "Вы будете перенаправлены на главную страницу через <span id='timer'>3</span>...");
+    $(this).fadeIn(500,function(){
+        window.setInterval(function () {
+            var timer = $('#timer').text();
+            timer -= 1;
+            $('#timer').text(timer)
+        },1000)
+        window.setTimeout(function() {
+            window.location.href = '<%=root_url%>';
+        }, 3000);
+    });
+});

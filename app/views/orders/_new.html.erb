@@ -1,46 +1,56 @@
-
-
-
-
 <%if controller_name == 'items' && action_name == 'show'%>
-    <%= form_for [@item,@order], role: 'form' do |f| %>
+    <%= form_for [@item,@order], role: 'form', remote: true do |f| %>
         <div class="form-group">
-          <label for="name"><span class="glyphicon glyphicon-shopping-cart"></span> Имя*</label>
-          <%= f.text_field :name, class: 'form-control', placeholder: 'Ваше имя' %>
+          <label for="name"><span class="glyphicon glyphicon-shopping-cart"></span> Имя*</label> <span class="namespan"></span>
+          <%= f.text_field :name, id: 'order_name', class: 'form-control', placeholder: 'Ваше имя', required: true, pattern: '[а-яА-ЯЁё]{2,15}' %>
         </div>
         <div class="form-group">
-          <label for="phone_number"><span class="glyphicon glyphicon-user"></span> Телефон*</label>
-          <%= f.text_field :phone_number, class: 'form-control', placeholder: 'Ваш телефон'%>
+          <label for="phone_number"><span class="glyphicon glyphicon-user"></span> Телефон*</label> <span class="phonespan"></span>
+          <%= f.text_field :phone_number,id: 'order_phone', class: 'form-control', placeholder: 'Ваш телефон', required: true, pattern: '((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}'%>
         </div>
-        <%= f.submit 'Заказать звонок', class: 'btn btn-block' do%>
+        <%= f.submit 'Заказать звонок', class: 'btn btn-block', onclick: "yaCounter42021524.reachGoal('ORDER_COMPLETED'); return true;" do%>
             <span class="glyphicon glyphicon-ok"></span>
         <% end %>
     <% end %>
 <%else%>
-    <%= form_tag ('/orders') do%>
+    <%= form_tag ('/orders'), remote: true do%>
         <div class="form-group">
-          <label for="name"><span class="glyphicon glyphicon-shopping-cart"></span> Имя*</label>
-          <%= text_field_tag :name, '',class: 'form-control', placeholder: 'Ваше имя' %>
+          <label for="name"><span class="glyphicon glyphicon-shopping-cart"></span> Имя*</label> <span class="namespan"></span>
+          <%= text_field_tag :name,'', id: 'order_name',class: 'form-control', placeholder: 'Ваше имя', required: true, pattern: '[а-яА-ЯЁё]{2,15}' %>
         </div>
         <div class="form-group">
-          <label for="phone_number"><span class="glyphicon glyphicon-user"></span> Телефон*</label>
-          <%= text_field_tag :phone_number, '', class: 'form-control', placeholder: 'Ваш телефон' %>
+          <label for="phone_number"><span class="glyphicon glyphicon-user"></span> Телефон*</label> <span class="phonespan"></span>
+          <%= text_field_tag :phone_number, '',id: 'order_phone', class: 'form-control', placeholder: 'Ваш телефон', required: true, pattern: '((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}' %>
         </div>
-        <%= submit_tag 'Заказать звонок', class: 'btn btn-block' do%>
+        <%= submit_tag 'Заказать звонок', class: 'btn btn-block', onclick: "yaCounter42021524.reachGoal('ORDER_COMPLETED'); return true;" do%>
             <span class="glyphicon glyphicon-ok"></span>
         <% end %>
     <%end%>
 <%end%>
-    <!--<form role="form">
-      <div class="form-group">
-        <label for="first-name"><span class="glyphicon glyphicon-shopping-cart"></span> Имя*</label>
-        <input type="text" class="form-control" id="first-name" placeholder="Ваше имя">
-      </div>
-      <div class="form-group">
-        <label for="phone-number"><span class="glyphicon glyphicon-user"></span> Телефон*</label>
-        <input type="text" class="form-control" id="phone-number" placeholder="Ваш номер телефона">
-      </div>
-      <button type="submit" class="btn btn-block">Заказать звонок
-        <span class="glyphicon glyphicon-ok"></span>
-      </button>
-    </form>-->
+<script>
+    $('#order_name').blur(function(){
+        var reg = /^[а-яА-ЯЁё]{2,15}$/;
+        var value = $('#order_name').val();
+        if (!reg.test(value)) {
+
+            $(".namespan").html('Имя должно состоять из 2-15 букв ');
+            $("#order_name").addClass('field-incorrect');
+        }else {
+            $(".namespan").html('');
+            $("#order_name").removeClass('field-incorrect');
+        }
+    })
+    $('#order_phone').blur(function(){
+        var reg = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+        var value = $('#order_phone').val();
+        if (!reg.test(value)) {
+
+            $(".phonespan").html('Введите существующий номер телефона');
+            $("#order_phone").addClass('field-incorrect');
+        }else {
+            $(".phonespan").html('');
+            $("#order_phone").removeClass('field-incorrect');
+        }
+    })
+</script>
+
