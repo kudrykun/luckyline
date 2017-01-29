@@ -43,6 +43,10 @@
             <%= f.label :meta_description, 'Мета-описание' %>
             <%= f.text_area :meta_description, class: 'form-control'%>
           </div>
+          <div class="form-group">
+            <%= f.label :preview, 'Изображение-превью' %>
+            <%= file_field_tag "preview", class: 'form-control'%>
+          </div>
           </div>
           <div class="form-group">
             <%= f.label :pictures, 'Изображения' %>

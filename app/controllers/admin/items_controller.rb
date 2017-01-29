@@ -28,6 +28,11 @@ class Admin::ItemsController < Admin::AdminController
         @item.pictures.create(image: image)
       }
     end
+    if params[:preview]
+        preview = Picture.create(image: params[:preview])
+      @item.preview = preview
+      @item.save
+    end
     redirect_to admin_items_path
   end
 
