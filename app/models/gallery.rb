@@ -3,6 +3,7 @@ class Gallery < ApplicationRecord
   include PgSearch
   pg_search_scope :search_everywhere, against: [:title]
   belongs_to :category
+  belongs_to :preview, class_name: 'Picture'
 
   #It is help to make nice routes
   extend FriendlyId

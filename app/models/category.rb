@@ -6,4 +6,5 @@ class Category < ApplicationRecord
   has_many :subs, :foreign_key => "parent_id", class_name: "Category"
   has_many :items
   has_many :galleries
+  belongs_to :preview, class_name: 'Picture'
 end

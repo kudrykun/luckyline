@@ -35,6 +35,16 @@
         </div>
       </div>
       <div class="panel panel-info">
+        <div class="panel-heading">Изображение-превью</div>
+        <div class="panel-body">
+          <%if @category.preview%>
+              <%= image_tag @category.preview.image(:for_grid)%>
+          <%else%>
+              Отсутствует
+          <%end%>
+        </div>
+      </div>
+      <div class="panel panel-info">
         <div class="panel-heading">Мета-название</div>
         <div class="panel-body"><%= @category.meta_title %></div>
       </div>

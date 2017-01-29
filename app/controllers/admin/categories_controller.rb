@@ -28,6 +28,11 @@ class Admin::CategoriesController < Admin::AdminController
         subcategory.save
       end
     end
+    if params[:preview]
+      preview = Picture.create(image: params[:preview])
+      @category.preview = preview
+      @category.save
+    end
     redirect_to admin_categories_path
   end
 

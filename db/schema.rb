@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170129151501) do
+ActiveRecord::Schema.define(version: 20170129185543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,9 @@ ActiveRecord::Schema.define(version: 20170129151501) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
+    t.integer  "preview_id"
     t.index ["parent_id"], name: "index_categories_on_parent_id", using: :btree
+    t.index ["preview_id"], name: "index_categories_on_preview_id", using: :btree
     t.index ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
   end
 
@@ -55,7 +57,9 @@ ActiveRecord::Schema.define(version: 20170129151501) do
     t.text     "description"
     t.string   "meta_title"
     t.string   "meta_description"
+    t.integer  "preview_id"
     t.index ["category_id"], name: "index_galleries_on_category_id", using: :btree
+    t.index ["preview_id"], name: "index_galleries_on_preview_id", using: :btree
     t.index ["slug"], name: "index_galleries_on_slug", unique: true, using: :btree
   end
 

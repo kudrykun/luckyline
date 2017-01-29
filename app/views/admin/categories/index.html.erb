@@ -29,6 +29,7 @@
           <th>ID</th>
           <th>Название</th>
           <th>Категория-родитель</th>
+          <th>Превью</th>
           <th></th>
         </tr>
         </thead>
@@ -43,6 +44,13 @@
                         <%= category.parent.title %>
                     <%else%>
                         Нет
+                    <%end%>
+                  </td>
+                  <td>
+                    <%if category.preview%>
+                        <%=image_tag category.preview.image(:thumb), class: 'img-responsive'%>
+                    <%else%>
+                        Отсутствует
                     <%end%>
                   </td>
                   <td>
