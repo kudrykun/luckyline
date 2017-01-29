@@ -44,6 +44,11 @@ class Admin::ItemsController < Admin::AdminController
         @item.pictures.create(image: image)
       }
     end
+    if !@item.preview && params[:preview]
+      preview = Picture.create(image: params[:preview])
+      @item.preview = preview
+      @item.save
+    end
     redirect_to admin_item_path(@item)
   end
 

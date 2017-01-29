@@ -45,6 +45,11 @@ class Admin::GalleriesController < Admin::AdminController
         @gallery.pictures.create(image: image)
       }
     end
+    if !@gallery.preview && params[:preview]
+      preview = Picture.create(image: params[:preview])
+      @gallery.preview = preview
+      @gallery.save
+    end
     redirect_to admin_gallery_path(@gallery)
   end
 

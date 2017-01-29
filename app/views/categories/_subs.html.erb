@@ -25,27 +25,14 @@
       <% @categories.each do |category| %>
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="item-container">
-              <%if category.items.size != 0%>
                   <%= link_to subs_and_items_path(category) do%>
                       <div class="item">
                         <div class="panel-footer">
                           <%=category.title%>
                         </div>
-                        <%sample_img = category.items.sample.pictures.sample%>
-                        <%=image_tag sample_img.image, alt: sample_img.alt, class: 'img-responsive'%>
+                        <%=image_tag category.preview.image, alt: category.preview.alt, class: 'img-responsive'%>
                       </div>
                   <%end%>
-              <%else%>
-                  <%= link_to subs_and_items_path(category) do%>
-                      <div class="item">
-                        <div class="panel-footer">
-                          <%=category.title%>
-                        </div>
-                        <%sample_img = category.galleries.sample.pictures.sample%>
-                        <%=image_tag sample_img.image, alt: sample_img.alt, class: 'img-responsive'%>
-                      </div>
-                  <%end%>
-              <%end%>
             </div>
           </div>
       <%end%>

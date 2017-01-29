@@ -27,11 +27,10 @@
             <div class="item-container">
               <%= link_to subs_and_items_path(category) do%>
               <div class="item">
-        пше         <div class="panel-footer">
+                 <div class="panel-footer">
                   <%=category.title%>
                 </div>
-                <%sample_img = category.items.sample.pictures.sample%>
-                <%=image_tag sample_img.image(:for_grid), alt: sample_img.alt, class: 'img-responsive'%>
+                <%=image_tag category.preview.image(:for_grid), alt: category.preview.alt, class: 'img-responsive'%>
               </div>
               <%end%>
             </div>
@@ -47,8 +46,7 @@
                         <div class="panel-footer">
                           <%=item.title%>
                         </div>
-                        <%sample_img = item.pictures.sample%>
-                        <%=image_tag sample_img.image(:for_grid), alt: sample_img.alt, class: 'img-responsive' %>
+                        <%=image_tag item.preview.image(:for_grid), alt: item.preview.alt, class: 'img-responsive' %>
                       </div>
                   <%end%>
                 </div>
@@ -64,8 +62,7 @@
                         <div class="panel-footer">
                           <%=gallery.title%>
                         </div>
-                        <%sample_img = gallery.pictures.sample%>
-                        <%=image_tag sample_img.image(:for_grid), alt: sample_img.alt, class: 'img-responsive' %>
+                        <%=image_tag gallery.preview.image(:for_grid), alt: gallery.preview.alt, class: 'img-responsive' %>
                       </div>
                   <%end%>
                 </div>
