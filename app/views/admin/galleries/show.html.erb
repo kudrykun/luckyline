@@ -45,13 +45,16 @@
         <div class="panel-body"><%= @gallery.meta_description %></div>
       </div>
       <div class="panel panel-info">
-        <div class="panel-heading">Изображения</div>
+        <div class="panel-heading">Изображения | Всего изображений: <%=@gallery.pictures.size%></div>
         <div class="panel-body">
-          <ul>
+          <div class="row">
             <% @gallery.pictures.each do |picture| %>
-                <li><%=image_tag picture.image(:thumb)%></li>
+                <div class="col-md-2">
+                  <%=image_tag picture.image(:thumb)%>
+                </div>
             <%end%>
-          </ul>
+
+          </div>
         </div>
       </div>
     </div>

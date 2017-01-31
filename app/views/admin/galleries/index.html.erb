@@ -30,6 +30,7 @@
           <th>Название</th>
           <th>Описание</th>
           <th>Категория</th>
+          <th>Изображений</th>
           <th>Превью</th>
           <th>Создан</th>
           <th>Обновлён</th>
@@ -44,6 +45,7 @@
                   <td><%= gallery.title %></td>
                   <td><%= gallery.description %></td>
                   <td><%= Category.find(gallery.category).title %></td>
+                  <td><%= gallery.pictures.size %></td>
                   <td>
                     <%if gallery.preview%>
                         <%=image_tag gallery.preview.image(:thumb), class: 'img-responsive'%>
