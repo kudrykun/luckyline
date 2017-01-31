@@ -23,14 +23,14 @@
   <div class="row">
     <div class="col-md-12">
       <% @categories.each do |category| %>
-          <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="col-md-4 col-sm-6 col-xs-6">
             <div class="item-container">
                   <%= link_to subs_and_items_path(category) do%>
                       <div class="item">
                         <div class="panel-footer">
                           <%=category.title%>
                         </div>
-                        <%=image_tag category.preview.image, alt: category.preview.alt, class: 'img-responsive'%>
+                        <%=image_tag category.preview.image(:for_grid), alt: category.preview.alt, class: 'img-responsive'%>
                       </div>
                   <%end%>
             </div>

@@ -12,10 +12,8 @@ class OpinionsController < ApplicationController
   end
 
   def create
-    @order = FinishedOrder.where(order_number: params[:opinion][:order_number]).present?
     @opinion = Opinion.new(opinion_params)
-    if @order
-      @opinion.save
+    if @opinion.save
       redirect_to :back, notice: 'Item was successfully created.'
     else
       redirect_to :back, notice: 'Item was not created.'
