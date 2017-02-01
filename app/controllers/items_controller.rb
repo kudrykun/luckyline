@@ -44,6 +44,6 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:title, :description, :category_id, :subcategory_id)
+      params.require(:item).permit(:title, :description, :category_id, :subcategory_id,:header)
     end
 end

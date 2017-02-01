@@ -30,6 +30,10 @@
           <th>Название</th>
           <th>Категория-родитель</th>
           <th>Превью</th>
+          <th><abbr title="Заполнен заголовок(SEO)">T</abbr></th>
+          <th><abbr title="Заполнено писание(SEO)">D</abbr></th>
+          <th><abbr title="Заполнен тег h1">H1</abbr></th>
+          <th><abbr title="Альтернативный текст для обложки">PA</abbr></th>
           <th></th>
         </tr>
         </thead>
@@ -53,6 +57,34 @@
                         Отсутствует
                     <%end%>
                   </td>
+                  <td>
+                    <%if category.meta_title && category.meta_title != ''%>
+                        <attr title="<%=category.meta_title%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <%= icon('times', class: 'times-icon')%>
+                    <%end%>
+                  </td> <!--Заполнен заголовок(SEO)-->
+                  <td>
+                    <%if category.meta_description && category.meta_description != ''%>
+                        <attr title="<%=category.meta_description%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <%= icon('times', class: 'times-icon')%>
+                    <%end%>
+                  </td> <!--Заполнено писание(SEO)-->
+                  <td>
+                    <%if category.header && category.header != ''%>
+                        <attr title="<%=category.header%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <%= icon('times', class: 'times-icon')%>
+                    <%end%>
+                  </td> <!--Заполнен тег h1-->
+                  <td>
+                    <%if category.preview && category.preview.alt && category.preview.alt != '' %>
+                        <attr title="<%=category.preview.alt%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <%= icon('times', class: 'times-icon')%>
+                    <%end%>
+                  </td> <!--Альтернативный текст для обложки-->
                   <td>
                     <ul class="controls">
                       <li title="Показать">

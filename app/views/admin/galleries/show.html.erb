@@ -26,7 +26,13 @@
         <div class="panel-heading">Изображение-превью</div>
         <div class="panel-body">
           <%if @gallery.preview%>
-              <%= image_tag @gallery.preview.image(:for_grid)%>
+              <%= image_tag @gallery.preview.image(:for_grid), alt: @gallery.preview.alt, class: 'img-responsive'%>
+              <%= form_tag "/admin/pictures/#{@gallery.preview.id}", method: 'put', remote: true , class: 'form-inline' do%>
+                  <div class="form-group">
+                    <%= text_field_tag :alt,@gallery.preview.alt, class:'form-control'%>
+                    <button type="submit" class="btn btn-default change-alt"><%=icon 'check'%></button>
+                  </div>
+              <%end%>
           <%else%>
               Отсутствует
           <%end%>
@@ -48,16 +54,24 @@
         <div class="panel-heading">Мета-описание</div>
         <div class="panel-body"><%= @gallery.meta_description %></div>
       </div>
-      <div class="panel panel-info">
+      <div class="panel panel-info" id="image-panel">
         <div class="panel-heading">Изображения | Всего изображений: <%=@gallery.pictures.size%></div>
         <div class="panel-body">
           <div class="row">
             <% @gallery.pictures.each do |picture| %>
-                <div class="col-md-2">
-                  <%=image_tag picture.image(:thumb)%>
+                <div class="col-md-3">
+                  <div class="image-wrapper">
+                    <%=image_tag picture.image(:for_grid), alt: picture.alt, class: 'img-responsive'%>
+
+                    <%= form_tag "/admin/pictures/#{picture.id}", method: 'put', remote: true , class: 'form-inline' do%>
+                        <div class="form-group">
+                          <%= text_field_tag :alt,picture.alt, class:'form-control'%>
+                          <button type="submit" class="btn btn-default change-alt"><%=icon 'check'%></button>
+                        </div>
+                    <%end%>
+                  </div>
                 </div>
             <%end%>
-
           </div>
         </div>
       </div>

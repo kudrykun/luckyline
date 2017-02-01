@@ -42,7 +42,13 @@
         <div class="panel-heading">Изображение-превью</div>
         <div class="panel-body">
           <%if @category.preview%>
-              <%= image_tag @category.preview.image(:for_grid)%>
+              <%= image_tag @category.preview.image(:for_grid), alt: @category.preview.alt, class: 'img-responsive'%>
+              <%= form_tag "/admin/pictures/#{@category.preview.id}", method: 'put', remote: true , class: 'form-inline' do%>
+                  <div class="form-group">
+                    <%= text_field_tag :alt,@category.preview.alt, class:'form-control'%>
+                    <button type="submit" class="btn btn-default change-alt"><%=icon 'check'%></button>
+                  </div>
+              <%end%>
           <%else%>
               Отсутствует
           <%end%>

@@ -32,7 +32,10 @@
           <th>Категория</th>
           <th>Изображений</th>
           <th>Превью</th>
-          <th>Создан</th>
+          <th><abbr title="Заполнен заголовок(SEO)">T</abbr></th>
+          <th><abbr title="Заполнено писание(SEO)">D</abbr></th>
+          <th><abbr title="Заполнен тег h1">H1</abbr></th>
+          <th><abbr title="Альтернативный текст для обложки">PA</abbr></th>
           <th>Обновлён</th>
           <th></th>
         </tr>
@@ -53,7 +56,34 @@
                         Отсутствует
                     <%end%>
                   </td>
-                  <td><%= time_tag gallery.created_at %></td>
+                  <td>
+                    <%if gallery.meta_title && gallery.meta_title != ''%>
+                        <attr title="<%=gallery.meta_title%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <%= icon('times', class: 'times-icon')%>
+                    <%end%>
+                  </td> <!--Заполнен заголовок(SEO)-->
+                  <td>
+                    <%if gallery.meta_description && gallery.meta_description != ''%>
+                        <attr title="<%=gallery.meta_description%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <%= icon('times', class: 'times-icon')%>
+                    <%end%>
+                  </td> <!--Заполнено писание(SEO)-->
+                  <td>
+                    <%if gallery.header && gallery.header != ''%>
+                        <attr title="<%=gallery.header%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <%= icon('times', class: 'times-icon')%>
+                    <%end%>
+                  </td> <!--Заполнен тег h1-->
+                  <td>
+                    <%if gallery.preview && gallery.preview.alt && gallery.preview.alt != '' %>
+                        <attr title="<%=gallery.preview.alt%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <%= icon('times', class: 'times-icon')%>
+                    <%end%>
+                  </td> <!--Альтернативный текст для обложки-->
                   <td><%= time_tag gallery.updated_at %></td>
                   <td>
                     <ul class="controls">

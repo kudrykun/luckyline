@@ -30,7 +30,10 @@
           <th>Название</th>
           <th>Категория</th>
           <th>Превью</th>
-          <th>Создан</th>
+          <th><abbr title="Заполнен заголовок(SEO)">T</abbr></th>
+          <th><abbr title="Заполнено писание(SEO)">D</abbr></th>
+          <th><abbr title="Заполнен тег h1">H1</abbr></th>
+          <th><abbr title="Альтернативный текст для обложки">PA</abbr></th>
           <th>Обновлён</th>
           <th></th>
         </tr>
@@ -39,18 +42,45 @@
         <%if @items%>
             <%@items.each do |item|%>
                 <tr>
-                  <th><%= item.id %></th>
-                  <td><%= item.title %></td>
-                  <td><%= Category.find(item.category).title %></td>
+                  <th><%= item.id %></th><!--id-->
+                  <td><%= item.title %></td><!--Название товара-->
+                  <td><%= Category.find(item.category).title %></td> <!--Родительская категория-->
                   <td>
                     <%if item.preview%>
                       <%=image_tag item.preview.image(:thumb), class: 'img-responsive'%>
                     <%else%>
                       Отсутствует
                     <%end%>
-                  </td>
-                  <td><%= time_tag item.created_at %></td>
-                  <td><%= time_tag item.updated_at %></td>
+                  </td><!--Изображение обложка-->
+                  <td>
+                    <%if item.meta_title && item.meta_title != ''%>
+                        <attr title="<%=item.meta_title%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <%= icon('times', class: 'times-icon')%>
+                    <%end%>
+                  </td> <!--Заполнен заголовок(SEO)-->
+                  <td>
+                    <%if item.meta_description && item.meta_description != ''%>
+                        <attr title="<%=item.meta_description%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <%= icon('times', class: 'times-icon')%>
+                    <%end%>
+                  </td> <!--Заполнено писание(SEO)-->
+                  <td>
+                    <%if item.header && item.header != ''%>
+                        <attr title="<%=item.header%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <%= icon('times', class: 'times-icon')%>
+                    <%end%>
+                  </td> <!--Заполнен тег h1-->
+                  <td>
+                    <%if item.preview && item.preview.alt && item.preview.alt != '' %>
+                        <attr title="<%=item.preview.alt%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <%= icon('times', class: 'times-icon')%>
+                    <%end%>
+                  </td> <!--Альтернативный текст для обложки-->
+                  <td><%= time_tag item.updated_at %></td><!--Последнее обновление-->
                   <td>
                     <ul class="controls">
                       <li title="Показать">
