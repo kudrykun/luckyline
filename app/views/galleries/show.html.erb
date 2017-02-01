@@ -11,7 +11,14 @@
       </div>
     </div>
   </div>
-  <%if @gallery.description%>
+  <%if @gallery.header && @gallery.header != ''%>
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="main-header"><%=@gallery.header.html_safe%></h1>
+        </div>
+      </div>
+  <%end%>
+  <%if @gallery.description && @gallery.description != ''%>
   <div class="row">
     <div class="col-md-12">
       <div class="panel panel-default description-panel">

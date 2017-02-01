@@ -28,6 +28,10 @@
             <%= f.text_area :description, class: 'form-control'%>
           </div>
           <div class="form-group">
+            <%= f.label :header, 'Заголовок H1' %>
+            <%= f.text_field :header, class: 'form-control'%>
+          </div>
+          <div class="form-group">
             <%= f.label :category_id, 'Категория' %>
             <%= f.collection_select :category_id, @categories.order(:id), :id, :title, class: 'form-control'%>
           </div>
