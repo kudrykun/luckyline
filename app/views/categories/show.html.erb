@@ -12,11 +12,11 @@
           </li>
         </ol>
       </div>
+      <%if @category.header && @category.header != ''%>
       <div class="col-md-12">
-        <div class="pull-right">
-          <%= render 'results/search_form' %>
-        </div>
+        <h1 class="main-header"><%=@category.header.html_safe%></h1>
       </div>
+      <%end%>
     </div>
   </div>
   <div class="row">

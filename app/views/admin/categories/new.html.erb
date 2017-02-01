@@ -44,6 +44,10 @@
             <%= f.text_area :description, class: 'form-control'%>
           </div>
           <div class="form-group">
+            <%= f.label :header, 'Заголовок H1' %>
+            <%= f.text_field :header, class: 'form-control'%>
+          </div>
+          <div class="form-group">
             <%= f.label :parent_id, 'Родитель' %>
             <%= f.collection_select :parent_id, @categories.order(:id), :id, :title, include_blank: true, class: 'form-control'%>
           </div>
