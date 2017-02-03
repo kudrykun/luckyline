@@ -56,30 +56,37 @@
                     <%if item.meta_title && item.meta_title != ''%>
                         <attr title="<%=item.meta_title%>"><%= icon('check', class: 'check-icon')%></attr>
                     <%else%>
-                        <%= icon('times', class: 'times-icon')%>
+                        <attr title="Title отсутствует"><%= icon('times', class: 'times-icon')%></attr>
                     <%end%>
                   </td> <!--Заполнен заголовок(SEO)-->
                   <td>
                     <%if item.meta_description && item.meta_description != ''%>
                         <attr title="<%=item.meta_description%>"><%= icon('check', class: 'check-icon')%></attr>
                     <%else%>
-                        <%= icon('times', class: 'times-icon')%>
+                        <attr title="Description отсутствует"><%= icon('times', class: 'times-icon')%></attr>
                     <%end%>
-                  </td> <!--Заполнено писание(SEO)-->
+                  </td> <!--Заполнено описание(SEO)-->
                   <td>
                     <%if item.header && item.header != ''%>
                         <attr title="<%=item.header%>"><%= icon('check', class: 'check-icon')%></attr>
                     <%else%>
-                        <%= icon('times', class: 'times-icon')%>
+                        <attr title="Тег H1 отсутствует"><%= icon('times', class: 'times-icon')%></attr>
                     <%end%>
                   </td> <!--Заполнен тег h1-->
                   <td>
                     <%if item.preview && item.preview.alt && item.preview.alt != '' %>
                         <attr title="<%=item.preview.alt%>"><%= icon('check', class: 'check-icon')%></attr>
                     <%else%>
-                        <%= icon('times', class: 'times-icon')%>
+                        <attr title="Альтернативный текст для обложки отсутствует"><%= icon('times', class: 'times-icon')%></attr>
                     <%end%>
                   </td> <!--Альтернативный текст для обложки-->
+                  <td>
+                    <%if item.description && item.description != ''%>
+                        <attr title="<%=item.description%>"><%= icon('check', class: 'check-icon')%></attr>
+                    <%else%>
+                        <attr title="Описание отсутствует"><%= icon('times', class: 'times-icon')%></attr>
+                    <%end%>
+                  </td> <!--Заполнено описание-->
                   <td><%= time_tag item.updated_at %></td><!--Последнее обновление-->
                   <td>
                     <ul class="controls">
