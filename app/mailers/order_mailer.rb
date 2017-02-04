@@ -1,9 +1,12 @@
 class OrderMailer < ApplicationMailer
-  default from: 'luckyteam@lucky-line-mebel.ru'
+
   def order_notice(order)
     @order = order
-    attachments.inline["#{@order.id}"] = File.read(@order.image.path)
+    if @order.image.exists?
+    attachments.inline["#{@order.id}"] = {content: File.read(@order.image.path),mime_type: "image/png"}
+    end
     mail(to: 'luckyteam@lucky-line-mebel.ru',subject: 'НОВАЯ ЗАЯВКА')
+
   end
   def subscriber_notice(order)
     @order = order

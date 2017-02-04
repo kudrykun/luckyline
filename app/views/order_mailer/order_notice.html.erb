@@ -33,4 +33,6 @@
     </tr>
   </tbody>
 </table>
+<%if @order.image.exists?%>
 <%=image_tag attachments["#{@order.id}"].url, class: 'attachment-image'%>
+<%end%>
