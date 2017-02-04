@@ -16,5 +16,6 @@ module Luckyline
     config.i18n.default_locale = :ru
     config.assets.initialize_on_precompile = false
     config.serve_static_assets = true
+    config.time_zone = "Moscow"
   end
 end

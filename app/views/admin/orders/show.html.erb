@@ -29,6 +29,10 @@
         </div>
       </div>
       <div class="panel panel-info">
+        <div class="panel-heading">Изображение</div>
+        <div class="panel-body"><%=image_tag @order.image %></div>
+      </div>
+      <div class="panel panel-info">
         <div class="panel-heading">Создано</div>
         <div class="panel-body"><%= time_tag @order.created_at %></div>
       </div>

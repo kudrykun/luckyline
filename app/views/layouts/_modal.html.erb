@@ -7,11 +7,7 @@
         <p>Оставьте свой номер телефона, мы свяжемся с вами и ответим на интересующие Вас вопросы!</p>
       </div>
       <div class="modal-body">
-        <%if controller_name == 'items' && action_name == 'show'%>
-            <%=render :partial => 'orders/new', object: @order%>
-        <%else%>
-            <%=render :partial => 'orders/new'%>
-        <%end%>
+            <%=render 'orders/new'%>
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">

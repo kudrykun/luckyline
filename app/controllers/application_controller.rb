@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout :layout_by_resource
-  before_action :number_of_news
+  before_action :number_of_news,:set_order
 
   protected
 
@@ -14,5 +14,9 @@ class ApplicationController < ActionController::Base
   private
   def number_of_news
     @number_of_news = NewsItem.all.size
+  end
+
+  def set_order
+    @order = Order.new
   end
 end

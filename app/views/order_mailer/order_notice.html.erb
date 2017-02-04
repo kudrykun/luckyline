@@ -1,0 +1,36 @@
+<h1 class="order-notice-header">Ура! У нас новая заявка</h1>
+<p>На сайте lucky-line-mebel.ru оставлена новая заявка:<br></p>
+<table class="order-notice-table">
+  <caption>Данные о заявке</caption>
+  <tbody>
+    <tr>
+      <td>Имя</td>
+      <td><%=@order.name%></td>
+    </tr>
+    <tr>
+      <td>Номер телефона</td>
+      <td><%=@order.phone_number%></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><%=@order.email%></td>
+    </tr>
+    <tr>
+      <td>Из</td>
+      <td>
+        <%if @order.item%>
+            <%=@order.item.title%>
+        <%end%>
+      </td>
+    </tr>
+    <tr>
+      <td>Дата</td>
+      <td><%=time_tag @order.created_at%></td>
+    </tr>
+    <tr>
+      <td>Нужно ответить до</td>
+      <td><%=time_tag @order.created_at + 1.day%></td>
+    </tr>
+  </tbody>
+</table>
+<%=image_tag attachments["#{@order.id}"].url, class: 'attachment-image'%>

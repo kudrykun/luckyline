@@ -47,10 +47,13 @@ gem 'rails_db_dump', '~>1.0.0'
 gem 'yaml_db'
 gem 'meta-tags'
 gem 'sitemap_generator'
+gem "letter_opener", :group => :development
+gem 'remotipart', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+
 end
 
 group :development do
