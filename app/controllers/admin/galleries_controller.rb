@@ -54,6 +54,14 @@ class Admin::GalleriesController < Admin::AdminController
   end
 
   def destroy
+    if @gallery.preview.exists?
+      @gallery.preview.destroy
+    end
+    if @gallery.pictures.size > 0
+      @gallery.pictures.each do |picture|
+        picture.destory
+      end
+    end
     @gallery.destroy
     redirect_to admin_galleries_path
   end

@@ -53,6 +53,14 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def destroy
+    if @item.preview && @item.preview.image.exists?
+      @item.preview.destroy
+    end
+    if @item.pictures.size > 0
+      @item.pictures.each do |picture|
+        picture.destroy
+      end
+    end
     @item.destroy
     redirect_to admin_items_path
   end

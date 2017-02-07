@@ -25,6 +25,9 @@ class Admin::OpinionsController < Admin::AdminController
   end
 
   def destroy
+    if Opinion.find(params[:id]).image.exists?
+      Opinion.find(params[:id]).image.destroy
+    end
     Opinion.find(params[:id]).destroy
     redirect_to :back
   end

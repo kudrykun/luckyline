@@ -55,6 +55,9 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   def destroy
+    if @category.preview.exists?
+      @category.preview.destroy
+    end
     @category.destroy
     redirect_to :back
   end

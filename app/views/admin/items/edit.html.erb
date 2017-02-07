@@ -61,7 +61,7 @@
                           </div>
                           <div class="image-container">
                             <div class="image">
-                              <%=image_tag @item.preview.image,class: 'img-responsive'%>
+                              <%=image_tag @item.preview.image(:for_grid),class: 'img-responsive'%>
 
                             </div>
                           </div>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="image-container">
                       <div class="image">
-                          <%=image_tag picture.image,class: 'img-responsive'%>
+                          <%=image_tag picture.image(:for_grid),class: 'img-responsive'%>
 
                       </div>
                     </div>

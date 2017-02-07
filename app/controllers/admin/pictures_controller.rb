@@ -10,8 +10,7 @@ class Admin::PicturesController < Admin::AdminController
   end
   def destroy
     @picture = Picture.find(params[:id])
-    @picture.image = nil
-    @picture.save
+    @picture.image.destroy
     @picture.destroy
 
     respond_to do |format|

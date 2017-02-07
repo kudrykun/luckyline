@@ -49,6 +49,7 @@ gem 'meta-tags'
 gem 'sitemap_generator'
 gem "letter_opener", :group => :development
 gem 'remotipart', '~> 1.2'
+gem 'paperclip-compression'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
