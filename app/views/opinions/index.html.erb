@@ -16,7 +16,11 @@
             <%=opinion.text%>
             <%=render 'opinions/info', opinion: opinion%>
           </div>
-          <div class="col-md-4 col-sm-12 opinion-image"><%=image_tag opinion.image, class: 'img-responsive'%></div>
+          <div class="col-md-4 col-sm-12 opinion-image">
+            <%=link_to opinion.image.url(:original), {'data-toggle': 'lightbox'} do %>
+                <%=image_tag opinion.image(:thumb), class: 'img-responsive', alt: opinion.alt%>
+            <%end%>
+          </div>
         <% else %>
           <div class="col-md-1 col-sm-1 col-xs-12">
             <span class="left-quotes">&#8220</span>

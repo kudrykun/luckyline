@@ -14,5 +14,6 @@
  *= require admin/dashboard
  *= require admin/items
  *= require admin/orders
+ *= require main/bootstrap-include
  *= require_self
  */

@@ -2,11 +2,205 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dc48681-0be3-41ca-b3f1-36df900be814" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/342/for_grid/Снимок_экрана_от_2017-01-15_00-14-45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/342/for_show/Снимок_экрана_от_2017-01-15_00-14-45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/342/original/Снимок_экрана_от_2017-01-15_00-14-45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/342/thumb/Снимок_экрана_от_2017-01-15_00-14-45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/343/for_grid/Снимок_экрана_от_2017-01-12_19-54-50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/343/for_show/Снимок_экрана_от_2017-01-12_19-54-50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/343/original/Снимок_экрана_от_2017-01-12_19-54-50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/343/thumb/Снимок_экрана_от_2017-01-12_19-54-50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/344/for_grid/Снимок_экрана_от_2017-01-14_23-16-26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/344/for_show/Снимок_экрана_от_2017-01-14_23-16-26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/344/original/Снимок_экрана_от_2017-01-14_23-16-26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/344/thumb/Снимок_экрана_от_2017-01-14_23-16-26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/349/for_grid/Hanex_GAM-001_AFTERSNOW.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/349/for_show/Hanex_GAM-001_AFTERSNOW.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/349/original/Hanex_GAM-001_AFTERSNOW.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/349/thumb/Hanex_GAM-001_AFTERSNOW.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/350/for_grid/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/350/for_show/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/350/original/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/opinions/images/000/000/350/thumb/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/176/medium/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/176/original/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/176/thumb/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/178/medium/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/178/original/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/178/thumb/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/179/medium/-0IGzG4VeiQ.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/179/original/-0IGzG4VeiQ.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/179/thumb/-0IGzG4VeiQ.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/180/medium/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/180/original/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/180/thumb/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/182/medium/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/182/original/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/182/thumb/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/183/medium/create1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/183/original/create1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/183/thumb/create1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/186/medium/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/186/original/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/186/thumb/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/187/medium/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/187/original/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/187/thumb/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/188/medium/create3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/188/original/create3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/188/thumb/create3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/189/medium/create3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/189/original/create3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/189/thumb/create3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/195/medium/deposit_types.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/195/original/deposit_types.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/195/thumb/deposit_types.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/198/medium/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/198/original/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/198/thumb/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/199/medium/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/199/original/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/199/thumb/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/200/medium/deposit_types.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/200/original/deposit_types.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/200/thumb/deposit_types.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/201/medium/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/201/original/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/201/thumb/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/202/medium/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/202/original/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/202/thumb/dashboard1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/203/medium/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/203/original/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/203/thumb/dashboard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/204/medium/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/204/original/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/204/thumb/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/205/medium/create2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/205/original/create2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/205/thumb/create2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/207/medium/create3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/207/original/create3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/207/thumb/create3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/208/medium/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/208/original/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/208/thumb/dashboard3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/209/medium/-0IGzG4VeiQ.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/209/original/-0IGzG4VeiQ.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/209/thumb/-0IGzG4VeiQ.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/210/medium/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/210/original/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/system/orders/images/000/000/210/thumb/1.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/801/for_grid/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/801/for_grid/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/801/for_show/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/801/for_show/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/801/thumb/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/801/thumb/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/802/for_grid/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/802/for_grid/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/802/for_show/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/802/for_show/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/802/thumb/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/802/thumb/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/803/for_grid/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/803/for_grid/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/803/for_show/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/803/for_show/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/803/thumb/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/803/thumb/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/804/for_grid/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/804/for_grid/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/804/for_show/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/804/for_show/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/804/thumb/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/804/thumb/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/805/for_grid/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/805/for_grid/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/805/for_show/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/805/for_show/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/805/thumb/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/805/thumb/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/806/for_grid/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/806/for_grid/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/806/for_show/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/806/for_show/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/806/thumb/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/806/thumb/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/807/for_grid/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/807/for_grid/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/807/for_show/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/807/for_show/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/807/thumb/1_практика_ГОТОВЫЙ.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/807/thumb/1_практика_ГОТОВЫЙ.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/813/for_grid/account.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/813/for_grid/account.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/813/for_show/account.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/813/for_show/account.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/813/thumb/account.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/813/thumb/account.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/817/for_grid/account.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/817/for_grid/account.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/817/for_show/account.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/817/for_show/account.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/817/thumb/account.png" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/817/thumb/account.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/825/for_grid/4vFGUj2AHZ4.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/825/for_grid/4vFGUj2AHZ4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/825/for_show/4vFGUj2AHZ4.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/825/for_show/4vFGUj2AHZ4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/826/for_grid/fbb7JRPHkt8.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/826/for_grid/fbb7JRPHkt8.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/826/for_show/fbb7JRPHkt8.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/826/for_show/fbb7JRPHkt8.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/836/for_grid/fbb7JRPHkt8.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/836/for_grid/fbb7JRPHkt8.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/836/for_show/fbb7JRPHkt8.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/836/for_show/fbb7JRPHkt8.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/850/for_grid/DwdRprVZ-cc.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/850/for_grid/DwdRprVZ-cc.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/850/for_show/DwdRprVZ-cc.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/850/for_show/DwdRprVZ-cc.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/850/thumb/DwdRprVZ-cc.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/850/thumb/DwdRprVZ-cc.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/857/for_grid/agt1.JPG" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/857/for_grid/agt1.JPG" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/857/for_show/agt1.JPG" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/857/for_show/agt1.JPG" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/857/thumb/agt1.JPG" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/857/thumb/agt1.JPG" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/858/for_grid/1000x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/858/for_grid/1000x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/858/for_show/1000x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/858/for_show/1000x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/858/thumb/1000x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/858/thumb/1000x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/859/for_grid/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/859/for_grid/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/859/for_show/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/859/for_show/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/859/thumb/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/859/thumb/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/860/for_grid/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/860/for_grid/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/860/for_show/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/860/for_show/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/860/thumb/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/860/thumb/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/861/for_grid/1920x1300.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/861/for_grid/1920x1300.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/861/for_show/1920x1300.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/861/for_show/1920x1300.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/861/thumb/1920x1300.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/861/thumb/1920x1300.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/862/for_grid/1000x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/862/for_grid/1000x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/862/for_show/1000x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/862/for_show/1000x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/862/thumb/1000x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/862/thumb/1000x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/863/for_grid/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/863/for_grid/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/863/for_show/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/863/for_show/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/863/thumb/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/863/thumb/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/864/for_grid/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/864/for_grid/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/864/for_show/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/864/for_show/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/864/thumb/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/864/thumb/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/865/for_grid/1920x1300.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/865/for_grid/1920x1300.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/865/for_show/1920x1300.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/865/for_show/1920x1300.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/865/thumb/1920x1300.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/865/thumb/1920x1300.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/866/for_grid/Fg4_s2SjdKk.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/866/for_grid/Fg4_s2SjdKk.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/866/for_show/Fg4_s2SjdKk.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/866/for_show/Fg4_s2SjdKk.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/866/thumb/Fg4_s2SjdKk.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/866/thumb/Fg4_s2SjdKk.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/867/for_grid/1000x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/867/for_grid/1000x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/867/for_show/1000x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/867/for_show/1000x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/867/thumb/1000x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/867/thumb/1000x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/868/for_grid/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/868/for_grid/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/868/for_show/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/868/for_show/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/868/thumb/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/868/thumb/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/869/for_grid/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/869/for_grid/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/869/for_show/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/869/for_show/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/869/thumb/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/869/thumb/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/870/for_grid/1920x1300.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/870/for_grid/1920x1300.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/870/for_show/1920x1300.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/870/for_show/1920x1300.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/870/thumb/1920x1300.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/870/thumb/1920x1300.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/871/for_grid/Tgqdt1KmCqc.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/871/for_grid/Tgqdt1KmCqc.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/871/for_show/Tgqdt1KmCqc.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/871/for_show/Tgqdt1KmCqc.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/871/thumb/Tgqdt1KmCqc.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/871/thumb/Tgqdt1KmCqc.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/873/for_grid/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/873/for_grid/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/873/for_show/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/873/for_show/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/873/thumb/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/873/thumb/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/874/for_grid/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/874/for_grid/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/874/for_show/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/874/for_show/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/874/thumb/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/874/thumb/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/876/for_grid/-0IGzG4VeiQ.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/876/for_grid/-0IGzG4VeiQ.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/876/for_show/-0IGzG4VeiQ.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/876/for_show/-0IGzG4VeiQ.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/876/thumb/-0IGzG4VeiQ.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/876/thumb/-0IGzG4VeiQ.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/877/for_grid/1000x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/877/for_grid/1000x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/877/for_show/1000x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/877/for_show/1000x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/877/thumb/1000x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/877/thumb/1000x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/878/for_grid/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/878/for_grid/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/878/for_show/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/878/for_show/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/878/thumb/1300x1920.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/878/thumb/1300x1920.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/879/for_grid/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/879/for_grid/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/879/for_show/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/879/for_show/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/879/thumb/1920x1000.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/879/thumb/1920x1000.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/880/for_grid/1920x1300.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/880/for_grid/1920x1300.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/880/for_show/1920x1300.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/880/for_show/1920x1300.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/880/thumb/1920x1300.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/880/thumb/1920x1300.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/881/for_grid/DwdRprVZ-cc.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/881/for_grid/DwdRprVZ-cc.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/881/for_show/DwdRprVZ-cc.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/881/for_show/DwdRprVZ-cc.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/system/pictures/images/000/003/881/thumb/DwdRprVZ-cc.jpg" afterPath="$PROJECT_DIR$/public/system/pictures/images/000/003/881/thumb/DwdRprVZ-cc.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/scroll.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/scroll.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/galleries/show.html.erb" afterPath="$PROJECT_DIR$/app/views/galleries/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/items/_carousel.html.erb" afterPath="$PROJECT_DIR$/app/views/items/_carousel.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/items/show.html.erb" afterPath="$PROJECT_DIR$/app/views/items/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/admin/admin.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/admin/admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/opinion.rb" afterPath="$PROJECT_DIR$/app/models/opinion.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/opinions/index.html.erb" afterPath="$PROJECT_DIR$/app/views/opinions/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -32,32 +226,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/galleries/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/admin.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="70" lean-forward="false" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/opinions/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
-              <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="opinions_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/opinions_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schema.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/schema.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1831">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1486577993001" expanded="true" signature="4126:6044" ph="do ... end" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,8 +261,8 @@
       <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/items/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            <state relative-caret-position="252">
+              <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -75,28 +271,18 @@
       <file leaf-file-name="_carousel.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/items/_carousel.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            <state relative-caret-position="360">
+              <caret line="20" column="23" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="20" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main/styles.scss">
+      <file leaf-file-name="opinion.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="489" column="21" lean-forward="false" selection-start-line="489" selection-start-column="14" selection-end-line="489" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scroll.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/scroll.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,9 +343,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/initializers/assets.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/admin/admin.css" />
-        <option value="$PROJECT_DIR$/app/views/order_mailer/order_notice.js.erb" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/views/order_mailer/subscriber_notice.html.erb" />
@@ -178,7 +361,6 @@
         <option value="$PROJECT_DIR$/app/mailers/order_mailer.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/picture.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/items/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/admin/galleries/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/admin/categories/edit.html.erb" />
@@ -208,6 +390,10 @@
         <option value="$PROJECT_DIR$/app/views/items/_carousel.html.erb" />
         <option value="$PROJECT_DIR$/app/views/items/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/galleries/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/admin/admin.css" />
+        <option value="$PROJECT_DIR$/app/models/picture.rb" />
+        <option value="$PROJECT_DIR$/app/models/opinion.rb" />
+        <option value="$PROJECT_DIR$/app/views/opinions/index.html.erb" />
       </list>
     </option>
   </component>
@@ -266,11 +452,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="luckyline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="luckyline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="luckyline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="luckyline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opinions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -332,11 +554,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="galleries" />
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -368,59 +586,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luckyline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luckyline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luckyline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luckyline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -711,15 +877,15 @@
       <workItem from="1486379474011" duration="918000" />
       <workItem from="1486409560754" duration="3885000" />
       <workItem from="1486461323950" duration="7702000" />
-      <workItem from="1486542105407" duration="10970000" />
+      <workItem from="1486542105407" duration="15435000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141933000" />
+    <option name="totallyTimeSpent" value="146398000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19354838" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -806,42 +972,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/mime_types.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/opinions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/orders/create.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/galleries/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="58" column="23" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="58" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/order.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -1126,46 +1256,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/picture.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main/styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="489" column="21" lean-forward="false" selection-start-line="489" selection-start-column="14" selection-end-line="489" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/items/_carousel.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/scroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/items/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/galleries/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
@@ -1186,6 +1276,88 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/admin/admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/picture.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="489" column="21" lean-forward="false" selection-start-line="489" selection-start-column="14" selection-end-line="489" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/scroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/items/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/items/_carousel.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="23" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="20" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1831">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1486577993001" expanded="true" signature="4126:6044" ph="do ... end" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/opinion.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/opinions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/opinions/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding />
         </state>
       </provider>
