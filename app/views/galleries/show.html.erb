@@ -33,17 +33,8 @@
     <div class="col-md-12">
       <% @gallery.pictures.each do |picture| %>
           <div class="col-md-4 text-center">
-            <div class="gallery_container">
-              <div class="gallery modal-image">
-                <div class="gallery-hover">
-                  <div class="gallery-hover-content">
-                    <%= icon('search-plus')%>
-                  </div>
-                </div>
-                <div class="pic-container">
-                  <%=image_tag picture.image(:for_grid), class: 'img-responsive'%>
-                </div>
-              </div>
+            <div class="catalog-gallery-container">
+              <%=image_tag picture.image(:for_grid), class: 'img-responsive'%>
             </div>
           </div>
       <%end%>

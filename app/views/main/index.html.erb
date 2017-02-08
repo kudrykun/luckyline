@@ -57,21 +57,7 @@
     </div>
   </div>
 </section>
-<!--<section id="self-description">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h1 class="info-header">Кухни LuckyLine</h1>
-        <hr class="primary">
-      </div>
-    </div>
-    <div clas="row">
-      <div clas="col-md-12 text-center">
 
-      </div>
-    </div>
-  </div>
-</section>-->
 <section id="examples" >
   <div class="container">
     <div class="col-md-12 text-center">
@@ -82,20 +68,11 @@
             <hr class="primary">
           </div>
         </div>
-
-
         <div class="row">
           <div class="col-md-6 col-sm-6 col-xs-6">
             <div class="example-item">
             <%=link_to show_item_path(@item1) do%>
-              <div class="example-item-image">
-                <div class="image-container">
-                  <div class="image">
-                    <%=image_tag @item1.pictures.sample.image(:for_show), class: 'img-responsive'%>
-                  </div>
-                </div>
-                <!--<img src="http://lorempixel.com/1600/900" class="img-responsive">-->
-              </div>
+                  <%=image_tag @item1.pictures.sample.image(:for_show), class: 'img-responsive'%>
               <div class="example-item-text">
                 <%= @item1.title%>
               </div>
@@ -105,14 +82,7 @@
           <div class="col-md-6 col-sm-6 col-xs-6">
             <div class="example-item">
               <%=link_to show_item_path(@item2) do%>
-                  <div class="example-item-image">
-                    <div class="image-container">
-                      <div class="image">
-                        <%=image_tag @item2.pictures.sample.image(:for_show), class: 'img-responsive'%>
-                      </div>
-                    </div>
-                    <!--<img src="http://lorempixel.com/1600/900" class="img-responsive">-->
-                  </div>
+                  <%=image_tag @item2.pictures.sample.image(:for_show), class: 'img-responsive'%>
                   <div class="example-item-text">
                     <%= @item2.title%>
                   </div>
@@ -124,14 +94,7 @@
           <div class="col-md-6 col-sm-6 col-xs-6">
             <div class="example-item">
               <%=link_to show_item_path(@item3) do%>
-                  <div class="example-item-image">
-                    <div class="image-container">
-                      <div class="image">
-                        <%=image_tag @item3.pictures.sample.image(:for_show), class: 'img-responsive'%>
-                      </div>
-                    </div>
-                    <!--<img src="http://lorempixel.com/1600/900" class="img-responsive">-->
-                  </div>
+                  <%=image_tag @item3.pictures.sample.image(:for_show), class: 'img-responsive'%>
                   <div class="example-item-text">
                     <%= @item3.title%>
                   </div>
@@ -141,14 +104,7 @@
           <div class="col-md-6 col-sm-6 col-xs-6">
             <div class="example-item">
               <%=link_to show_item_path(@item4) do%>
-                  <div class="example-item-image">
-                    <div class="image-container">
-                      <div class="image">
-                        <%=image_tag @item4.pictures.sample.image(:for_show), class: 'img-responsive'%>
-                      </div>
-                    </div>
-                    <!--<img src="http://lorempixel.com/1600/900" class="img-responsive">-->
-                  </div>
+                  <%=image_tag @item4.pictures.sample.image(:for_show), class: 'img-responsive'%>
                   <div class="example-item-text">
                     <%= @item4.title%>
                   </div>
@@ -157,10 +113,7 @@
           </div>
         </div>
         <div class="green-button"><%=link_to 'Перейти в каталог', catalog_path, class: 'btn-examples'%></div>
-
-
       </div>
-
     </div>
   </div>
 </section>
