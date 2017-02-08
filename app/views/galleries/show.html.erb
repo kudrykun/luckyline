@@ -34,19 +34,13 @@
       <% @gallery.pictures.each do |picture| %>
           <div class="col-md-4 text-center">
             <div class="catalog-gallery-container">
-              <%=image_tag picture.image(:for_grid), class: 'img-responsive'%>
+              <%=link_to picture.image.url(:original), {'data-toggle': 'lightbox'} do %>
+                <%=image_tag picture.image(:for_grid), class: 'img-responsive'%>
+              <%end%>
             </div>
           </div>
       <%end%>
     </div>
   </div>
 </div>
-<div tabindex="-1" class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-
-      </div>
-    </div>
-  </div>
-</div>
+<

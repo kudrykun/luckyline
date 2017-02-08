@@ -362,16 +362,17 @@ footer {
 .btn:hover, .btn:focus {
   background-color: #2f4154;
 }
-.modal-header, .close {
+
+#myModal .modal-header, #myModal .close, #opinionModal .modal-header, #opinionModal .close{
   background-color: #2f4154;
   color: #ffffff !important;
   text-align: center;
   font-size: 30px;
 }
-
-.modal-header, .modal-body {
+#myModal .modal-header, #myModal .modal-body, #opinionModal .modal-header, #opinionModal .modal-body {
   padding: 40px 50px;
 }
+
 .badge{
   background-color: red;
 }
