@@ -7,11 +7,3 @@ $(document).ready(function() {
         event.preventDefault();
     });
 });
-
-$(document).ready(function() {
-    $('.modal-image').click(function(){
-        $('.modal-body').empty();
-        $($(this).find('.pic-container').html()).appendTo('.modal-body');
-        $('#itemModal').modal({show:true});
-    });
-});
