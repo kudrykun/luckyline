@@ -39,6 +39,6 @@ class Admin::OpinionsController < Admin::AdminController
   end
 
   def opinion_params
-    params.require(:opinion).permit(:name,:text,:info,:order_number)
+    params.require(:opinion).permit(:name,:text,:info,:vk,:ok,:alt)
   end
 end

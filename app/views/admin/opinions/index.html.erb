@@ -29,6 +29,7 @@
           <th>ID</th>
           <th>Имя</th>
           <th>Текст</th>
+          <th>Изображение</th>
           <th>Инфо</th>
           <th>Создан</th>
           <th>Обновлён</th>
@@ -42,6 +43,13 @@
                   <th><%= opinion.id %></th>
                   <td><%= opinion.name %></td>
                   <td><%= opinion.text %></td>
+                  <td>
+                    <%if opinion.image.exists?%>
+                        <%=image_tag opinion.image(:thumb), class: 'img-responsive'%>
+                    <%else%>
+                        Отсутствует
+                    <%end%>
+                  </td><!--Изображение обложка-->
                   <td><%= opinion.info %></td>
                   <td><%= time_tag opinion.created_at %></td>
                   <td><%= time_tag opinion.updated_at %></td>
