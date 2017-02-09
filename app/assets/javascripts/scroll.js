@@ -7,3 +7,16 @@ $(document).ready(function() {
         event.preventDefault();
     });
 });
+/*
+jQuery(document).ready(function(){
+    jQuery("a.page-scroll").on("click", function (event) {
+        event.preventDefault();
+
+        var id  = jQuery(this).attr('href'),
+
+            top = jQuery(id).offset().top;
+
+        jQuery('body').animate({scrollTop: top}, 500);
+    });
+});
+*/

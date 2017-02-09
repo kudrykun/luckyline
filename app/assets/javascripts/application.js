@@ -12,10 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
-//= require scroll
-//= require lightbox-bootstrap
 //= require jquery.remotipart
+//= require bootstrap-sprockets
+//= require lightbox-bootstrap
 //= require turbolinks
 //= require_tree .
 
