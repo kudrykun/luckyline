@@ -5,4 +5,6 @@ class Order < ApplicationRecord
 
   validates :name, presence: true, format: {with: /\A[а-яА-ЯЁё]{2,15}\Z/}
   validates :phone_number, presence: true, format: {with: /\A((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}\Z/}
+  validates :city, presence: true, format: {with: /\A[а-яА-ЯЁё]{2,20}\Z/}
+  validates :order_text,length: {in: 0..500}
 end

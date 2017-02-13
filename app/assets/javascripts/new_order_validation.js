@@ -26,3 +26,17 @@ $(document).ready(function() {
         }
     });
 });
+$(document).ready(function() {
+    $('#order_city').blur(function(){
+        var reg = /^[а-яА-ЯЁё]{2,20}$/;
+        var value = $('#order_city').val();
+        if (!reg.test(value)) {
+
+            $(".cityspan").html('Введите существующий город');
+            $("#order_city").addClass('field-incorrect');
+        }else {
+            $(".cityspan").html('');
+            $("#order_city").removeClass('field-incorrect');
+        }
+    });
+});

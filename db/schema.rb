@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209062255) do
+ActiveRecord::Schema.define(version: 20170213091112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 20170209062255) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.text     "order_text"
+    t.string   "city"
     t.index ["item_id"], name: "index_orders_on_item_id", using: :btree
   end
 
