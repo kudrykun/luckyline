@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <!--catalog-->
-        <%if controller_name#myNavbar == 'categories' || controller_name == 'subcategories' || controller_name == 'items'%>
+        <%if controller_name == 'categories' || controller_name == 'galleries' || controller_name == 'items'%>
             <li class="active"><%=link_to 'Каталог', catalog_path%></li>
         <%else%>
             <li class=""><%=link_to 'Каталог', catalog_path%></li>
