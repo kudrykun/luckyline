@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
-  get 'thank_you', to: 'thanks#index', as: 'thank_you'
-
+  #Вход и выход из админки
   devise_for :users, :skip => [:sessions]
   as :user do
     get 'login' => 'devise/sessions#new', :as => :new_user_session
@@ -10,20 +8,17 @@ Rails.application.routes.draw do
   end
 
   root 'main#index' #Главная
-  get 'contacts/show' #Контакты
-  get 'results/index' #Результаты поиска
+  get 'contacts', to: 'contacts#show', as: 'contacts' #Контакты
   get 'results', to: 'results#index', as: 'results' #Результаты поиска
-  get 'item/:id', to: 'items#show', as: 'show_item' #Показ итема с главной
-  get 'gallery/:id', to: 'galleries#show', as: 'show_gallery' #Показ итема с главной
-  get 'catalog/:category_id/item/:id', to: 'items#show', as: 'show_category_item' #показ итема из каталога
-  get 'catalog/:category_id/gallery/:id', to: 'galleries#show', as: 'show_category_gallery' #показ итема из каталога
+  get 'item/:id', to: 'items#show', as: 'show_item' #Товар
+  get 'gallery/:id', to: 'galleries#show', as: 'show_gallery' #Галерея
   get 'catalog', to: 'categories#index', as: 'catalog' #Каталог
-  get '/catalog/:id', to: 'categories#show',as: 'subs_and_items' #показ подкатегорий
-  resources :news_items, only: [:index, :show]
-  resources :orders, only: [:create]
-  resources :opinions, only: [:index, :show, :create]
+  get 'catalog/:id', to: 'categories#show',as: 'subs_and_items' #показ подкатегорий
+  resources :news_items, only: [:index, :show] #акции
+  resources :orders, only: [:create] # создание заказов
+  resources :opinions, only: [:index, :create] #отзывы и создание отзывов
   resources :items, only: [] do
-    resources :orders, only: [:create]
+    resources :orders, only: [:create]  #создание заказа из товара
   end
 
   namespace :admin do
@@ -36,9 +31,4 @@ Rails.application.routes.draw do
     resources :galleries
     resources :pictures, only: [:destroy,:update,:edit]
   end
-
-
-
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

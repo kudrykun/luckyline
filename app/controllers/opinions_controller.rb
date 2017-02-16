@@ -7,10 +7,6 @@ class OpinionsController < ApplicationController
     @opinion = Opinion.new
   end
 
-  def show
-    @opinion = Opinion.find(params[:id])
-  end
-
   def create
     @opinion = Opinion.new(opinion_params)
     if @opinion.save
