@@ -8,12 +8,12 @@
           <%= f.text_field :phone_number,id: 'order_phone', class: 'form-control', placeholder: 'Ваш телефон', required: true, pattern: '((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}'%>
         </div>
         <div class="form-group">
-          <label for="city"><span class="glyphicon glyphicon-home"></span> Ваш город <span class="required-star">*</span></label> <span class="cityspan"></span>
-          <%= f.text_field :city, id: 'order_city', class: 'form-control', placeholder: 'Ваш город', required: true, pattern: '[а-яА-ЯЁё]{2,20}' %>
+          <label for="email"><span class="glyphicon glyphicon-envelope"></span> Email <span class="required-star">*</span></label>
+          <%= f.text_field :email, class: 'form-control', placeholder: 'Ваш E-mail', required: true%>
         </div>
         <div class="form-group">
-          <label for="email"><span class="glyphicon glyphicon-envelope"></span> Email</label>
-          <%= f.text_field :email, class: 'form-control', placeholder: 'Ваш E-mail'%>
+          <label for="city"><span class="glyphicon glyphicon-home"></span> Ваш город</label> <span class="cityspan"></span>
+          <%= f.text_field :city, id: 'order_city', class: 'form-control', placeholder: 'Ваш город', pattern: '[а-яА-ЯЁё]{2,20}' %>
         </div>
         <div class="form-group">
           <label for="order_text"><span class="glyphicon glyphicon-pencil"></span>Комментарий</label>
