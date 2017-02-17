@@ -13,10 +13,10 @@ SitemapGenerator::Sitemap.create do
     add subs_and_items_path(category), :lastmod => category.updated_at, :priority => 0.8
   end
   Item.find_each do |item|
-    add show_item_path(item.category,item), :lastmod =>  item.updated_at, :priority => 0.9
+    add show_item_path(item), :lastmod =>  item.updated_at, :priority => 0.9
   end
   Gallery.find_each do |gallery|
-    add show_gallery_path(gallery.category,gallery), :lastmod => gallery.updated_at, :priority => 0.8
+    add show_gallery_path(gallery), :lastmod => gallery.updated_at, :priority => 0.8
   end
 
 end

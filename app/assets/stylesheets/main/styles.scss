@@ -517,8 +517,12 @@ ul.pagination li a.active {
 }
 
 .example-item-text{
+  white-space: nowrap; /* Запрещаем перенос строк */
+  overflow: hidden; /* Обрезаем все, что не помещается в область */
+  text-overflow: ellipsis; /* Добавляем многоточие */
   border-bottom-right-radius: inherit;
   border-bottom-left-radius: inherit;
+  padding: 10px 20px;
 }
 
 .new_order span.glyphicon {
@@ -541,4 +545,22 @@ ul.pagination li a.active {
   color: #fff;
   background-color: #72d14b;
   border-color: #72d14b;
+}
+
+.price-wrapper{
+  border: 3px dashed #6bc748;
+  padding: 10px;
+}
+
+.catalog-gallery-container img{
+  -webkit-transform: scale(1,1);
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 100ms;
+  -moz-transform: scale(1,1);
+  -moz-transition-timing-function: ease-out;
+  -moz-transition-duration: 100ms;
+}
+.catalog-gallery-container img:hover{
+  -webkit-transform: scale(1.02,1.02);
+  -moz-transform: scale(1.02,1.02);
 }
