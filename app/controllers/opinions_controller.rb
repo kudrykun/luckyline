@@ -10,9 +10,9 @@ class OpinionsController < ApplicationController
   def create
     @opinion = Opinion.new(opinion_params)
     if @opinion.save
-      redirect_to :back, notice: 'Item was successfully created.'
+      redirect_to opinions_path, notice: 'Item was successfully created.'
     else
-      redirect_to :back, notice: 'Item was not created.'
+      redirect_to opinions_path, notice: 'Item was not created.'
     end
   end
 

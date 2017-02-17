@@ -13,7 +13,7 @@
             </div>
             <div class="form-group">
               <label for="text"><span class="glyphicon glyphicon-pencil"></span> Отзыв*</label> <span class="textspan"></span>
-              <%= f.text_area :text, class: 'form-control', placeholder: 'Ваш отзыв', required: true, pattern: '.{10,500}'%>
+              <%= f.text_area :text, class: 'form-control', placeholder: 'Ваш отзыв', required: true, pattern: '.{10,500}',maxlength: 500%>
             </div>
             <div class="form-group">
               <label for="name"><%=icon('vk', class: 'vk')%> Ссылка на ваш профиль ВКонтакте</label> <span class="vkspan"></span>
