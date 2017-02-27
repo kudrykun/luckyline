@@ -5,6 +5,16 @@
     <div class="panel panel-primary">
       <div class="panel-heading">
         <div class="row">
+          <div class="col-md-12">
+            Последнее изменение:
+            <% if @items_last_update %>
+                <%= time_tag @items_last_update%>
+            <%else%>
+              Нет данных
+            <%end%>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-xs-3">
             <%=icon('shopping-bag', class: 'fa-5x icon-admin',)%>
           </div>
@@ -26,6 +36,16 @@
     <%=link_to admin_galleries_path, class:'panel-hover' do%>
         <div class="panel panel-primary">
           <div class="panel-heading">
+            <div class="row">
+              <div class="col-md-12">
+                Последнее изменение:
+                <% if @galleries_last_update %>
+                    <%= time_tag @galleries_last_update%>
+                <%else%>
+                    Нет данных
+                <%end%>
+              </div>
+            </div>
             <div class="row">
               <div class="col-xs-3">
                 <%=icon('shopping-bag', class: 'fa-5x icon-admin',)%>
@@ -50,6 +70,16 @@
     <div class="panel panel-blue">
       <div class="panel-heading">
         <div class="row">
+          <div class="col-md-12">
+            Последнее изменение:
+            <% if @categories_last_update %>
+                <%= time_tag @categories_last_update%>
+            <%else%>
+                Нет данных
+            <%end%>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-xs-3">
             <%=icon('folder-open', class: 'fa-5x icon-admin')%>
           </div>
@@ -72,6 +102,16 @@
     <%=link_to admin_news_items_path, class:'panel-hover' do%>
     <div class="panel panel-green">
       <div class="panel-heading">
+        <div class="row">
+          <div class="col-md-12">
+            Последнее изменение:
+            <% if @news_items_last_update %>
+                <%= time_tag @news_items_last_update%>
+            <%else%>
+                Нет данных
+            <%end%>
+          </div>
+        </div>
         <div class="row">
           <div class="col-xs-3">
             <%=icon('tags', class: 'fa-5x icon-admin')%>
@@ -96,6 +136,16 @@
     <div class="panel panel-yellow">
       <div class="panel-heading">
         <div class="row">
+          <div class="col-md-12">
+            Последнее изменение:
+            <% if @opinions_last_update %>
+                <%= time_tag @opinions_last_update%>
+            <%else%>
+                Нет данных
+            <%end%>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-xs-3">
             <%=icon('comments-o', class: 'fa-5x icon-admin')%>
           </div>
@@ -118,6 +168,16 @@
     <%=link_to admin_orders_path, class:'panel-hover' do%>
     <div class="panel panel-shell">
       <div class="panel-heading">
+        <div class="row">
+          <div class="col-md-12">
+            Последнее изменение:
+            <% if @orders_last_update %>
+                <%= time_tag @orders_last_update%>
+            <%else%>
+                Нет данных
+            <%end%>
+          </div>
+        </div>
         <div class="row">
           <div class="col-xs-3">
             <%=icon('cart-plus', class: 'fa-5x icon-admin')%>
