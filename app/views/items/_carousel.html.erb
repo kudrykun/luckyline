@@ -16,7 +16,7 @@
         <%if picture == @item.pictures.first%>
             <div class="item modal-image active">
               <div class="pic-container">
-                <%=link_to picture.image.url(:original), {'data-toggle': 'lightbox','data-gallery':"example-gallery"} do %>
+                <%=link_to picture.image.url(:original), {'data-toggle': 'lightbox','data-gallery':"carousel-gallery"} do %>
                     <%=image_tag picture.image(:for_show), class: 'img-responsive', alt: picture.alt%>
                 <%end%>
               </div>
@@ -24,7 +24,7 @@
         <%else%>
             <div class="item modal-image">
               <div class="pic-container">
-                <%=link_to picture.image.url(:original), {'data-toggle': 'lightbox','data-gallery':"example-gallery"} do %>
+                <%=link_to picture.image.url(:original), {'data-toggle': 'lightbox','data-gallery':"carousel-gallery"} do %>
                     <%=image_tag picture.image(:for_show), class: 'img-responsive', alt: picture.alt%>
                 <%end%>
               </div>
