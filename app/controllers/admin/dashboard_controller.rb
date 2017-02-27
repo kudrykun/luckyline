@@ -30,5 +30,6 @@ class Admin::DashboardController < Admin::AdminController
       @categories_last_update = Category.all.order(updated_at: :desc).first.updated_at
     end
 
+    @users = User.all
   end
 end

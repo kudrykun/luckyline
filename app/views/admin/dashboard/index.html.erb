@@ -7,4 +7,18 @@
     </div>
   </div>
   <%=render 'admin/dashboard/panels'%>
+  <% if current_user.admin? %>
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="page-header">Пользователи</h1>
+        </div>
+      </div>
+      <%=render 'admin/dashboard/users_list'%>
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="page-header">Операции пользователей</h1>
+        </div>
+      </div>
+      <%=render 'admin/dashboard/users_operations_list'%>
+  <%end%>
 </div>
