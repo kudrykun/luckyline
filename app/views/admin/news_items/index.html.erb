@@ -29,6 +29,7 @@
           <th>ID</th>
           <th>Название</th>
           <th>Текст</th>
+          <th>Image</th>
           <th>Создан</th>
           <th>Обновлён</th>
           <th></th>
@@ -41,6 +42,7 @@
                   <th><%= news_item.id %></th>
                   <td><%= news_item.title %></td>
                   <td><%= news_item.text %></td>
+                  <td><%= image_tag news_item.image(:thumb) %></td>
                   <td><%= time_tag news_item.created_at %></td>
                   <td><%= time_tag news_item.updated_at %></td>
                   <td>

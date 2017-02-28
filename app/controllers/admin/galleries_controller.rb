@@ -34,6 +34,7 @@ class Admin::GalleriesController < Admin::AdminController
       @gallery.preview = preview
       @gallery.save
     end
+    record_activity(current_user.name + " создал новую галлерею " + @gallery.title)
     redirect_to admin_galleries_path
   end
 
@@ -50,6 +51,7 @@ class Admin::GalleriesController < Admin::AdminController
       @gallery.preview = preview
       @gallery.save
     end
+    record_activity(current_user.name + " обновил галлерею " + @gallery.title)
     redirect_to admin_gallery_path(@gallery)
   end
 
@@ -62,7 +64,9 @@ class Admin::GalleriesController < Admin::AdminController
         picture.destory
       end
     end
+    gallery_title = @ggallery.title
     @gallery.destroy
+    record_activity(current_user.name + " удалил галлерею " + gallery_title)
     redirect_to admin_galleries_path
   end
 

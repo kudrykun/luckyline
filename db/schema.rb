@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227123350) do
+ActiveRecord::Schema.define(version: 20170228111121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activity_logs", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "browser"
+    t.string   "ip_address"
+    t.string   "note"
+    t.string   "controller"
+    t.string   "action"
+    t.string   "params"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_activity_logs_on_user_id", using: :btree
+  end
 
   create_table "categories", force: :cascade do |t|
     t.integer  "parent_id"
@@ -79,10 +92,14 @@ ActiveRecord::Schema.define(version: 20170227123350) do
   create_table "news_items", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "meta_title"
     t.string   "meta_description"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "opinions", force: :cascade do |t|
@@ -148,6 +165,7 @@ ActiveRecord::Schema.define(version: 20170227123350) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "activity_logs", "users"
   add_foreign_key "galleries", "categories"
   add_foreign_key "items", "categories"
   add_foreign_key "orders", "items"

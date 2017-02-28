@@ -31,5 +31,8 @@ class Admin::DashboardController < Admin::AdminController
     end
 
     @users = User.all
+
+    @activity_logs = ActivityLog.all.order(created_at: :desc)
+    @activity_logs_size = ActivityLog.where("created_at >= ?", Time.zone.now.beginning_of_day).size
   end
 end

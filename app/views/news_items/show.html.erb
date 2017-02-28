@@ -3,29 +3,16 @@
 <div class="container box bg-offwhite">
   <div class="row">
     <div class="col-md-12 text-center">
-      <h2>Время распродаж и скидок до 70% !</h2>
+      <h2><%=@news_item.title%></h2>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-6">
-        <div class="row">
-          <div class="col-md-2">
-
-            <div class="preview-images">
-              <%@news_item.pictures.each do |picture|%>
-                  <%=image_tag picture.image, class: 'img-responsive'%>
-              <%end%>
-            </div>
-
-          </div>
-          <div class="col-md-10">
-            <%=image_tag @news_item.pictures.sample.image, class: 'img-responsive'%>
-          </div>
-        </div>
+              <%=image_tag @news_item.image(:show), class: 'img-responsive'%>
       </div>
       <div class="col-md-6">
-        <small class="date"><span class="glyphicon glyphicon-time"></span> <%=time_tag @news_item.created_at%></small>
+        <small class="date"><span class="glyphicon glyphicon-time"></span> <%=time_tag @news_item.created_at.to_date%></small>
         <p><%=@news_item.text%></p>
       </div>
     </div>

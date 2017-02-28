@@ -33,6 +33,7 @@ class Admin::ItemsController < Admin::AdminController
       @item.preview = preview
       @item.save
     end
+    record_activity(current_user.name + " создал новый товар " + @item.title)
     redirect_to admin_items_path
   end
 
@@ -49,6 +50,7 @@ class Admin::ItemsController < Admin::AdminController
       @item.preview = preview
       @item.save
     end
+    record_activity(current_user.name + "обновил товар " + @item.title)
     redirect_to admin_item_path(@item)
   end
 
@@ -61,7 +63,9 @@ class Admin::ItemsController < Admin::AdminController
         picture.destroy
       end
     end
+    item_title = @item.title
     @item.destroy
+    record_activity(current_user.name + " удалил товар " + item_title)
     redirect_to admin_items_path
   end
 

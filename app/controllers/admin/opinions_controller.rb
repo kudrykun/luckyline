@@ -16,11 +16,13 @@ class Admin::OpinionsController < Admin::AdminController
 
   def create
     @opinion = Opinion.create(opinion_params)
+    record_activity(current_user.name + " создал новый отзыв " + @opinions.text)
     redirect_to admin_opinion_path(@opinion)
   end
 
   def update
     @opinion.update(opinion_params)
+    record_activity(current_user.name + " обновил отзыв " + @opinions.text)
     redirect_to admin_opinion_path(@opinion)
   end
 
@@ -28,7 +30,9 @@ class Admin::OpinionsController < Admin::AdminController
     if Opinion.find(params[:id]).image.exists?
       Opinion.find(params[:id]).image.destroy
     end
+    opinions_text = @opinions.text
     Opinion.find(params[:id]).destroy
+    record_activity(current_user.name + " обновил отзыв " + opinions_text)
     redirect_to :back
   end
 

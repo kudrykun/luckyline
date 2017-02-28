@@ -33,6 +33,7 @@ class Admin::CategoriesController < Admin::AdminController
       @category.preview = preview
       @category.save
     end
+    record_activity(current_user.name + " создал новую категорию " + @category.title)
     redirect_to admin_categories_path
   end
 
@@ -51,6 +52,7 @@ class Admin::CategoriesController < Admin::AdminController
       @category.preview = preview
       @category.save
     end
+    record_activity(current_user.name + " обновил категорию " + @category.title)
     redirect_to admin_category_path(@category)
   end
 
@@ -58,7 +60,9 @@ class Admin::CategoriesController < Admin::AdminController
     if @category.preview.exists?
       @category.preview.destroy
     end
+    category_title = @category.title
     @category.destroy
+    record_activity(current_user.name + " удалил категорию " + category_title)
     redirect_to :back
   end
 

@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-12 inner-table">
+    <table class="table table-striped table-hover">
+      <caption>Операций за сегодня: <%=@activity_logs_size%></caption>
+      <thead>
+      <tr>
+        <th>Имя</th>
+        <th>IP</th>
+        <th>Время</th>
+        <th>Note</th>
+        <th><abbr title="Имя контроллера">C</abbr></th>
+        <th><abbr title="Имя экшна">A</abbr></th>
+        <th><abbr title="Данные о браузере">B</abbr></th>
+        <th><abbr title="Параметры действия">P</abbr></th>
+      </tr>
+      </thead>
+      <tbody>
+      <%if @activity_logs%>
+          <%@activity_logs.each do |log|%>
+              <tr>
+                <td><%= log.user.name %></td><!--Имя пользователя-->
+                <td><attr title="<%= log.ip_address %>"><%= icon('eye')%></attr></td><!--Имя пользователя-->
+                <td><attr title="<%= log.created_at %>"><%= icon('eye')%></attr></td><!--Имя пользователя-->
+                <td><attr title="<%= log.note %>"><%= log.note %></attr></td><!--Имя пользователя-->
+                <td><attr title="<%= log.controller %>"><%= icon('eye')%></attr></td><!--Имя пользователя-->
+                <td><attr title="<%= log.action %>"><%= icon('eye')%></attr></td><!--Имя пользователя-->
+                <td><attr title="<%= log.browser %>"><%= icon('eye')%></attr></td><!--Имя пользователя-->
+                <td><attr title="<%= log.params%>"><%= icon('eye')%></attr></td><!--Имя пользователя-->
+              </tr>
+          <%end%>
+      <%else%>
+          <tr>
+            <th>-</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+      <%end%>
+      </tbody>
+    </table>
+  </div>
+</div>
