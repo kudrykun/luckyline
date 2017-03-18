@@ -5,6 +5,7 @@ $('.modal-header').find('h4').fadeOut(500, function() {
 });
 
 $('.modal-header').find('p').fadeOut(500, function() {
+    $('#myModal').animate({ scrollTop: 0 }, 'slow');
     $(this).html("Мы перезвоним Вам в течении 48 часов.<br>" +
                 "Вы будете перенаправлены на главную страницу через <span id='timer'>3</span>...");
     $(this).fadeIn(500,function(){

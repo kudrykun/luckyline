@@ -44,14 +44,26 @@ img{
   margin-top: 70px;
   margin-bottom: 50px;
 }
+.title-box > h1 {
+  font-size: 24px;
+  font-weight: normal;
+}
 .title-box > hr{
-  max-width: 400px;
+  max-width: 574px;
 }
 .bg-offwhite{
   background-color: #f2f2f2;
 }
 .title-box > hr{
   border-color: #bbbbbb;
+}
+.contacts-info h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #a00909;
+}
+#address2{
+  margin-top: 17px;
 }
 
 .contacts{
@@ -62,7 +74,7 @@ img{
   padding-left: 20px;
 }
 .map-container{
-  padding-right: 20px;
+  padding: 17px 20px 0px 20px;
 }
 
 .breadcrumb{
@@ -132,10 +144,7 @@ img{
 }
 
 header {
-  background: image-url('header2.jpg') no-repeat;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
+  background: image-url('header2.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -144,8 +153,12 @@ header {
   color: #aaa;
   padding-top: 120px;
   padding-bottom: 150px;
+  height: 100vh;
 }
 
+header > .container {
+  display: inline;
+}
 
 .navbar-brand{
   -webkit-transform: scale(1,1);
@@ -298,9 +311,23 @@ header {
   padding-bottom:25px;
 }
 .logot{
-  min-width: 50%;
+  min-width: 45%;
   max-width:30%;
-  padding-top: 50px;
+}
+@media screen and (max-width: 768px) {
+  .logot{
+    min-width: 70%;
+    max-width:30%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .logot{
+    min-width: 90%;
+    max-width:30%;
+  }
+  header {
+    height: 80vh;
+  }
 }
 
 @media screen and (max-width: 768px) {
