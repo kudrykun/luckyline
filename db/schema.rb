@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228111121) do
+ActiveRecord::Schema.define(version: 20170323211910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20170228111121) do
     t.string   "meta_description"
     t.integer  "preview_id"
     t.string   "header"
+    t.boolean  "wide"
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["preview_id"], name: "index_items_on_preview_id", using: :btree
     t.index ["slug"], name: "index_items_on_slug", unique: true, using: :btree

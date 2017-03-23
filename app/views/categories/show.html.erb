@@ -51,16 +51,29 @@
       <!--Товары-->
       <% if @items && @items.size != 0 %>
       <% @items.each do |item| %>
-              <div class="col-md-4 col-sm-6 col-xs-6">
-                  <%= link_to show_item_path(item) do%>
-                      <div class="catalog-item-container">
-                        <%=image_tag item.preview.image(:for_grid), alt: item.preview.alt, class: 'img-responsive' %>
-                        <div class="item-caption">
-                          <%=item.title%>
+              <%if !item.wide %>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <%= link_to show_item_path(item) do%>
+                        <div class="catalog-item-container">
+                          <%=image_tag item.preview.image(:for_grid), alt: item.preview.alt, class: 'img-responsive' %>
+                          <div class="item-caption">
+                            <%=item.title%>
+                          </div>
                         </div>
-                      </div>
-                  <%end%>
-              </div>
+                    <%end%>
+                </div>
+              <%else%>
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <%= link_to show_item_path(item) do%>
+                        <div class="catalog-item-container">
+                          <%=image_tag item.preview.image, alt: item.preview.alt, class: 'img-responsive' %>
+                          <div class="item-caption">
+                            <%=item.title%>
+                          </div>
+                        </div>
+                    <%end%>
+                  </div>
+              <%end%>
       <%end%>
       <% end %>
       <!--Галлереи-->

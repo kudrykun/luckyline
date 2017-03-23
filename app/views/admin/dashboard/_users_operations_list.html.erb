@@ -19,7 +19,7 @@
           <%@activity_logs.each do |log|%>
               <tr>
                 <td><%= log.user.name %></td><!--Имя пользователя-->
-                <td><attr title="<%= log.ip_address %>"><%= icon('eye')%></attr></td><!--Имя пользователя-->
+                <td><attr title="<%= log.user.current_sign_in_ip %> %>"><%= icon('eye')%></attr></td><!--Имя пользователя-->
                 <td><attr title="<%= log.created_at %>"><%= icon('eye')%></attr></td><!--Имя пользователя-->
                 <td><attr title="<%= log.note %>"><%= log.note %></attr></td><!--Имя пользователя-->
                 <td><attr title="<%= log.controller %>"><%= icon('eye')%></attr></td><!--Имя пользователя-->
