@@ -68,6 +68,11 @@
             <%end%>
             <%= file_field_tag "preview", class: 'form-control'%>
           </div>
+          <div class="checkbox">
+            <label>
+              <%=f.check_box :wide%> Широкое превью
+            </label>
+          </div>
           <div class="form-group">
             <%= f.label :pictures, 'Изображения' %>
             <div class="row">

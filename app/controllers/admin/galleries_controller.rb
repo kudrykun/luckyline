@@ -56,15 +56,15 @@ class Admin::GalleriesController < Admin::AdminController
   end
 
   def destroy
-    if @gallery.preview.exists?
+    if @gallery.preview && @gallery.preview.image.exists?
       @gallery.preview.destroy
     end
     if @gallery.pictures.size > 0
       @gallery.pictures.each do |picture|
-        picture.destory
+        picture.destroy
       end
     end
-    gallery_title = @ggallery.title
+    gallery_title = @gallery.title
     @gallery.destroy
     record_activity(current_user.name + " удалил галлерею " + gallery_title)
     redirect_to admin_galleries_path
@@ -77,6 +77,6 @@ class Admin::GalleriesController < Admin::AdminController
   end
 
   def gallery_params
-    params.require(:gallery).permit(:title, :description, :category_id,:meta_title,:meta_description,:header)
+    params.require(:gallery).permit(:title, :description, :category_id,:meta_title,:meta_description,:header,:wide)
   end
 end

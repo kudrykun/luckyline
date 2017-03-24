@@ -57,12 +57,14 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   def destroy
-    if @category.preview.exists?
-      @category.preview.destroy
+    if !(@category.title.to_s == 'catalog'.to_s)
+      if @category.preview.exists?
+        @category.preview.destroy
+      end
+      category_title = @category.title
+      @category.destroy
+      record_activity(current_user.name + " удалил категорию " + category_title)
     end
-    category_title = @category.title
-    @category.destroy
-    record_activity(current_user.name + " удалил категорию " + category_title)
     redirect_to :back
   end
 

@@ -10,5 +10,4 @@ class Gallery < ApplicationRecord
   friendly_id :title, use: :slugged
 
   has_many :pictures, as: :imageable, dependent: :destroy
-  validates :title, presence: true
 end

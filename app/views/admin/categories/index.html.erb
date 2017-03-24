@@ -40,6 +40,7 @@
         <tbody>
         <% if @categories%>
             <%@categories.each do |category|%>
+                <% if !(category.title.to_s == 'catalog'.to_s)%>
                 <tr>
                   <th><%= category.id %></th>
                   <td><%= category.title %></td>
@@ -110,6 +111,7 @@
                     </ul>
                   </td>
                 </tr>
+            <%end%>
             <%end%>
         <%else%>
             <tr>

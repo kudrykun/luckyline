@@ -11,5 +11,4 @@ class Item < ApplicationRecord
   has_many :orders, dependent: :destroy
   belongs_to :category
   belongs_to :preview, class_name: 'Picture'
-  validates :title, presence: true
 end
