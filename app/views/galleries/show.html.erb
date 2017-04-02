@@ -36,13 +36,23 @@
   <div class="row">
     <div class="col-md-12">
       <% @gallery.pictures.each do |picture| %>
-          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
-            <div class="catalog-gallery-container">
-              <%=link_to picture.image.url(:original), {'data-toggle': 'lightbox','data-gallery':"gallery-gallery"} do %>
-                <%=image_tag picture.image(:for_grid), class: 'img-responsive'%>
-              <%end%>
+          <%if @gallery.half_wide? %>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+                <div class="catalog-gallery-container">
+                  <%=link_to picture.image.url(:original), {'data-toggle': 'lightbox','data-gallery':"gallery-gallery"} do %>
+                      <%=image_tag picture.image(:half_wide), class: 'img-responsive'%>
+                  <%end%>
+                </div>
+              </div>
+          <%else%>
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+              <div class="catalog-gallery-container">
+                <%=link_to picture.image.url(:original), {'data-toggle': 'lightbox','data-gallery':"gallery-gallery"} do %>
+                  <%=image_tag picture.image(:for_grid), class: 'img-responsive'%>
+                <%end%>
+              </div>
             </div>
-          </div>
+          <%end%>
       <%end%>
     </div>
   </div>

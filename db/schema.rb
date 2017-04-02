@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324172808) do
+ActiveRecord::Schema.define(version: 20170402152346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20170324172808) do
     t.integer  "preview_id"
     t.string   "header"
     t.boolean  "wide"
+    t.boolean  "half_wide"
     t.index ["category_id"], name: "index_galleries_on_category_id", using: :btree
     t.index ["preview_id"], name: "index_galleries_on_preview_id", using: :btree
     t.index ["slug"], name: "index_galleries_on_slug", unique: true, using: :btree
@@ -145,6 +146,7 @@ ActiveRecord::Schema.define(version: 20170324172808) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "alt"
+    t.boolean  "half_wide"
     t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable_type_and_imageable_id", using: :btree
   end
 

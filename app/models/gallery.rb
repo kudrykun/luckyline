@@ -7,7 +7,13 @@ class Gallery < ApplicationRecord
 
   #It is help to make nice routes
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
 
   has_many :pictures, as: :imageable, dependent: :destroy
+  def slug_candidates
+    [
+        :title,
+        [:title, :category_id]
+    ]
+  end
 end

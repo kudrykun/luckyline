@@ -25,12 +25,23 @@ class Admin::GalleriesController < Admin::AdminController
     @gallery = Gallery.create(gallery_params)
     if params[:images]
       #===== The magic is here ;)
-      params[:images].each { |image|
-        @gallery.pictures.create(image: image)
-      }
+      if @gallery.half_wide?
+        params[:images].each { |image|
+          @gallery.pictures.create(half_wide: true,image: image)
+        }
+      else
+        params[:images].each { |image|
+          @gallery.pictures.create(image: image)
+        }
+      end
     end
     if params[:preview]
-      preview = Picture.create(image: params[:preview])
+      if @gallery.half_wide?
+        preview = Picture.create(half_wide: true,image: params[:preview])
+      else
+        preview = Picture.create(image: params[:preview])
+      end
+      logger.debug "*********** PREVIEW CHECK #{preview.half_wide?}"
       @gallery.preview = preview
       @gallery.save
     end
@@ -42,12 +53,23 @@ class Admin::GalleriesController < Admin::AdminController
     @gallery.update(gallery_params)
     if params[:images]
       #===== The magic is here ;)
-      params[:images].each { |image|
-        @gallery.pictures.create(image: image)
-      }
+      if @gallery.half_wide?
+        params[:images].each { |image|
+          @gallery.pictures.create(half_wide: true,image: image)
+        }
+      else
+        params[:images].each { |image|
+          @gallery.pictures.create(image: image)
+        }
+      end
     end
-    if !@gallery.preview && params[:preview]
-      preview = Picture.create(image: params[:preview])
+    if params[:preview]
+      if @gallery.half_wide?
+        preview = Picture.create(half_wide: true,image: params[:preview])
+      else
+        preview = Picture.create(image: params[:preview])
+      end
+      logger.debug "*********** PREVIEW CHECK #{preview.half_wide?}"
       @gallery.preview = preview
       @gallery.save
     end
@@ -77,6 +99,6 @@ class Admin::GalleriesController < Admin::AdminController
   end
 
   def gallery_params
-    params.require(:gallery).permit(:title, :description, :category_id,:meta_title,:meta_description,:header,:wide)
+    params.require(:gallery).permit(:title, :description, :category_id,:meta_title,:meta_description,:header,:wide,:half_wide)
   end
 end

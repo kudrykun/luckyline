@@ -76,7 +76,7 @@
       <!--Галлереи-->
       <% if @galleries && @galleries.size != 0 %>
           <% @galleries.each do |gallery| %>
-              <%if !gallery.wide %>
+              <%if !gallery.wide && !gallery.half_wide %>
               <div class="col-md-4 col-sm-6 col-xs-6">
                   <%= link_to show_gallery_path(gallery) do%>
                       <div class="catalog-item-container">
@@ -88,6 +88,18 @@
                   <%end%>
               </div>
               <%else%>
+                  <%if gallery.half_wide%>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <%= link_to show_gallery_path(gallery) do%>
+                            <div class="catalog-item-container">
+                              <%=image_tag gallery.preview.image(:half_wide), alt: gallery.preview.alt, class: 'img-responsive' %>
+                              <div class="item-caption">
+                                <%=gallery.title%>
+                              </div>
+                            </div>
+                        <%end%>
+                      </div>
+                  <%else%>
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <%= link_to show_gallery_path(gallery) do%>
                         <div class="catalog-item-container">
@@ -95,7 +107,8 @@
                         </div>
                     <%end%>
                   </div>
-            <%end%>
+                  <%end%>
+              <%end%>
           <%end%>
       <% end %>
     </div>
