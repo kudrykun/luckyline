@@ -1,4 +1,5 @@
-class Admin::CategoriesController < Admin::AdminController
+module Admin
+class CategoriesController < AdminController
 
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
@@ -78,4 +79,5 @@ class Admin::CategoriesController < Admin::AdminController
   def category_params
     params.require(:category).permit(:description, :parent_id, :title,:meta_title,:meta_description,:header)
   end
+end
 end

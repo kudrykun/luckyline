@@ -30,6 +30,17 @@
       <%end%>
     </div>
   </div>
+  <%if @category.description && @category.description != ''%>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default description-panel">
+            <div class="panel-body">
+              <%=@category.description.html_safe%>
+            </div>
+          </div>
+        </div>
+      </div>
+  <%end%>
   <!--Содержание категории-->
   <div class="row">
     <div class="col-md-12">
