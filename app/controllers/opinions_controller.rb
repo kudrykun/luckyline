@@ -18,6 +18,6 @@ class OpinionsController < ApplicationController
 
   private
   def opinion_params
-    params.require(:opinion).permit(:name,:text,:info,:vk,:ok,:alt)
+    params.require(:opinion).permit(:name,:text,:info,:vk,:ok,:alt, :image)
   end
 end

@@ -1,8 +1,8 @@
 class NewsItemsController < ApplicationController
   def index
-    set_meta_tags title: 'Акций тайтл',
+    set_meta_tags title: 'Акции',
                   description: 'Описание акций'
-    @news_items = NewsItem.all
+    @news_items = NewsItem.all.order(created_at: :desc)
   end
 
   def show

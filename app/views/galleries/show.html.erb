@@ -39,16 +39,22 @@
           <%if @gallery.half_wide? %>
               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
                 <div class="catalog-gallery-container">
-                  <%=link_to picture.image.url(:original), {'data-toggle': 'lightbox','data-gallery':"gallery-gallery"} do %>
-                      <img class="lazyload img-responsive" data-src="<%=picture.image(:half_wide)%>">
+                  <%=link_to picture.image.url(:original), {'data-toggle': 'lightbox','data-gallery':"gallery-gallery",'data-title': picture.caption} do %>
+                      <%=image_tag picture.image(:half_wide), class: 'img-responsive'%>
+                      <div class="gallery-image-caption">
+                        <%=picture.caption%>
+                      </div>
                   <%end%>
                 </div>
               </div>
           <%else%>
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
               <div class="catalog-gallery-container">
-                <%=link_to picture.image.url(:original), {'data-toggle': 'lightbox','data-gallery':"gallery-gallery"} do %>
-                  <img class="lazyload img-responsive" data-src="<%=picture.image(:for_grid)%>">
+                <%=link_to picture.image.url(:original), {'data-toggle': 'lightbox','data-gallery':"gallery-gallery",'data-title':picture.caption} do %>
+                    <%=image_tag picture.image(:for_grid), class: 'img-responsive'%>
+                    <div class="gallery-image-caption">
+                      <%=picture.caption%>
+                    </div>
                 <%end%>
               </div>
             </div>

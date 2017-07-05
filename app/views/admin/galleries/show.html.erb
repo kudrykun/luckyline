@@ -65,8 +65,12 @@
 
                     <%= form_tag "/admin/pictures/#{picture.id}", method: 'put', remote: true , class: 'form-inline' do%>
                         <div class="form-group">
-                          <%= text_field_tag :alt,picture.alt, class:'form-control'%>
+                          <%= text_field_tag :alt,picture.alt, placeholder: 'Alt', class:'form-control'%>
                           <button type="submit" class="btn btn-default change-alt"><%=icon 'check'%></button>
+                        </div>
+                        <div class="form-group">
+                          <%= text_field_tag :caption,picture.caption, placeholder: 'Caption', class:'form-control'%>
+                          <button type="submit" class="btn btn-default change-caption"><%=icon 'check'%></button>
                         </div>
                     <%end%>
                   </div>

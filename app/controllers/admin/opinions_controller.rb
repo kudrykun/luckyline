@@ -30,7 +30,7 @@ class Admin::OpinionsController < Admin::AdminController
     if Opinion.find(params[:id]).image.exists?
       Opinion.find(params[:id]).image.destroy
     end
-    opinions_text = @opinions.text
+    opinions_text = @opinion.text
     Opinion.find(params[:id]).destroy
     record_activity(current_user.name + " обновил отзыв " + opinions_text)
     redirect_to :back
@@ -43,6 +43,6 @@ class Admin::OpinionsController < Admin::AdminController
   end
 
   def opinion_params
-    params.require(:opinion).permit(:name,:text,:info,:vk,:ok,:alt)
+    params.require(:opinion).permit(:name,:text,:info,:vk,:ok,:alt,:image)
   end
 end

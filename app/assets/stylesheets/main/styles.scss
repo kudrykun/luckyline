@@ -1,3 +1,6 @@
+body {
+  background: image-url('header2.jpg') no-repeat center center fixed;
+}
 .fa-file-pdf-o {
   color: #d90106;
 }
@@ -144,11 +147,6 @@ img{
 }
 
 header {
-  background: image-url('header2.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
   text-align: center;
   color: #aaa;
   padding-top: 120px;
@@ -159,6 +157,41 @@ header {
 header > .container {
   display: inline;
 }
+
+
+#info {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  overflow-x: hidden;
+}
+#info::before {
+  content: "";
+  left: 0;
+  top: 0;
+  background: image-url('header2.jpg') no-repeat center center fixed;
+  width: calc(100% + 10px);
+  height: calc(100% - 20px);
+  position: absolute;
+  filter: blur(10px);
+
+}
+/*@media screen and (max-width: 768px) {
+  #info::before{
+    height: 1520px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #info::before{
+    height: 1100px;
+  }
+}
+@media screen and (min-width: 992px) {
+  #info::before{
+    height: 830px;
+  }
+}*/
+
 
 .navbar-brand{
   -webkit-transform: scale(1,1);
@@ -197,10 +230,7 @@ header > .container {
     -moz-transform: scale(1.05, 1.05);
   }
 }
-#info{
-  padding-top: 100px;
-  padding-bottom: 50px;
-}
+
 #examples{
   padding-top: 50px;
   padding-bottom: 100px;
@@ -541,10 +571,7 @@ ul.pagination li a.active {
   border-bottom-right-radius: inherit;
   border-bottom-left-radius: inherit;
 }
-.catalog-gallery-container img{
-  border-radius: 4px;
-  box-shadow: 0px 0px 10px black;
-}
+
 
 .example-item-text{
   white-space: nowrap; /* Запрещаем перенос строк */
@@ -581,8 +608,28 @@ ul.pagination li a.active {
   border: 3px dashed #6bc748;
   padding: 10px;
 }
-
+//фото из галереи
+.catalog-gallery-container{
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px black;
+}
+.catalog-gallery-container a{
+  border-radius: inherit;
+}
+.catalog-gallery-container .gallery-image-caption{
+  position: absolute;
+  color: white;
+  bottom: 13px;
+  background-color: rgba(0,0,0,0.45);
+  width: 100%;
+  opacity: 0;
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 100ms;
+}
 .catalog-gallery-container img{
+  border-radius: inherit;
+}
+.catalog-gallery-container{
   -webkit-transform: scale(1,1);
   -webkit-transition-timing-function: ease-out;
   -webkit-transition-duration: 100ms;
@@ -590,10 +637,29 @@ ul.pagination li a.active {
   -moz-transition-timing-function: ease-out;
   -moz-transition-duration: 100ms;
 }
-.catalog-gallery-container img:hover{
+.catalog-gallery-container:hover{
   -webkit-transform: scale(1.02,1.02);
   -moz-transform: scale(1.02,1.02);
+  .gallery-image-caption{
+    opacity: 1;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 100ms;
+  }
 }
+
+.ekko-lightbox.modal{
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 25px;
+}
+.ekko-lightbox h4.modal-title{
+  display: inline-block;
+}
+.ekko-lightbox .modal-header span {
+  font-size: 38px;
+}
+//#фото из галереи
+
 
 .ekko-lightbox .modal-dialog {
   margin: 0 auto;
@@ -602,3 +668,12 @@ ul.pagination li a.active {
 .news-items .col-md-8,.news-items .col-sm-8,.news-items .col-xs-8{
   margin-bottom: 30px;
 }
+
+/*
+.catalog-gallery-container .img-caption{
+  position: absolute;
+  height: 95%;
+  top: 10px;
+  width: 95%;
+  color: white;
+}*/
