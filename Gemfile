@@ -53,6 +53,7 @@ gem 'paperclip-compression'
 gem 'lightbox-bootstrap-rails', '5.1.0.1'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'hirb'
+gem 'jquery-turbolinks'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
