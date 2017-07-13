@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 20170713103934) do
   create_table "galleries", force: :cascade do |t|
     t.string   "title"
     t.integer  "category_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "slug"
     t.text     "description"
     t.string   "meta_title"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20170713103934) do
     t.string   "header"
     t.boolean  "wide"
     t.boolean  "half_wide"
-    t.boolean  "visible"
+    t.boolean  "visible",          default: true
     t.index ["category_id"], name: "index_galleries_on_category_id", using: :btree
     t.index ["preview_id"], name: "index_galleries_on_preview_id", using: :btree
     t.index ["slug"], name: "index_galleries_on_slug", unique: true, using: :btree
