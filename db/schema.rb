@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170604102552) do
+ActiveRecord::Schema.define(version: 20170713103934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170604102552) do
     t.string   "header"
     t.boolean  "wide"
     t.boolean  "half_wide"
+    t.boolean  "visible"
     t.index ["category_id"], name: "index_galleries_on_category_id", using: :btree
     t.index ["preview_id"], name: "index_galleries_on_preview_id", using: :btree
     t.index ["slug"], name: "index_galleries_on_slug", unique: true, using: :btree
