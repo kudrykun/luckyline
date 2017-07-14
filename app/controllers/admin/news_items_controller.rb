@@ -1,7 +1,7 @@
 class Admin::NewsItemsController < Admin::AdminController
   before_action :set_news_item, only: [:show,:edit,:update,:destroy]
   def index
-    @news_items = NewsItem.all.order(:id)
+    @news_items = NewsItem.all.order(updated_at: :desc)
   end
 
   def show

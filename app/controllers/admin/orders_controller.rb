@@ -1,6 +1,6 @@
 class Admin::OrdersController < Admin::AdminController
   def index
-    @orders = Order.all.order(:id)
+    @orders = Order.all.order(updated_at: :desc)
   end
 
   def show

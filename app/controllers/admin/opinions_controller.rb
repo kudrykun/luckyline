@@ -1,7 +1,7 @@
 class Admin::OpinionsController < Admin::AdminController
   before_action :set_opinion, only: [:show, :edit, :update, :destroy]
   def index
-    @opinions = Opinion.all.order(:id)
+    @opinions = Opinion.all.order(updated_at: :desc)
   end
 
   def show
