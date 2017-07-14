@@ -1,23 +1,28 @@
+/*Стили для формы*/
 .namespan,.textspan, .vkspan, .okspan,.phonespan, .cityspan{
   color: #fd4949;
   font-size: 80%;
 }
 
 .field-incorrect{
- border-color: rgb(247, 167, 167);
+  border-color: rgb(247, 167, 167);
 }
 
+/*Основные стили*/
+.opinions {
+  background-color: rgba(255, 255, 255, 0.74);
+}
 .left-quotes{
   font-size: 8em;
   font-family: sans-serif;
   color: #6bc748;
   line-height: 140px;
 }
-
+/*информация о комментаторе*/
 .opinion-info{
   font-size: 89%;
   line-height: 2.067;
-  color: #cecdcd;
+  color: #929292;
 }
 
 .opinion-info > time{
@@ -28,25 +33,9 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.opinions > .row > .col-md-12:nth-child(2n){
+/*.opinions > .row > .col-md-12:nth-child(2n){
   background-color: #f6f6f6;
-}
-
-.opinions > .row > .col-sm-12{
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.opinions > .row > .col-sm-12:nth-child(2n){
-  background-color: #f6f6f6;
-}
-
-.opinions > .row > .col-xs-12{
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.opinions > .row > .col-xs-12:nth-child(2n){
-  background-color: #f6f6f6;
-}
+}*/
 
 @media screen and (max-width: 991px){
   .opinion-image > img{
