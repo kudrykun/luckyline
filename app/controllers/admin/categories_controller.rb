@@ -4,7 +4,7 @@ class CategoriesController < AdminController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
-    @categories = Category.all.order(:id)
+    @categories = Category.all.order(updated_at: :desc)
   end
 
   def show

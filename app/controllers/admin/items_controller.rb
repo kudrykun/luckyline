@@ -3,7 +3,7 @@ class Admin::ItemsController < Admin::AdminController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all.order(:id)
+    @items = Item.all.order(updated_at: :desc)
   end
 
   # GET /items/1

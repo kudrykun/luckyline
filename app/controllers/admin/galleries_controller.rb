@@ -4,7 +4,7 @@ class Admin::GalleriesController < Admin::AdminController
   # GET /items
   # GET /items.json
   def index
-    @galleries = Gallery.all.order(:id)
+    @galleries = Gallery.all.order(updated_at: :desc)
   end
 
   # GET /items/1
