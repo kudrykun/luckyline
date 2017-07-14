@@ -6,7 +6,15 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <%= form_for ([:admin,@gallery]),:html => {multipart: true} do |f| %>
+      <%= form_for ([:admin, @gallery]), :html => {multipart: true} do |f| %>
+
+          <div class="checkbox">
+            <%= f.label :visible do %>
+                <%= f.check_box :visible %>
+                Видимость
+            <% end %>
+          </div>
+
           <% if @gallery.errors.any? %>
               <div id="error_explanation">
                 <h2><%= pluralize(@gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
@@ -21,40 +29,40 @@
 
           <div class="form-group">
             <%= f.label :title, 'Название' %>
-            <%= f.text_field :title, class: 'form-control'%>
+            <%= f.text_field :title, class: 'form-control' %>
           </div>
           <div class="form-group">
             <%= f.label :description, 'Описание' %>
-            <%= f.text_area :description, class: 'form-control'%>
+            <%= f.text_area :description, class: 'form-control' %>
           </div>
           <div class="form-group">
             <%= f.label :header, 'Заголовок H1' %>
-            <%= f.text_field :header, class: 'form-control'%>
+            <%= f.text_field :header, class: 'form-control' %>
           </div>
           <div class="form-group">
             <%= f.label :category_id, 'Категория' %>
-            <%= f.collection_select :category_id, @categories.order(:id), :id, :title, class: 'form-control'%>
+            <%= f.collection_select :category_id, @categories.order(:id), :id, :title, class: 'form-control' %>
           </div>
           <div class="form-group">
             <%= f.label :meta_title, 'Мета-название' %>
-            <%= f.text_field :meta_title, class: 'form-control'%>
+            <%= f.text_field :meta_title, class: 'form-control' %>
           </div>
           <div class="form-group">
             <%= f.label :meta_description, 'Мета-описание' %>
-            <%= f.text_area :meta_description, class: 'form-control'%>
+            <%= f.text_area :meta_description, class: 'form-control' %>
           </div>
           <div class="form-group">
             <%= f.label :preview, 'Изображение-превью' %>
-            <%= file_field_tag "preview", class: 'form-control'%>
+            <%= file_field_tag "preview", class: 'form-control' %>
           </div>
           <div class="checkbox">
             <label>
-              <%=f.check_box :wide%> Широкое превью
+              <%= f.check_box :wide %> Широкое превью
             </label>
           </div>
           <div class="checkbox">
             <label>
-              <%=f.check_box :half_wide%> Полуширокое превью
+              <%= f.check_box :half_wide %> Полуширокое превью
             </label>
           </div>
           <div class="form-group">
@@ -63,10 +71,10 @@
           </div>
           <div class="row">
             <%= f.submit 'Создать', class: 'btn btn-default' %>
-            <%=link_to admin_galleries_path, class: 'btn btn-default' do%>
+            <%= link_to admin_galleries_path, class: 'btn btn-default' do %>
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 Назад
-            <%end%>
+            <% end %>
           </div>
       <% end %>
     </div>
