@@ -45,6 +45,11 @@
         <%if @galleries%>
             <%@galleries.each do |gallery|%>
                 <tr>
+                <%if !gallery.visible?%>
+                <tr class="hidden-gallery">
+                <%else%>
+                <tr>
+                <%end%>
                   <th><%= gallery.id %></th>
                   <td><%= gallery.title %></td>
                   <td><%= gallery.description %></td>

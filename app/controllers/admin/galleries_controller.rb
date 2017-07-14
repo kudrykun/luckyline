@@ -99,6 +99,14 @@ class Admin::GalleriesController < Admin::AdminController
   end
 
   def gallery_params
-    params.require(:gallery).permit(:title, :description, :category_id,:meta_title,:meta_description,:header,:wide,:half_wide)
+    params.require(:gallery).permit(:title,
+                                    :description,
+                                    :category_id,
+                                    :meta_title,
+                                    :meta_description,
+                                    :header,
+                                    :wide,
+                                    :half_wide,
+                                    :visible)
   end
 end

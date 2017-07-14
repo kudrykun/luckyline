@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
     @category = Category.friendly.find(params[:id]);
     @categories = @category.subs
     @items = @category.items
-    @galleries = @category.galleries
+    @galleries = @category.galleries.where(visible: true)
     set_meta_tags title: @category.meta_title,
                   description: @category.meta_description
   end
