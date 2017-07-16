@@ -1,6 +1,5 @@
 class Opinion < ApplicationRecord
-  has_attached_file :image, styles: {for_show: "800x800#",for_grid: "450x450#", thumb: "150x150#", }, default_url: "/images/:style/missing.png"
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  has_many :pictures, as: :imageable, dependent: :destroy
 
   validates :name, presence: true, format: {with: /\A[а-яА-ЯЁё]{3,15}\Z/,
                                             message:'Only Cyrillic, in range beetween 3..15'}

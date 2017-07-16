@@ -13,7 +13,7 @@
   <div class="row">
     <%@opinions.each do |opinion|%>
     <div class="col-md-12 col-sm-12 col-xs-12">
-        <% if opinion.image_file_name != nil %>
+        <% if opinion.pictures.first != nil %>
           <div class="col-md-1 col-sm-1 col-xs-12">
             <span class="left-quotes">&#8220</span>
           </div>
@@ -22,10 +22,10 @@
             <%=render 'opinions/info', opinion: opinion%>
           </div>
           <div class="col-md-3 col-sm-12 opinion-image">
-            <%=link_to opinion.image.url(:original), {'data-toggle': 'lightbox'} do %>
-                <%=image_tag opinion.image(:for_grid), class: 'img-responsive', alt: opinion.alt%>
+            <%=link_to opinion.pictures.first.image(:original), {'data-toggle': 'lightbox'} do %>
+                <%=image_tag opinion.pictures.first.image(:for_grid), class: 'img-responsive', alt: opinion.alt%>
                 <div class="images-count">
-                  <div class="caption">4 фото</div>
+                  <div class="caption"><%= opinion.pictures.size %> фото</div>
                 </div>
             <%end%>
           </div>
