@@ -17,13 +17,16 @@
           <div class="col-md-1 col-sm-1 col-xs-12">
             <span class="left-quotes">&#8220</span>
           </div>
-          <div class="col-md-7 col-sm-11 col-xs-12">
+          <div class="col-md-8 col-sm-11 col-xs-12">
             <%=opinion.text%>
             <%=render 'opinions/info', opinion: opinion%>
           </div>
-          <div class="col-md-4 col-sm-12 opinion-image">
+          <div class="col-md-3 col-sm-12 opinion-image">
             <%=link_to opinion.image.url(:original), {'data-toggle': 'lightbox'} do %>
-                <%=image_tag opinion.image(:thumb), class: 'img-responsive', alt: opinion.alt%>
+                <%=image_tag opinion.image(:for_grid), class: 'img-responsive', alt: opinion.alt%>
+                <div class="images-count">
+                  <div class="caption">4 фото</div>
+                </div>
             <%end%>
           </div>
         <% else %>
