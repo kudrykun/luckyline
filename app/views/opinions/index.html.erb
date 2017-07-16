@@ -22,11 +22,14 @@
             <%=render 'opinions/info', opinion: opinion%>
           </div>
           <div class="col-md-3 col-sm-12 opinion-image">
-            <%=link_to opinion.pictures.first.image(:original), {'data-toggle': 'lightbox'} do %>
+            <%=link_to opinion.pictures.first.image(:original), {'data-toggle': 'lightbox', 'data-gallery': 'hidden-images'} do %>
                 <%=image_tag opinion.pictures.first.image(:for_grid), class: 'img-responsive', alt: opinion.alt%>
                 <div class="images-count">
                   <div class="caption"><%= opinion.pictures.size %> фото</div>
                 </div>
+            <%end%>
+            <%opinion.pictures[1..-1].each do |picture|%>
+                <div data-toggle="lightbox" data-gallery="hidden-images" data-remote="<%=picture.image.url%>"></div>
             <%end%>
           </div>
         <% else %>
