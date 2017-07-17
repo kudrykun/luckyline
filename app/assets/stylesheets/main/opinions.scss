@@ -18,6 +18,15 @@
   color: #6bc748;
   line-height: 140px;
 }
+#new_opinion > .invalid-button {
+  background-color: #8793a0;
+}
+.picture_span {
+  font-size: 15px;
+}
+.invalid-count{
+  color: #fd4949;
+}
 /*информация о комментаторе*/
 .opinion-info{
   font-size: 89%;
