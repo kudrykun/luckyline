@@ -4,6 +4,7 @@ var vkFlag = true;
 var okFlag = true;
 var picturesFlag = true;
 
+
 $(document).ready(function() {
     $('#opinion_name').blur(function(){
         var reg = /^[а-яА-ЯЁё]{3,15}$/;

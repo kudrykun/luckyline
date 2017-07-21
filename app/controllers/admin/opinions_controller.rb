@@ -37,8 +37,10 @@ class Admin::OpinionsController < Admin::AdminController
   end
 
   def destroy
-    if Opinion.find(params[:id]).image.exists?
-      Opinion.find(params[:id]).image.destroy
+    if @opinion.pictures.size > 0
+      @opinion.pictures.each do |picture|
+        picture.destroy
+      end
     end
     opinion_text = @opinion.text
     Opinion.find(params[:id]).destroy
