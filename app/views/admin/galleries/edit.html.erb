@@ -34,6 +34,11 @@
           <div class="form-group">
             <%= f.label :description, 'Описание' %>
             <%= f.text_area :description, class: 'form-control' %>
+            <%= tinymce %>
+          </div>
+          <div class="form-group">
+            <%= f.label :description, 'Описание' %>
+            <%= f.text_area :description, :class => "tinymce", :rows => 40, :cols => 120 %>
           </div>
           <div class="form-group">
             <%= f.label :header, 'Заголовок H1' %>
