@@ -15,6 +15,8 @@
 //= require jquery.remotipart
 //= require bootstrap-sprockets
 //= require lightbox-bootstrap
+//= require tinymce-jquery
+//= require ru
 //= require turbolinks
 //= require turbolinks-compability
 //= require_tree .
