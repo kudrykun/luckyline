@@ -1,5 +1,5 @@
 toolbar:
-  - bold italic | undo redo | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent
+  - bold italic | undo redo | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | paste
   - image | link
 plugins:
   - image
@@ -16,3 +16,8 @@ plugins:
   - contextmenu
   - paste
   - code
+paste_data_images: true
+image_title: true
+automatic_uploads: true
+images_upload_url: 'postAcceptor.php'
+file_picker_types: 'image'
