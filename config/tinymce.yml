@@ -1,6 +1,18 @@
 toolbar:
-  - styleselect | bold italic | undo redo
+  - bold italic | undo redo | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent
   - image | link
 plugins:
   - image
   - link
+  - lists
+  - print
+  - preview
+  - searchreplace
+  - visualblocks
+  - fullscreen
+  - insertdatetime
+  - media
+  - table
+  - contextmenu
+  - paste
+  - code
