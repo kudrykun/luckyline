@@ -22,13 +22,13 @@
             <%=render 'opinions/info', opinion: opinion%>
           </div>
           <div class="col-md-3 col-sm-12 opinion-image">
-            <%=link_to opinion.pictures.first.image(:original), {'data-toggle': 'lightbox', 'data-gallery': "hidden-images-#{opinion.id}"} do %>
-                <%=image_tag opinion.pictures.first.image(:for_grid), class: 'img-responsive', alt: opinion.pictures.first.alt%>
+            <%=link_to opinion.pictures.order(:updated_at).first.image(:original), {'data-toggle': 'lightbox', 'data-gallery': "hidden-images-#{opinion.id}"} do %>
+                <%=image_tag opinion.pictures.order(:updated_at).first.image(:for_grid), class: 'img-responsive', alt: opinion.pictures.order(:updated_at).first.alt%>
                 <div class="images-count">
                   <div class="caption"><%= opinion.pictures.size %> фото</div>
                 </div>
             <%end%>
-            <%opinion.pictures.drop(1).each do |picture|%>
+            <%opinion.pictures.order(:updated_at).drop(1).each do |picture|%>
                 <div data-toggle="lightbox" data-gallery="hidden-images-<%=opinion.id%>" data-remote="<%=picture.image.url%>"></div>
             <%end%>
           </div>
