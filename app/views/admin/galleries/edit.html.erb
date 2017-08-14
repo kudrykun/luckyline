@@ -1,5 +1,6 @@
 <div class="container">
   <script>
+
       tinymce.init({
           selector: '#gallery_description',
           plugins: 'image link lists print ' +
@@ -8,18 +9,22 @@
                     'table contextmenu paste code',
           toolbar: 'bold italic | undo redo | ' +
                     'alignleft aligncenter alignright alignjustify | ' +
-                    'bullist numlist outdent indent | paste | image | link',
+                    'bullist numlist outdent indent | paste | image | link | mybutton | myrow',
+          style_formats: [
+              { title: 'Колонка 3 из 12', block: 'div', classes: 'col-md-3'}
+          ],
           // enable title field in the Image dialog
           image_title: true,
           // enable automatic uploads of images represented by blob or data URIs
           automatic_uploads: true,
           // URL of our upload handler (for more details check: https://www.tinymce.com/docs/configure/file-image-upload/#images_upload_url)
-          images_upload_url: '<%=admin_description_pictures_path%>',
+          images_upload_url: '<%=description_pictures_path%>',
           // here we add custom filepicker only to Image dialog
           file_picker_types: 'image',
           // and here's our custom image picker
 
           file_picker_callback: function(cb, value, meta) {
+
               (function() {
                   var send = XMLHttpRequest.prototype.send,
                       token = $('meta[name=csrf-token]').attr('content');
@@ -28,6 +33,7 @@
                       return send.apply(this, arguments);
                   };
               }());
+
               var input = document.createElement('input');
               input.setAttribute('type', 'file');
               input.setAttribute('accept', 'image/*');
@@ -54,11 +60,54 @@
                       blobCache.add(blobInfo);
 
                       // call the callback and populate the Title field with the file name
-                      cb(blobInfo.blobUri(), { title: file.name });
+                      cb(blobInfo.blobUri(), { title: file.nasme });
                   };
               };
 
               input.click();
+          },
+          setup: function(editor) {
+              editor.addButton('mybutton', {
+                  text: "Обернуть изображение",
+                  onclick: function () {
+                      var content = editor.selection.getContent();
+                      if (content.match('<img.*\/>')) {
+                          var regex = /src=["']?((?:.(?!["']?\s+(?:\S+)=|[>"']))+.)["']?/g;
+                          var src = '/' + regex.exec(editor.selection.getContent())[1].replace(/\.\.\//g,'');
+                          content.replace(/width="\d*"/g, '');
+                          content.replace(/height="\d*"/g, '');
+                          content.replace(/<img/g, '<img class="img-responsive"');
+                          editor.selection.setContent(
+                              '<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">' +
+                                '<div class="catalog-gallery-container">' +
+                                  '<a data-toggle="lightbox" data-gallery="description-pictures" href="'+ src +'">' +
+                                    content  +
+                                  '</a>' +
+                                '</div>' +
+                              '</div>'
+                          );
+                          /*editor.selection.wrap('<a data-toggle="lightbox" data-gallery="description-pictures" href="'+  src + '"></a>');*/
+                        /* editor.insertContent(
+                          '<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">' +
+                          '<div class="catalog-gallery-container">' +
+                          '<a data-toggle="lightbox" data-gallery="description-pictures" href="#">' +
+                          '<img class="img-responsive" src="ссыль" alt="1000x1920">' +
+                          '<div class="gallery-image-caption"></div>' +
+                          '</a>' +
+                          '</div>' +
+                          '</div>'
+                      );*/
+                      }
+                      else
+                          alert("ВОУ! ДА ВЕДЬ НИЧЕГО НЕ ПРОИЗОШЛО!");
+                  }
+              });
+              editor.addButton('myrow', {
+                  text: "Контейнер для изображений",
+                  onclick: function () {
+                      editor.selection.setContent('<div class="row"></div>');
+                  }
+              });
           }
       });
   </script>
