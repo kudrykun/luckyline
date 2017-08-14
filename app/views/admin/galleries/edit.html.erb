@@ -1,4 +1,26 @@
 <div class="container">
+  <script>
+
+      tinymce.init({
+          selector: '#gallery_description',
+          plugins: 'image link lists print ' +
+                    'preview searchreplace visualblocks ' +
+                    'fullscreen insertdatetime media ' +
+                    'table contextmenu paste code',
+          toolbar: 'bold italic | undo redo | ' +
+                    'alignleft aligncenter alignright alignjustify | ' +
+                    'bullist numlist outdent indent | paste | image | link | images_tag',
+          setup: function(editor) {
+              editor.addButton('images_tag', {
+                  text: "Изображения-цены",
+                  onclick: function () {
+                      alert(editor.selection.getContent());
+                      editor.insertContent('<div id="price_images" style="color:green">Цены</div>');
+                  }
+              });
+          }
+      });
+  </script>
   <div class="row">
     <div class="col-md-12">
       <h1 class="page-header">Редактировать галерею</h1>
@@ -35,6 +57,36 @@
             <%= f.label :description, 'Описание' %>
             <%= f.text_area :description, :class => "tinymce", :rows => 40, :cols => 120 %>
             <%= tinymce %>
+          </div>
+          <!--Изображения для цен-->
+          <div class="form-group">
+            <%= f.label :pictures, 'Изображения для цен' %>
+            <div class="row">
+              <div class="col-md-12">
+                Всего изображений: <%= @gallery.description_pictures.size %>
+              </div>
+            </div>
+            <div class="row">
+              <% @gallery.description_pictures.each do |picture| %>
+                  <div class="col-md-2">
+                    <div class="image-wrapper">
+                      <%= link_to admin_description_picture_path(picture), method: :delete, :remote => true, :class => 'delete-image' do %>
+                          <div class="image-hover">
+                            <div class="image-hover-content">
+                              <%= icon ('times') %>
+                            </div>
+                          </div>
+                          <div class="image-container">
+                            <div class="image">
+                              <%= image_tag picture.image(:for_grid), class: 'img-responsive' %>
+                            </div>
+                          </div>
+                      <% end %>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+            <%= file_field_tag "description_images[]", type: :file, multiple: true %>
           </div>
           <div class="form-group">
             <%= f.label :header, 'Заголовок H1' %>
