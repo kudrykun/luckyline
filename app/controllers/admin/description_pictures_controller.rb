@@ -1,4 +1,4 @@
-class DescriptionPicturesController < ApplicationController
+class Admin::DescriptionPicturesController < Admin::AdminController
   def create
     if params[:file].class == ActionDispatch::Http::UploadedFile
       @image = DescriptionPicture.new(image: params[:file])

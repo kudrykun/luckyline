@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   resources :items, only: [] do
     resources :orders, only: [:create]  #создание заказа из товара
   end
-  match "description_pictures" => "description_pictures#create", via: :post
 
 
   namespace :admin do
@@ -32,5 +31,6 @@ Rails.application.routes.draw do
     resources :orders
     resources :galleries
     resources :pictures, only: [:destroy,:update,:edit]
+    resources :description_pictures, only: [:destroy,:update,:edit]
   end
 end

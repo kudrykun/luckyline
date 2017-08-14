@@ -9,103 +9,13 @@
                     'table contextmenu paste code',
           toolbar: 'bold italic | undo redo | ' +
                     'alignleft aligncenter alignright alignjustify | ' +
-                    'bullist numlist outdent indent | paste | image | link | mybutton | myrow',
-          style_formats: [
-              { title: 'Колонка 3 из 12', block: 'div', classes: 'col-md-3'}
-          ],
-          // enable title field in the Image dialog
-          image_title: true,
-          // enable automatic uploads of images represented by blob or data URIs
-          automatic_uploads: true,
-          // URL of our upload handler (for more details check: https://www.tinymce.com/docs/configure/file-image-upload/#images_upload_url)
-          images_upload_url: '<%=description_pictures_path%>',
-          // here we add custom filepicker only to Image dialog
-          file_picker_types: 'image',
-          // and here's our custom image picker
-
-          file_picker_callback: function(cb, value, meta) {
-
-              (function() {
-                  var send = XMLHttpRequest.prototype.send,
-                      token = $('meta[name=csrf-token]').attr('content');
-                  XMLHttpRequest.prototype.send = function(data) {
-                      this.setRequestHeader('X-CSRF-Token', token);
-                      return send.apply(this, arguments);
-                  };
-              }());
-
-              var input = document.createElement('input');
-              input.setAttribute('type', 'file');
-              input.setAttribute('accept', 'image/*');
-
-              // Note: In modern browsers input[type="file"] is functional without
-              // even adding it to the DOM, but that might not be the case in some older
-              // or quirky browsers like IE, so you might want to add it to the DOM
-              // just in case, and visually hide it. And do not forget do remove it
-              // once you do not need it anymore.
-
-              input.onchange = function() {
-                  var file = this.files[0];
-
-                  var reader = new FileReader();
-                  reader.readAsDataURL(file);
-                  reader.onload = function () {
-                      // Note: Now we need to register the blob in TinyMCEs image blob
-                      // registry. In the next release this part hopefully won't be
-                      // necessary, as we are looking to handle it internally.
-                      var id = 'blobid' + (new Date()).getTime();
-                      var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
-                      var base64 = reader.result.split(',')[1];
-                      var blobInfo = blobCache.create(id, file, base64);
-                      blobCache.add(blobInfo);
-
-                      // call the callback and populate the Title field with the file name
-                      cb(blobInfo.blobUri(), { title: file.nasme });
-                  };
-              };
-
-              input.click();
-          },
+                    'bullist numlist outdent indent | paste | image | link | images_tag',
           setup: function(editor) {
-              editor.addButton('mybutton', {
-                  text: "Обернуть изображение",
+              editor.addButton('images_tag', {
+                  text: "Изображения-цены",
                   onclick: function () {
-                      var content = editor.selection.getContent();
-                      if (content.match('<img.*\/>')) {
-                          var regex = /src=["']?((?:.(?!["']?\s+(?:\S+)=|[>"']))+.)["']?/g;
-                          var src = '/' + regex.exec(editor.selection.getContent())[1].replace(/\.\.\//g,'');
-                          content.replace(/width="\d*"/g, '');
-                          content.replace(/height="\d*"/g, '');
-                          content.replace(/<img/g, '<img class="img-responsive"');
-                          editor.selection.setContent(
-                              '<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">' +
-                                '<div class="catalog-gallery-container">' +
-                                  '<a data-toggle="lightbox" data-gallery="description-pictures" href="'+ src +'">' +
-                                    content  +
-                                  '</a>' +
-                                '</div>' +
-                              '</div>'
-                          );
-                          /*editor.selection.wrap('<a data-toggle="lightbox" data-gallery="description-pictures" href="'+  src + '"></a>');*/
-                        /* editor.insertContent(
-                          '<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">' +
-                          '<div class="catalog-gallery-container">' +
-                          '<a data-toggle="lightbox" data-gallery="description-pictures" href="#">' +
-                          '<img class="img-responsive" src="ссыль" alt="1000x1920">' +
-                          '<div class="gallery-image-caption"></div>' +
-                          '</a>' +
-                          '</div>' +
-                          '</div>'
-                      );*/
-                      }
-                      else
-                          alert("ВОУ! ДА ВЕДЬ НИЧЕГО НЕ ПРОИЗОШЛО!");
-                  }
-              });
-              editor.addButton('myrow', {
-                  text: "Контейнер для изображений",
-                  onclick: function () {
-                      editor.selection.setContent('<div class="row"></div>');
+                      alert(editor.selection.getContent());
+                      editor.insertContent('<div id="price_images" style="color:green">Цены</div>');
                   }
               });
           }
@@ -147,6 +57,36 @@
             <%= f.label :description, 'Описание' %>
             <%= f.text_area :description, :class => "tinymce", :rows => 40, :cols => 120 %>
             <%= tinymce %>
+          </div>
+          <!--Изображения для цен-->
+          <div class="form-group">
+            <%= f.label :pictures, 'Изображения для цен' %>
+            <div class="row">
+              <div class="col-md-12">
+                Всего изображений: <%= @gallery.description_pictures.size %>
+              </div>
+            </div>
+            <div class="row">
+              <% @gallery.description_pictures.each do |picture| %>
+                  <div class="col-md-2">
+                    <div class="image-wrapper">
+                      <%= link_to admin_description_picture_path(picture), method: :delete, :remote => true, :class => 'delete-image' do %>
+                          <div class="image-hover">
+                            <div class="image-hover-content">
+                              <%= icon ('times') %>
+                            </div>
+                          </div>
+                          <div class="image-container">
+                            <div class="image">
+                              <%= image_tag picture.image(:for_grid), class: 'img-responsive' %>
+                            </div>
+                          </div>
+                      <% end %>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+            <%= file_field_tag "description_images[]", type: :file, multiple: true %>
           </div>
           <div class="form-group">
             <%= f.label :header, 'Заголовок H1' %>
