@@ -1,0 +1,21 @@
+<script>
+    tinymce.init({
+        selector: '#gallery_description',
+        plugins: 'image link lists print ' +
+        'preview searchreplace visualblocks ' +
+        'fullscreen insertdatetime media ' +
+        'table contextmenu paste code',
+        toolbar: 'bold italic | undo redo | ' +
+        'alignleft aligncenter alignright alignjustify | ' +
+        'bullist numlist outdent indent | paste | image | link | images_tag',
+        setup: function (editor) {
+            editor.addButton('images_tag', {
+                text: "Изображения-цены",
+                onclick: function () {
+                    alert(editor.selection.getContent());
+                    editor.insertContent('<div id="price_images" style="color:green">Цены</div>');
+                }
+            });
+        }
+    });
+</script>
