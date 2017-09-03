@@ -1,10 +1,11 @@
 <%= form_for ([:admin, gallery]), :html => {multipart: true} do |f| %>
 
     <!--Видимость-->
-    <div class="checkbox">
+    <div class="switch">
       <%= f.label :visible do %>
-          <%= f.check_box :visible %>
           Видимость
+          <%= f.check_box :visible %>
+          <span class="lever"></span>
       <% end %>
     </div>
 
@@ -22,9 +23,9 @@
     <% end %>
 
     <!--Название-->
-    <div class="form-group">
+    <div class="input-field">
+      <%= f.text_field :title%>
       <%= f.label :title, 'Название' %>
-      <%= f.text_field :title, class: 'form-control' %>
     </div>
 
     <!--Описание товара-->
@@ -62,8 +63,18 @@
             </div>
         <% end %>
       </div>
-      <%= file_field_tag "description_images[]", type: :file, multiple: true %>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Загрузить</span>
+          <%= file_field_tag "description_images[]", type: :file, multiple: true %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Загрузите один или несколько файлов">
+        </div>
+      </div>
     </div>
+
+
 
     <!--Заголовок H1-->
     <div class="form-group">
@@ -72,21 +83,21 @@
     </div>
 
     <!--Принадлежность к категории-->
-    <div class="form-group">
+    <div class="input-field">
+      <%= f.collection_select :category_id, @categories.order(:id), :id, :title,{prompt: 'Пусто'} %>
       <%= f.label :category_id, 'Категория' %>
-      <%= f.collection_select :category_id, @categories.order(:id), :id, :title, class: 'form-control' %>
     </div>
 
     <!--Мета-название-->
-    <div class="form-group">
+    <div class="input-field">
+      <%= f.text_field :meta_title%>
       <%= f.label :meta_title, 'Мета-название' %>
-      <%= f.text_field :meta_title, class: 'form-control' %>
     </div>
 
     <!--Мета-описание-->
-    <div class="form-group">
+    <div class="input-field">
+      <%= f.text_area :meta_description, class: 'materialize-textarea'%>
       <%= f.label :meta_description, 'Мета-описание' %>
-      <%= f.text_area :meta_description, class: 'form-control' %>
     </div>
 
     <!--Изображение для обложки-->
@@ -113,21 +124,33 @@
             </div>
           </div>
       <% end %>
-      <%= file_field_tag "preview", class: 'form-control' %>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Загрузить</span>
+          <%= file_field_tag "preview", class: 'form-control' %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Загрузите один файл">
+        </div>
+      </div>
     </div>
 
     <!--Сделать ли превью во всю ширину?-->
-    <div class="checkbox">
-      <label>
-        <%= f.check_box :wide %> Широкое превью
-      </label>
+    <div class="switch">
+      <%= f.label :wide do %>
+          Широкое превью
+          <%= f.check_box :wide %>
+          <span class="lever"></span>
+      <% end %>
     </div>
 
     <!--Сделать ли превью в половину ширины экрана?-->
-    <div class="checkbox">
-      <label>
-        <%= f.check_box :half_wide %> Полуширокое превью
-      </label>
+    <div class="switch">
+      <%= f.label :half_wide do %>
+          Широкое превью
+          <%= f.check_box :half_wide %>
+          <span class="lever"></span>
+      <% end %>
     </div>
 
     <!--Загрузка изображений-->
@@ -158,7 +181,15 @@
             </div>
         <% end %>
       </div>
-      <%= file_field_tag "images[]", type: :file, multiple: true %>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Загрузить</span>
+          <%= file_field_tag "images[]", type: :file, multiple: true %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Загрузите один или несколько файлов">
+        </div>
+      </div>
     </div>
 
     <div class="row">

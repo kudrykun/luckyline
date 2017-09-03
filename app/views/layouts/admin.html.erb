@@ -5,33 +5,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'admin/admin', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'admin/admin' %>
+  <%= javascript_include_tag 'application' %>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </head>
 
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<nav class="navbar navbar-user">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <%=link_to 'Luckyline', root_path, class: 'navbar-brand'%>
-    </div>
-    <div class="collapse navbar-collapse text-right" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><%=link_to 'Контрольная панель', admin_path%></li>
-        <%if user_signed_in?%>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=current_user.email%><span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><%=link_to 'Выйти', destroy_user_session_path, :method => :delete%></li>
-              </ul>
-            </li>
-        <%end%>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!--container-fluid-->
-</nav>
+<%= render 'layouts/nav_admin'%>
 
 <%= yield %>
 
