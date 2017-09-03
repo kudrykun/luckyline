@@ -17,4 +17,6 @@ class Gallery < ApplicationRecord
         [:title, :category_id]
     ]
   end
+
+  has_many :pictures_groups
 end

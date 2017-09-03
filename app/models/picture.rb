@@ -3,6 +3,8 @@ class Picture < ApplicationRecord
   has_one :item
   has_one :category
   has_one :gallery
+  belongs_to :pictures_group, optional: true
+
   has_attached_file :image, styles:
                     lambda { |attachment|
                       { for_show: "800x800#",
