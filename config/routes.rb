@@ -32,5 +32,6 @@ Rails.application.routes.draw do
     resources :galleries
     resources :pictures, only: [:destroy,:update,:edit]
     resources :description_pictures, only: [:destroy,:update,:edit]
+    resources :decoration_pictures, only: [:destroy,:update,:edit]
   end
 end

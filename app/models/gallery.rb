@@ -5,6 +5,7 @@ class Gallery < ApplicationRecord
   belongs_to :category
   belongs_to :preview, class_name: 'Picture'
   has_many :description_pictures
+  has_many :decoration_pictures
 
   #It is help to make nice routes
   extend FriendlyId

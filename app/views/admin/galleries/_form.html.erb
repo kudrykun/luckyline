@@ -1,0 +1,200 @@
+<%= form_for ([:admin, gallery]), :html => {multipart: true} do |f| %>
+
+    <!--Видимость-->
+    <div class="checkbox">
+      <%= f.label :visible do %>
+          <%= f.check_box :visible %>
+          Видимость
+      <% end %>
+    </div>
+
+    <!--Ошибки сохранения галлереи-->
+    <% if gallery.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
+
+          <ul>
+            <% gallery.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <!--Название-->
+    <div class="form-group">
+      <%= f.label :title, 'Название' %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+
+    <!--Описание-->
+    <div class="form-group">
+      <%= f.label :description, 'Описание' %>
+      <%= f.text_area :description, :class => "tinymce", :rows => 40, :cols => 120 %>
+      <%= tinymce %>
+    </div>
+
+    <!--Изображения для цен-->
+    <div class="form-group">
+      <%= f.label 'Изображения для цен' %>
+      <div class="row">
+        <div class="col-md-12">
+          Всего изображений: <%= gallery.description_pictures.size %>
+        </div>
+      </div>
+      <div class="row">
+        <% gallery.description_pictures.each do |picture| %>
+            <div class="col-md-2">
+              <div class="image-wrapper">
+                <%= link_to admin_description_picture_path(picture), method: :delete, :remote => true, :class => 'delete-image' do %>
+                    <div class="image-hover">
+                      <div class="image-hover-content">
+                        <%= icon ('times') %>
+                      </div>
+                    </div>
+                    <div class="image-container">
+                      <div class="image">
+                        <%= image_tag picture.image(:for_grid), class: 'img-responsive' %>
+                      </div>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+      <%= file_field_tag "description_images[]", type: :file, multiple: true %>
+    </div>
+
+    <!--Изображения для декоров-->
+    <div class="form-group">
+      <%= f.label :pictures, 'Изображения для декоров' %>
+      <div class="row">
+        <div class="col-md-12">
+          Всего изображений: <%= gallery.decoration_pictures.size %>
+        </div>
+      </div>
+      <div class="row">
+        <% gallery.decoration_pictures.each do |picture| %>
+            <div class="col-md-2">
+              <div class="image-wrapper">
+                <%= link_to admin_decoration_picture_path(picture), method: :delete, :remote => true, :class => 'delete-image' do %>
+                    <div class="image-hover">
+                      <div class="image-hover-content">
+                        <%= icon ('times') %>
+                      </div>
+                    </div>
+                    <div class="image-container">
+                      <div class="image">
+                        <%= image_tag picture.image(:for_grid), class: 'img-responsive' %>
+                      </div>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+      <%= file_field_tag "decoration_images[]", type: :file, multiple: true %>
+    </div>
+
+    <!--Заголовок галлереи-->
+    <div class="form-group">
+      <%= f.label :header, 'Заголовок H1' %>
+      <%= f.text_field :header, class: 'form-control' %>
+    </div>
+
+    <!--Категория-родитель-->
+    <div class="form-group">
+      <%= f.label :category_id, 'Категория' %>
+      <%= f.collection_select :category_id, @categories.order(:id), :id, :title, class: 'form-control' %>
+    </div>
+
+    <!--Мета название-->
+    <div class="form-group">
+      <%= f.label :meta_title, 'Мета-название' %>
+      <%= f.text_field :meta_title, class: 'form-control' %>
+    </div>
+
+    <!--Мета описание-->
+    <div class="form-group">
+      <%= f.label :meta_description, 'Мета-описание' %>
+      <%= f.text_area :meta_description, class: 'form-control' %>
+    </div>
+
+    <!--Изображение превью-->
+    <div class="form-group">
+      <%= f.label :preview, 'Изображение-превью' %>
+      <% if gallery.preview %>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="image-wrapper">
+                <%= link_to admin_picture_path(gallery.preview), method: :delete, :remote => true, :class => 'delete-image' do %>
+                    <div class="image-hover">
+                      <div class="image-hover-content">
+                        <%= icon ('times') %>
+                      </div>
+                    </div>
+                    <div class="image-container">
+                      <div class="image">
+                        <%= image_tag gallery.preview.image(:for_grid), class: 'img-responsive' %>
+
+                      </div>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+      <%= file_field_tag "preview", class: 'form-control' %>
+    </div>
+
+    <!--Будет ли во всю страницу превью?-->
+    <div class="checkbox">
+      <label>
+        <%= f.check_box :wide %> Широкое превью
+      </label>
+    </div>
+
+    <!--Будет ли превью в половину страницы?-->
+    <div class="checkbox">
+      <label>
+        <%= f.check_box :half_wide %> Полуширокое превью
+      </label>
+    </div>
+
+    <!--Изображения галлереи-->
+    <div class="form-group">
+      <%= f.label :pictures, 'Изображения' %>
+      <div class="row">
+        <div class="col-md-12">
+          Всего изображений: <%= gallery.pictures.size %>
+        </div>
+      </div>
+      <div class="row">
+        <% gallery.pictures.each do |picture| %>
+            <div class="col-md-2">
+              <div class="image-wrapper">
+                <%= link_to admin_picture_path(picture), method: :delete, :remote => true, :class => 'delete-image' do %>
+                    <div class="image-hover">
+                      <div class="image-hover-content">
+                        <%= icon ('times') %>
+                      </div>
+                    </div>
+                    <div class="image-container">
+                      <div class="image">
+                        <%= image_tag picture.image(:for_grid), class: 'img-responsive' %>
+                      </div>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+    </div>
+
+    <!--Кнопки-->
+    <div class="row">
+      <%= f.submit 'Сохранить изменения', class: 'btn btn-default' %>
+      <%= link_to 'Назад', admin_galleries_path, class: 'btn btn-default' %>
+    </div>
+<% end %>

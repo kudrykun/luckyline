@@ -80,5 +80,20 @@
                 '</div>');
             <%end%>
         }
+        if($('#decoration_images').length){
+            $('#decoration_images').empty();
+            $('#decoration_images').removeAttr('style');
+            $('#decoration_images').addClass('row');
+            <%@gallery.decoration_pictures.each do |picture|%>
+            $('#decoration_images').append(
+                '<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">' +
+                '<div class="catalog-gallery-container">' +
+                '<a data-toggle="lightbox" data-gallery="decoration-pictures" href="<%=picture.image(:original)%>">' +
+                '<%=image_tag picture.image(:for_grid), class: 'img-responsive'%>' +
+                '</a>' +
+                '</div>' +
+                '</div>');
+            <%end%>
+        }
     });
 </script>
