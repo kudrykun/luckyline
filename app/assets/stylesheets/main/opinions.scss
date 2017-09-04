@@ -1,23 +1,37 @@
+/*Стили для формы*/
 .namespan,.textspan, .vkspan, .okspan,.phonespan, .cityspan{
   color: #fd4949;
   font-size: 80%;
 }
 
 .field-incorrect{
- border-color: rgb(247, 167, 167);
+  border-color: rgb(247, 167, 167);
 }
 
+/*Основные стили*/
+.opinions {
+  background-color: rgba(255, 255, 255, 0.74);
+}
 .left-quotes{
   font-size: 8em;
   font-family: sans-serif;
   color: #6bc748;
   line-height: 140px;
 }
-
+#new_opinion > .invalid-button {
+  background-color: #8793a0;
+}
+.picture_span {
+  font-size: 15px;
+}
+.invalid-count{
+  color: #fd4949;
+}
+/*информация о комментаторе*/
 .opinion-info{
   font-size: 89%;
   line-height: 2.067;
-  color: #cecdcd;
+  color: #929292;
 }
 
 .opinion-info > time{
@@ -28,24 +42,38 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.opinions > .row > .col-md-12:nth-child(2n){
+/*.opinions > .row > .col-md-12:nth-child(2n){
   background-color: #f6f6f6;
-}
+}*/
 
-.opinions > .row > .col-sm-12{
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.opinions > .row > .col-sm-12:nth-child(2n){
-  background-color: #f6f6f6;
-}
 
-.opinions > .row > .col-xs-12{
-  padding-top: 20px;
-  padding-bottom: 20px;
+/*Стили для прикрепленных изображений*/
+.opinion-image > a{
+  display: inline-block;
+  position: relative;
 }
-.opinions > .row > .col-xs-12:nth-child(2n){
-  background-color: #f6f6f6;
+.opinion-image .images-count{
+  position: absolute;
+  text-align: center;
+  color: white;
+  background-color: rgba(0,0,0,0.45);
+  width: 100%;
+  height: 100px;
+  opacity: 0;
+  bottom: calc(50% - 50px);
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 100ms;
+}
+.opinion-image .images-count .caption{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
+}
+.opinion-image:hover{
+  .images-count{
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 991px){

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:create]  #создание заказа из товара
   end
 
+
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
     resources :items
@@ -30,5 +31,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :galleries
     resources :pictures, only: [:destroy,:update,:edit]
+    resources :description_pictures, only: [:destroy,:update,:edit]
+    resources :decoration_pictures, only: [:destroy,:update,:edit]
   end
 end

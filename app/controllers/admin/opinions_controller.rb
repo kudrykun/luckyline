@@ -16,23 +16,35 @@ class Admin::OpinionsController < Admin::AdminController
 
   def create
     @opinion = Opinion.create(opinion_params)
-    record_activity(current_user.name + " создал новый отзыв " + @opinions.text)
+    if params[:images]
+      params[:images].each { |image|
+        @opinion.pictures.create(image: image)
+      }
+    end
+    record_activity(current_user.name + " создал новый отзыв " + @opinion.text)
     redirect_to admin_opinion_path(@opinion)
   end
 
   def update
     @opinion.update(opinion_params)
-    record_activity(current_user.name + " обновил отзыв " + @opinions.text)
+    if params[:images]
+      params[:images].each { |image|
+        @opinion.pictures.create(image: image)
+      }
+    end
+    record_activity(current_user.name + " обновил отзыв " + @opinion.text)
     redirect_to admin_opinion_path(@opinion)
   end
 
   def destroy
-    if Opinion.find(params[:id]).image.exists?
-      Opinion.find(params[:id]).image.destroy
+    if @opinion.pictures.size > 0
+      @opinion.pictures.each do |picture|
+        picture.destroy
+      end
     end
-    opinions_text = @opinion.text
+    opinion_text = @opinion.text
     Opinion.find(params[:id]).destroy
-    record_activity(current_user.name + " обновил отзыв " + opinions_text)
+    record_activity(current_user.name + " удалил отзыв " + opinion_text)
     redirect_to :back
   end
 
@@ -43,6 +55,6 @@ class Admin::OpinionsController < Admin::AdminController
   end
 
   def opinion_params
-    params.require(:opinion).permit(:name,:text,:info,:vk,:ok,:alt,:image)
+    params.require(:opinion).permit(:name,:text,:vk,:ok)
   end
 end

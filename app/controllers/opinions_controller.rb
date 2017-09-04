@@ -8,16 +8,17 @@ class OpinionsController < ApplicationController
   end
 
   def create
-    @opinion = Opinion.new(opinion_params)
-    if @opinion.save
-      redirect_to opinions_path, notice: 'Item was successfully created.'
-    else
-      redirect_to opinions_path, notice: 'Item was not created.'
+    @opinion = Opinion.create(opinion_params)
+    if params[:images]
+      params[:images].each { |image|
+        @opinion.pictures.create(image: image)
+      }
     end
+    redirect_to opinions_path
   end
 
   private
   def opinion_params
-    params.require(:opinion).permit(:name,:text,:info,:vk,:ok,:alt, :image)
+    params.require(:opinion).permit(:name,:text,:vk,:ok)
   end
 end
