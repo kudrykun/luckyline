@@ -40,6 +40,11 @@ class Admin::GalleriesController < Admin::AdminController
         @gallery.description_pictures.create(image: image)
       }
     end
+    if params[:decoration_images]
+      params[:decoration_images].each { |image|
+        @gallery.decoration_pictures.create(image: image)
+      }
+    end
     if params[:preview]
       if @gallery.half_wide?
         preview = Picture.create(half_wide: true,image: params[:preview])
@@ -73,6 +78,11 @@ class Admin::GalleriesController < Admin::AdminController
         @gallery.description_pictures.create(image: image)
       }
     end
+    if params[:decoration_images]
+      params[:decoration_images].each { |image|
+        @gallery.decoration_pictures.create(image: image)
+      }
+    end
     if params[:preview]
       if @gallery.half_wide?
         preview = Picture.create(half_wide: true,image: params[:preview])
@@ -98,6 +108,11 @@ class Admin::GalleriesController < Admin::AdminController
     end
     if @gallery.description_pictures.size > 0
       @gallery._description_pictures.each do |picture|
+        picture.destroy
+      end
+    end
+    if @gallery.decoration_pictures.size > 0
+      @gallery._decoration_pictures.each do |picture|
         picture.destroy
       end
     end

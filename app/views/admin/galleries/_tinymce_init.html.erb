@@ -8,13 +8,20 @@
         'table contextmenu paste code',
         toolbar: 'bold italic | undo redo | ' +
         'alignleft aligncenter alignright alignjustify | ' +
-        'bullist numlist outdent indent | paste | image | link | images_tag',
+        'bullist numlist outdent indent | paste | image | link | images_tag | decoration_tag',
         setup: function(editor) {
             editor.addButton('images_tag', {
                 text: "Изображения-цены",
                 onclick: function () {
                     alert(editor.selection.getContent());
                     editor.insertContent('<div id="price_images" style="color:green">Цены</div>');
+                }
+            });
+            editor.addButton('decoration_tag', {
+                text: "Изображения-декоры",
+                onclick: function () {
+                    alert(editor.selection.getContent());
+                    editor.insertContent('<div id="decoration_images" style="color:#00806f">Декоры</div>');
                 }
             });
         }

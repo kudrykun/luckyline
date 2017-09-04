@@ -36,7 +36,7 @@
 
     <!--Изображения для цен-->
     <div class="form-group">
-      <%= f.label :pictures, 'Изображения для цен' %>
+      <%= f.label 'Изображения для цен' %>
       <div class="row">
         <div class="col-md-12">
           Всего изображений: <%= gallery.description_pictures.size %>
@@ -63,6 +63,37 @@
         <% end %>
       </div>
       <%= file_field_tag "description_images[]", type: :file, multiple: true %>
+    </div>
+
+    <!--Изображения для декоров-->
+    <div class="form-group">
+      <%= f.label :pictures, 'Изображения для декоров' %>
+      <div class="row">
+        <div class="col-md-12">
+          Всего изображений: <%= gallery.decoration_pictures.size %>
+        </div>
+      </div>
+      <div class="row">
+        <% gallery.decoration_pictures.each do |picture| %>
+            <div class="col-md-2">
+              <div class="image-wrapper">
+                <%= link_to admin_decoration_picture_path(picture), method: :delete, :remote => true, :class => 'delete-image' do %>
+                    <div class="image-hover">
+                      <div class="image-hover-content">
+                        <%= icon ('times') %>
+                      </div>
+                    </div>
+                    <div class="image-container">
+                      <div class="image">
+                        <%= image_tag picture.image(:for_grid), class: 'img-responsive' %>
+                      </div>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+      <%= file_field_tag "decoration_images[]", type: :file, multiple: true %>
     </div>
 
     <!--Заголовок галлереи-->
