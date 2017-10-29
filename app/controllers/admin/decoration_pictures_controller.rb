@@ -1,8 +1,8 @@
-class Admin::DescriptionPicturesController < Admin::AdminController
+class Admin::DecorationPicturesController < Admin::AdminController
   def edit
   end
   def update
-    @picture = DescriptionPicture.find(params[:id])
+    @picture = DecorationPicture.find(params[:id])
     @picture.update_attribute(:alt, params[:alt])
     @picture.update_attribute(:caption, params[:caption])
     respond_to do |format|
@@ -10,7 +10,7 @@ class Admin::DescriptionPicturesController < Admin::AdminController
     end
   end
   def destroy
-    @picture = DescriptionPicture.find(params[:id])
+    @picture = DecorationPicture.find(params[:id])
     @picture.image.destroy
     @picture.destroy
 

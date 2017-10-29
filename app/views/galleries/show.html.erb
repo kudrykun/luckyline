@@ -73,8 +73,11 @@
             $('#price_images').append(
                 '<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">' +
                   '<div class="catalog-gallery-container">' +
-                    '<a data-toggle="lightbox" data-gallery="description-pictures" href="<%=picture.image(:original)%>">' +
+                    '<a data-toggle="lightbox" data-gallery="description-pictures" href="<%=picture.image(:original)%>" data-title="<%=picture.caption%>">' +
                         '<%=image_tag picture.image(:for_grid), class: 'img-responsive'%>' +
+                        '<div class="gallery-image-caption">' +
+                          '<%=picture.caption%>' +
+                        '</div>' +
                     '</a>' +
                   '</div>' +
                 '</div>');
@@ -87,11 +90,14 @@
             <%@gallery.decoration_pictures.each do |picture|%>
             $('#decoration_images').append(
                 '<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">' +
-                '<div class="catalog-gallery-container">' +
-                '<a data-toggle="lightbox" data-gallery="decoration-pictures" href="<%=picture.image(:original)%>">' +
-                '<%=image_tag picture.image(:for_grid), class: 'img-responsive'%>' +
-                '</a>' +
-                '</div>' +
+                  '<div class="catalog-gallery-container">' +
+                    '<a data-toggle="lightbox" data-gallery="decoration-pictures" href="<%=picture.image(:original)%>" data-title="<%=picture.caption%>">' +
+                      '<%=image_tag picture.image(:for_grid), class: 'img-responsive'%>' +
+                      '<div class="gallery-image-caption">' +
+                        '<%=picture.caption%>' +
+                      '</div>' +
+                    '</a>' +
+                  '</div>' +
                 '</div>');
             <%end%>
         }

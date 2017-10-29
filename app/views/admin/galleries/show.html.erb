@@ -24,6 +24,60 @@
         <div class="panel-heading">Описание</div>
         <div class="panel-body"><%= @gallery.description %></div>
       </div>
+
+      <!--Изображения цен-->
+      <div class="panel panel-info" id="price-image-panel">
+        <div class="panel-heading">Изображения цен | Всего изображений: <%= @gallery.description_pictures.size %></div>
+        <div class="panel-body">
+          <div class="row">
+            <% @gallery.description_pictures.each do |picture| %>
+                <div class="col-md-3">
+                  <div class="image-wrapper">
+                    <%= image_tag picture.image(:for_grid), alt: picture.alt, class: 'img-responsive' %>
+
+                    <%= form_tag "/admin/description_pictures/#{picture.id}", method: 'put', remote: true, class: 'form-inline' do %>
+                        <div class="form-group">
+                          <%= text_field_tag :alt, picture.alt, placeholder: 'Alt', class: 'form-control' %>
+                          <button type="submit" class="btn btn-default change-alt"><%= icon 'check' %></button>
+                        </div>
+                        <div class="form-group">
+                          <%= text_field_tag :caption, picture.caption, placeholder: 'Caption', class: 'form-control' %>
+                          <button type="submit" class="btn btn-default change-caption"><%= icon 'check' %></button>
+                        </div>
+                    <% end %>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <!--Изображения декоров-->
+      <div class="panel panel-info" id="price-image-panel">
+        <div class="panel-heading">Изображения декоров | Всего изображений: <%= @gallery.decoration_pictures.size %></div>
+        <div class="panel-body">
+          <div class="row">
+            <% @gallery.decoration_pictures.each do |picture| %>
+                <div class="col-md-3">
+                  <div class="image-wrapper">
+                    <%= image_tag picture.image(:for_grid), alt: picture.alt, class: 'img-responsive' %>
+
+                    <%= form_tag "/admin/decoration_pictures/#{picture.id}", method: 'put', remote: true, class: 'form-inline' do %>
+                        <div class="form-group">
+                          <%= text_field_tag :alt, picture.alt, placeholder: 'Alt', class: 'form-control' %>
+                          <button type="submit" class="btn btn-default change-alt"><%= icon 'check' %></button>
+                        </div>
+                        <div class="form-group">
+                          <%= text_field_tag :caption, picture.caption, placeholder: 'Caption', class: 'form-control' %>
+                          <button type="submit" class="btn btn-default change-caption"><%= icon 'check' %></button>
+                        </div>
+                    <% end %>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
       <div class="panel panel-info">
         <div class="panel-heading">Заголовок H1</div>
         <div class="panel-body"><%= @gallery.header %></div>
