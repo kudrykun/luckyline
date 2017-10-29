@@ -1,5 +1,6 @@
 body {
   background: image-url('header2.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 .fa-file-pdf-o {
   color: #d90106;
@@ -170,6 +171,7 @@ header > .container {
   left: 3%;
   top: 0;
   background: image-url('header2.jpg') no-repeat center center fixed;
+  background-size: cover;
   width: 94%;
   height: calc(100% - 20px);
   position: absolute;
