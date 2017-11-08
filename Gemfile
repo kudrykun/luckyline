@@ -76,7 +76,10 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
 end
-
+group :production do
+  gem 'fog-google'
+  gem 'google-api-client', '~> 0.8.6'
+end
 group :production do
   gem 'unicorn'
 end

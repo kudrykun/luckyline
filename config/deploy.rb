@@ -19,6 +19,7 @@ set :use_sudo,       false
 set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 set :linked_files, fetch(:linked_files, []).push('config/secrets.yml')
 set :linked_files, fetch(:linked_files, []).push('config/initializers/devise.rb')
+set :linked_files, fetch(:linked_files, []).push('config/initializers/paperclip.rb')
 set :repo_url,       "git@github.com:kudrykun/luckyline.git"
 
 # Default branch is :master
