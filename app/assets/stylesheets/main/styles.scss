@@ -688,6 +688,10 @@ ul.pagination li a.active {
   margin-bottom: 30px;
 }
 
+/*Лепим футер к низу страницы*/
+.container{
+  min-height: calc(100vh - 180px);
+}
 /*
 .catalog-gallery-container .img-caption{
   position: absolute;
