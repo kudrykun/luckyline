@@ -29,6 +29,9 @@
                 <% @categories_for_catalog.each do |category| %>
                     <li><%=link_to category.title,subs_and_items_path(category)%></li>>
                 <% end %>
+                <% @galleries_for_catalog.each do |gallery| %>
+                    <li><%=link_to gallery.title,admin_gallery_path(gallery)%></li>>
+                <% end %>
               </ul>
             </li>
         <% end %>
