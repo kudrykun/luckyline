@@ -29,6 +29,13 @@
           </ul>
         </li>
 
+        <!-- Дисконт -->
+        <li class="<%="#{'active' if controller_name == 'discount'}"%>">
+          <%= link_to discount_path do %>
+              Дисконт
+          <% end %>
+        </li>
+
         <!--Акции-->
         <li class="<%="#{'active' if controller_name == 'news_items'}"%>">
           <%= link_to news_items_path do %>

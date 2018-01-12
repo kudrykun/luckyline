@@ -17,3 +17,5 @@ end
 =begin
 {for_show: "800x800#",for_grid: "500x500#", thumb: "150x150#" },
 =end
+
+#TODO Убрать сжатие
