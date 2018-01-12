@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'item/:id', to: 'items#show', as: 'show_item' #Товар
   get 'gallery/:id', to: 'galleries#show', as: 'show_gallery' #Галерея
   get 'catalog', to: 'categories#show', as: 'catalog', defaults: {id: 'catalog'} #Каталог
+  get 'discount', to: 'discount#show', as: 'discount' #Дисконт
   get 'catalog/:id', to: 'categories#show',as: 'subs_and_items' #показ подкатегорий
   resources :news_items, only: [:index, :show] #акции
   resources :orders, only: [:create] # создание заказов
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
+    get 'discount', to: 'discount#index', as: 'discount'
     resources :items
     resources :categories
     resources :news_items

@@ -1,82 +1,59 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
+
+    <!-- Логотип -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <i class="fa fa-bars"></i>
       </button>
       <%= link_to 'Lucky', root_path, class: 'navbar-brand', style: 'color:#6bc748;font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;' %>
-
     </div>
+
+
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <!--catalog-->
-        <% if controller_name == 'categories' || controller_name == 'galleries' || controller_name == 'items' %>
-            <li class="dropdown">
-              <%= link_to 'Каталог', catalog_path, class: 'dropdown-toggle disabled active', "data-toggle" => 'dropdown' %>
-              <ul class="dropdown-menu">
-                <% @categories_for_catalog.each do |category| %>
-                    <li><%=link_to category.title,subs_and_items_path(category)%></li>>
-                <% end %>
-                <% @galleries_for_catalog.each do |gallery| %>
-                    <li><%=link_to gallery.title,show_gallery_path(gallery)%></li>>
-                <% end %>
-              </ul>
-            </li>
-        <% else %>
-            <li class="dropdown">
-              <%= link_to 'Каталог', catalog_path, class: 'dropdown-toggle disabled', "data-toggle" => 'dropdown' %>
-              <ul class="dropdown-menu">
-                <% @categories_for_catalog.each do |category| %>
-                    <li><%=link_to category.title,subs_and_items_path(category)%></li>>
-                <% end %>
-                <% @galleries_for_catalog.each do |gallery| %>
-                    <li><%=link_to gallery.title,show_gallery_path(gallery)%></li>>
-                <% end %>
-              </ul>
-            </li>
-        <% end %>
 
-        <!--news_items-->
-        <% if controller_name == 'news_items' %>
-            <li class="active"><%= link_to news_items_path do %>
-                  Акции
-                  <span class="badge"><%= @number_of_news %></span>
-              <% end %></li>
-        <% else %>
-            <li><%= link_to news_items_path do %>
-                  Акции
-                  <span class="badge"><%= @number_of_news %></span>
-              <% end %></li>
-        <% end %>
+        <!-- Каталог -->
+        <li class="dropdown">
+          <%= link_to 'Каталог',
+                      catalog_path,
+                      class: "dropdown-toggle disabled #{'active 'if controller_name == 'categories' || controller_name == 'galleries' || controller_name == 'items'}",
+                      "data-toggle" => 'dropdown' %>
+        </li>
 
-        <!--Заявка-->
+        <!-- Дисконт -->
+        <li class="<%="#{'active' if controller_name == 'discount'}"%>">
+          <%= link_to discount_path do %>
+              Дисконт
+          <% end %>
+        </li>
+
+        <!--Акции-->
+        <li class="<%="#{'active' if controller_name == 'news_items'}"%>">
+          <%= link_to news_items_path do %>
+              Акции
+              <span class="badge"><%= @number_of_news %></span>
+          <% end %>
+        </li>
+
+        <!-- Заявка -->
         <li data-toggle="modal" data-target="#myModal"><a id="order-href">Онлайн заявка</a></li>
 
-        <!--opinions-->
-        <% if controller_name == 'opinions' %>
-            <li class="active"><%= link_to 'Отзывы', opinions_path %></li>
-        <% else %>
-            <li><%= link_to 'Отзывы', opinions_path %></li>
-            </li>
-        <% end %>
+        <!-- Отзывы -->
+        <li class="<%='active' if controller_name == 'opinions' %>">
+          <%= link_to 'Отзывы', opinions_path %>
+        </li>
 
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
-
-        <% if controller_name == 'contacts' %>
-            <li class="active">
-              <%= link_to contacts_path do %>
-                  <span class="glyphicon glyphicon-bookmark"></span>Контакты
-              <% end %>
-            </li>
-        <% else %>
-            <li>
-              <%= link_to contacts_path do %>
-                  <span class="glyphicon glyphicon-bookmark"></span>Контакты
-              <% end %>
-            </li>
-        <% end %>
+        <li class="<%= "#{'active' if controller_name == 'contacts'}" %>">
+          <%= link_to contacts_path do %>
+              <span class="glyphicon glyphicon-bookmark"></span>Контакты
+          <% end %>
+        </li>
       </ul>
+
     </div>
   </div>
 </nav>

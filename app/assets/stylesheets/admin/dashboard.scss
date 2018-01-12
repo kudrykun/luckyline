@@ -81,20 +81,38 @@
 }
 
 .col-md-4 .panel-blue{
-  border-color: #64ccec;
+  border-color: #43A047;
 }
 .panel-blue > .panel-heading{
-  border-color: #64ccec;
+  border-color: #43A047;
   color: #ffffff;
-  background-color: #64ccec;
+  background-color: #43A047;
 }
 .col-md-4 .panel-blue{
-  border-color: #64ccec;
-  color: #64ccec;
+  border-color: #43A047;
+  color: #43A047;
 }
 .panel-blue:hover {
-  color: #58a6c5;
+  color: #3b763b;
 }
+
+
+.col-md-4 .panel-grey{
+  border-color: #546E7A;
+}
+.panel-grey > .panel-heading{
+  border-color: #546E7A;
+  color: #ffffff;
+  background-color: #546E7A;
+}
+.col-md-4 .panel-grey{
+  border-color: #546E7A;
+  color: #546E7A;
+}
+.panel-grey:hover {
+  color: #3d4f5b;
+}
+
 
 .icon-admin{
   -webkit-transform: scale(1,1);
