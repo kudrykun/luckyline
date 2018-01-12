@@ -45,7 +45,6 @@ gem 'meta-tags'
 gem 'sitemap_generator'
 gem "letter_opener", :group => :development
 gem 'remotipart', '~> 1.2'
-gem 'paperclip-compression'
 gem 'lightbox-bootstrap-rails', '5.1.0.1'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'hirb'

@@ -210,9 +210,6 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
-    paperclip-compression (0.3.16)
-      os (~> 0.9.6)
-      paperclip (>= 4.3.6)
     pg (0.21.0)
     pg_search (2.1.1)
       activerecord (>= 4.2)
@@ -352,7 +349,6 @@ DEPENDENCIES
   listen (~> 3.0.5)
   meta-tags
   paperclip
-  paperclip-compression
   pg (~> 0.18)
   pg_search
   puma (~> 3.0)

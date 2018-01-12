@@ -1,4 +1,5 @@
 Gallery.delete_all
+Item.delete_all
 Category.delete_all
 Opinion.delete_all
 Picture.all.each do |picture|
