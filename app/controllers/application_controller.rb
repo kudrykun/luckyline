@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout :layout_by_resource
-  before_action :number_of_news,:set_order, :categories_for_catalog, :galleries_for_catalog
+  before_action :number_of_news,:set_order
 
   protected
 

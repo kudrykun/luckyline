@@ -19,14 +19,6 @@
                       catalog_path,
                       class: "dropdown-toggle disabled #{'active 'if controller_name == 'categories' || controller_name == 'galleries' || controller_name == 'items'}",
                       "data-toggle" => 'dropdown' %>
-          <ul class="dropdown-menu">
-            <% @categories_for_catalog.each do |category| %>
-                <li><%=link_to category.title,subs_and_items_path(category)%></li>>
-            <% end %>
-            <% @galleries_for_catalog.each do |gallery| %>
-                <li><%=link_to gallery.title,show_gallery_path(gallery)%></li>>
-            <% end %>
-          </ul>
         </li>
 
         <!-- Дисконт -->
