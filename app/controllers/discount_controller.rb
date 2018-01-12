@@ -1,13 +1,11 @@
 class DiscountController < ApplicationController
   def show
-    set_meta_tags title: '', #TODO Добавить title для дисконта
-                  description: '' #TODO Добавить description для дисконта
-
-    @discount = Category.find('discount')
-    @categories = @discount.categories
+    @discount = Category.find_by(title: 'discount')
+    @categories = @discount.subs
     @items = @discount.items
     @galleries = @discount.galleries
-  rescue ActiveRecord::RecordNotFound
-    @discount = nil
+
+    set_meta_tags title: @discount.meta_title,
+                  description: @discount.meta_description
   end
 end
