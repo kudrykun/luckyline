@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
+    get 'discount', to: 'discount#index', as: 'discount'
     resources :items
     resources :categories
     resources :news_items

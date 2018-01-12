@@ -1,37 +1,5 @@
 <div class="row">
-  <!--Панель с товарами-->
-  <div class="col-md-4">
-    <%=link_to admin_items_path, class:'panel-hover' do%>
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col-md-12">
-            Последнее изменение:
-            <% if @items_last_update %>
-                <%= time_tag @items_last_update%>
-            <%else%>
-              Нет данных
-            <%end%>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-3">
-            <%=icon('shopping-bag', class: 'fa-5x icon-admin',)%>
-          </div>
-          <div class="col-xs-9 text-right">
-            <div class="huge"><%=@items_size%></div>
-            <div>Товары</div>
-          </div>
-        </div>
-      </div>
-      <div class="panel-footer">L
-        <span class="pull-left">Работать с товарами</span>
-        <span class="pull-right"><%=icon('arrow-circle-right')%></span>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-    <%end%>
-  </div>
+  <!-- Панель с галереями-->
   <div class="col-md-4">
     <%=link_to admin_galleries_path, class:'panel-hover' do%>
         <div class="panel panel-primary">
@@ -64,6 +32,7 @@
         </div>
     <%end%>
   </div>
+
   <!--Панель с категориями-->
   <div class="col-md-4">
     <%=link_to admin_categories_path, class:'panel-hover' do%>
@@ -97,6 +66,41 @@
     </div>
     <%end%>
   </div>
+
+  <!--Панель с Дисконтами-->
+  <div class="col-md-4">
+    <%=link_to admin_discount_path, class:'panel-hover' do%>
+        <div class="panel panel-grey">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-md-12">
+                Последнее изменение:
+                <% if @discounts_last_update %>
+                    <%= time_tag @discounts_last_update%>
+                <%else%>
+                    Нет данных
+                <%end%>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">
+                <%=icon('usd', class: 'fa-5x icon-admin',)%>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div class="huge"><%=@discounts_size%></div>
+                <div>Дисконтные товары</div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <span class="pull-left">Работать с дисконтными товарами</span>
+            <span class="pull-right"><%=icon('arrow-circle-right')%></span>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+    <%end%>
+  </div>
+
   <!--Панель с акциями-->
   <div class="col-md-4">
     <%=link_to admin_news_items_path, class:'panel-hover' do%>

@@ -1,8 +1,8 @@
 class Admin::DashboardController < Admin::AdminController
   def index
-    @items_size = Item.all.size;
-    if @items_size != 0
-      @items_last_update = Item.all.order(updated_at: :desc).first.updated_at
+    @discounts_size = Category.find_by(title: 'discount').galleries.size
+    if @discounts_size != 0
+      @discounts_last_update = Category.find_by(title: 'discount').galleries.order(updated_at: :desc).first.updated_at
     end
 
     @galleries_size = Gallery.all.size;
