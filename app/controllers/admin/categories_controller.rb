@@ -59,7 +59,7 @@ class CategoriesController < AdminController
 
 
   def destroy
-    if !(@category.title.to_s == 'catalog'.to_s)
+    if (!(@category.title.to_s == 'catalog'.to_s) && !(@category.title.to_s == 'discount'.to_s))
       if @category.preview && @category.preview.image.exists?
         @category.preview.destroy
       end
