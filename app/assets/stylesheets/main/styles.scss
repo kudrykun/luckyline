@@ -692,6 +692,32 @@ ul.pagination li a.active {
 .container{
   min-height: calc(100vh - 180px);
 }
+
+@media (max-width: 840px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    margin-right: -21px!important;
+    margin-left: -21px!important;
+    border-top: 1px solid transparent;
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none!important;
+  }
+  .navbar-nav>li {
+    float: none;
+  }
+  .collapse.in{
+    display:block !important;
+  }
+}
 /*
 .catalog-gallery-container .img-caption{
   position: absolute;
